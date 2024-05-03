@@ -2,9 +2,14 @@ import { Dialog } from "@headlessui/react";
 import AnimatedGradientText from "./animated-gradient-text";
 import { BorderBeam } from "./border-beam";
 
-const ResumeDialog = ({ isOpen, onClose }) => {
+interface ResumeDialogProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const ResumeDialog = ({ isOpen, onClose }: ResumeDialogProps) => {
   const handleDownloadClick = () => {
-    document.getElementById("downloadResumeLink").click();
+    document.getElementById("downloadResumeLink")?.click();
   };
 
   return (
