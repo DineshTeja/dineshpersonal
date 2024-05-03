@@ -5,7 +5,6 @@ import { useRef } from "react";
 import DotPattern from "@/components/ui/dot-pattern";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import ShimmerButton from "@/components/ui/shimmer-button";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Meteors } from "@/components/ui/meteors";
 import "@magiclabs/ui/dist/cjs/index.css";

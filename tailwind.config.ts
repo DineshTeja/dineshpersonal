@@ -60,11 +60,11 @@ const config: Config = {
       },
       keyframes: {
         "meteor": { 
-          "0%": { transform: "rotate(215deg) translateX(0)", opacity: 1 },
-          "70%": { opacity: 1 },
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" }, // Changed opacity to a string
+          "70%": { opacity: "1" }, // Changed opacity to a string
           "100%": {
             transform: "rotate(215deg) translateX(-500px)",
-            opacity: 0,
+            opacity: "0", // Changed opacity to a string
           },
         },
         "border-beam": {
