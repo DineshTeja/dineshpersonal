@@ -36,7 +36,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-20 overflow-x-hidden"
+      className="mb-28 max-w-[53rem] scroll-mt-36 text-center overflow-x-hidden"
     >
       {/* About Section */}
       <motion.div
@@ -68,13 +68,14 @@ export default function Skills() {
       <ul className="flex flex-wrap justify-center gap-2 text-sm">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="rounded-xl px-2 py-3 sm:px-1 sm:py-1 text-xs"
+            className="rounded-xl px-2 py-3"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
             viewport={{
               once: true,
+              margin: "-10% 0px -10% 0px"
             }}
             custom={index}
           >
