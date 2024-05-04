@@ -47,8 +47,8 @@
 //         viewport={{ once: true }}
 //       >
 //         <p
-//           className="mt-6 lg:text-xl animate-gradient bg-gradient-to-r from-[#6f71e2] 
-//             via-[#712c8f] to-[#7802ff] bg-[length:var(--bg-size)_100%] 
+//           className="mt-6 lg:text-xl animate-gradient bg-gradient-to-r from-[#6f71e2]
+//             via-[#712c8f] to-[#7802ff] bg-[length:var(--bg-size)_100%]
 //             bg-clip-text text-transparent font-medium md:text-lg sm:text-md pb-10
 //             leading-relaxed sm:leading-loose sm:px-2"
 //         >
@@ -129,9 +129,8 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-20"
     >
-
       {/* About Section */}
       <motion.div
         className="text-center mt-10 sm:mt-2"
@@ -158,11 +157,11 @@ export default function Skills() {
         </p>
       </motion.div>
 
-      <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-1 text-lg text-gray-800">
+      <SectionHeading>⚙️ Skills</SectionHeading>
+      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="rounded-xl px-5 py-3"
+            className="rounded-xl px-2 py-3"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -172,12 +171,11 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {/* {skill} */}
-              <AnimatedGradientText>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6f71e2] via-[#712c8f] to-[#7802ff] font-normal">
-                  {skill}
-                </span>
-              </AnimatedGradientText>
+            <AnimatedGradientText>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6f71e2] via-[#712c8f] to-[#7802ff] font-normal sm:font-small">
+                {skill}
+              </span>
+            </AnimatedGradientText>
           </motion.li>
         ))}
       </ul>
