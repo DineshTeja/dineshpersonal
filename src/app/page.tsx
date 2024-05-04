@@ -13,8 +13,8 @@ import Intro from "@/components/intropic";
 import Projects from "@/components/projectcards";
 import { AnimatedBeamDemo } from "@/components/picbeam";
 import Experience from "@/components/experience";
-import Skills from '@/components/skills'
-import Contact from '@/components/contact'
+import Skills from "@/components/skills";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (

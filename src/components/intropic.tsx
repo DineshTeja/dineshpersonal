@@ -1,22 +1,22 @@
 // /** @jsxImportSource next/client */
-'use client';
+"use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from 'react';
-import { useRef } from 'react';
-import DotPattern from '@/components/ui/dot-pattern';
-import AnimatedGradientText from '@/components/ui/animated-gradient-text';
-import { AnimatedBeam } from '@/components/ui/animated-beam';
-import { BorderBeam } from '@/components/ui/border-beam';
-import { Meteors } from '@/components/ui/meteors';
-import '@magiclabs/ui/dist/cjs/index.css'; 
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
+import DotPattern from "@/components/ui/dot-pattern";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
+import { AnimatedBeam } from "@/components/ui/animated-beam";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { Meteors } from "@/components/ui/meteors";
+import "@magiclabs/ui/dist/cjs/index.css";
 import { ChevronRight } from "lucide-react";
 import { useSectionInView } from "@/lib/sectiondisplay";
 import { useSectionContext } from "@/context/sectioncontext";
-import { BsLinkedin } from 'react-icons/bs';
-import { FaGithubSquare } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-import ResumeDialog from '@/components/ui/resumedialog';
+import { BsLinkedin } from "react-icons/bs";
+import { FaGithubSquare } from "react-icons/fa";
+import { motion } from "framer-motion";
+import ResumeDialog from "@/components/ui/resumedialog";
 
 const Intro: React.FC = () => {
   const { ref } = useSectionInView("Home", 0.5);
@@ -45,23 +45,24 @@ const Intro: React.FC = () => {
   }, [fullText]);
 
   return (
-    <main className="flex w-full min-h-relative flex-col items-center gap-12 pb-5">
-      <ResumeDialog isOpen={isResumeDialogOpen} onClose={() => setIsResumeDialogOpen(false)} />
-      <AnimatedGradientText
-        onClick={() => setIsResumeDialogOpen(true)}
-        >
+    <main className="flex w-full min-h-relative flex-col items-center gap-12 pb-5 overflow-x-hidden">
+      <ResumeDialog
+        isOpen={isResumeDialogOpen}
+        onClose={() => setIsResumeDialogOpen(false)}
+      />
+      <AnimatedGradientText onClick={() => setIsResumeDialogOpen(true)}>
         🎉 <hr id="home" className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
         <span
-            className={`inline animate-gradient bg-gradient-to-r from-[#ffaa40] 
+          className={`inline animate-gradient bg-gradient-to-r from-[#ffaa40] 
             via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] 
             bg-clip-text text-transparent font-semibold`}
         >
-            Resume
+          Resume
         </span>
         <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         <BorderBeam size={250} duration={5} delay={4} />
       </AnimatedGradientText>
-      
+
       {/* Hero card */}
       <div className="flex flex-col w-full gap-8 items-center max-w-5xl p-4 h-full">
         <Meteors number={30} />
@@ -84,41 +85,60 @@ const Intro: React.FC = () => {
       </div>
 
       {/* Social Links */}
-      <div className="grid md:grid-cols-3 sm:grid-cols-1 sm:pb-1lg:grid-cols-3 gap-4 w-full max-w-md mx-auto">
-      <AnimatedGradientText onClick={() => window.open("https://github.com/DineshTeja", "_blank")}>
-        <FaGithubSquare /> <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
-        <span
-          className={`inline animate-gradient bg-gradient-to-r from-[#6f71e2] 
+      <div className="grid grid-cols-3 sm:pb-1 gap-6 w-full max-w-md mx-auto" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+        <AnimatedGradientText
+          onClick={() => window.open("https://github.com/DineshTeja", "_blank")}
+        >
+          <FaGithubSquare className="sm:w-6 sm:h-6" />{" "}
+          <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300 hidden sm:block" />{" "}
+          <span
+            className={`hidden sm:inline animate-gradient bg-gradient-to-r from-[#6f71e2] 
           via-[#712c8f] to-[#7802ff] bg-[length:var(--bg-size)_100%] 
           bg-clip-text text-transparent font-semibold`}
-        >
-          Github
-        </span>
-        <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-      </AnimatedGradientText>
+          >
+            Github
+          </span>
+          <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5 hidden sm:block" />
+        </AnimatedGradientText>
 
-      <AnimatedGradientText onClick={() => window.open("https://www.linkedin.com/in/dinesh-vasireddy/", "_blank")}>
-        <BsLinkedin /> <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
-        <span
-          className={`inline animate-gradient bg-gradient-to-r from-[#40a3ff] 
+        <AnimatedGradientText
+          onClick={() =>
+            window.open(
+              "https://www.linkedin.com/in/dinesh-vasireddy/",
+              "_blank"
+            )
+          }
+        >
+          <BsLinkedin className="sm:w-6 sm:h-6" />{" "}
+          <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300 hidden sm:block" />{" "}
+          <span
+            className={`hidden sm:inline animate-gradient bg-gradient-to-r from-[#40a3ff] 
           via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] 
           bg-clip-text text-transparent font-semibold`}
-        >
-          Linkedin
-        </span>
-        <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-      </AnimatedGradientText>
+          >
+            Linkedin
+          </span>
+          <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5 hidden sm:block" />
+        </AnimatedGradientText>
 
-      <AnimatedGradientText onClick={() => window.location.href = "mailto:dineshvasireddy@college.harvard.edu"}>
-        📧<hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
-        <span
-          className={`inline animate-gradient bg-gradient-to-r from-[#5340ff] 
+        <AnimatedGradientText
+          onClick={() =>
+            (window.location.href =
+              "mailto:dineshvasireddy@college.harvard.edu")
+          }
+        >
+          <span role="img" aria-label="Email" className="sm:w-6 sm:h-6">
+            📧
+          </span>
+          <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300 hidden sm:block" />{" "}
+          <span
+            className={`hidden sm:inline animate-gradient bg-gradient-to-r from-[#5340ff] 
           via-[#9c40ff] to-[#ff4040] bg-[length:var(--bg-size)_100%] 
           bg-clip-text text-transparent font-semibold`}
-        >
-          Email
-        </span>
-      </AnimatedGradientText>
+          >
+            Email
+          </span>
+        </AnimatedGradientText>
       </div>
     </main>
   );

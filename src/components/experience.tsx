@@ -25,7 +25,7 @@ export default function Experience() {
   };
 
   return (
-    <main id="experience" ref={ref} className="scroll-mt-28 mb-10 sm:mb-40">
+    <main id="experience" ref={ref} className="scroll-mt-28 mb-10 sm:mb-40 overflow-x-hidden">
       <SectionHeading>💼 Work </SectionHeading>
       
       <AnimatedGradientText>

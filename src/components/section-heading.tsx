@@ -27,7 +27,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ children }) => {
   };
 
   return (
-    <div className="flex items-center justify-center rounded-lg border">
+    <div className="flex items-center justify-center rounded-lg border overflow-x-hidden">
       <motion.h2
         ref={ref}
         initial="hidden"

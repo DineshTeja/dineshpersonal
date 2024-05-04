@@ -15,14 +15,14 @@ const Header: React.FC = () => {
         <>
             <style>
                 {`
-                @media (max-width: 640px) {
+                @media (max-width: 500px) {
                     .header-mobile-hidden {
                         display: none;
                     }
                 }
                 `}
             </style>
-            <header className="z-[999] relative header-mobile-hidden">
+            <header className="z-[999] relative header-mobile-hidden overflow-x-hidden">
                 <motion.div className="fixed top-0 left-1/2 h-[3.5rem] w-full rounded-none border
                 border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg
                 shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] 
