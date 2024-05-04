@@ -85,7 +85,10 @@ const Intro: React.FC = () => {
       </div>
 
       {/* Social Links */}
-      <div className="grid grid-cols-3 sm:pb-1 gap-6 w-full max-w-md mx-auto" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+      <div
+        className="grid grid-cols-3 sm:pb-1 gap-6 w-full max-w-md mx-auto"
+        style={{ gridTemplateColumns: "1fr 1fr 1fr" }}
+      >
         <AnimatedGradientText
           onClick={() => window.open("https://github.com/DineshTeja", "_blank")}
         >

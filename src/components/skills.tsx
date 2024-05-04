@@ -36,7 +36,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] text-center sm:mb-20 overflow-x-hidden"
+      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-20 overflow-x-hidden"
     >
       {/* About Section */}
       <motion.div
@@ -47,7 +47,7 @@ export default function Skills() {
         viewport={{ once: true }}
       >
         <p
-          className="lg:text-xl animate-gradient bg-gradient-to-r from-[#6f71e2] 
+          className="mt-6 lg:text-xl animate-gradient bg-gradient-to-r from-[#6f71e2] 
             via-[#712c8f] to-[#7802ff] bg-[length:var(--bg-size)_100%] 
             bg-clip-text text-transparent font-medium md:text-lg sm:text-md pb-10
             leading-relaxed sm:leading-loose sm:px-2"
