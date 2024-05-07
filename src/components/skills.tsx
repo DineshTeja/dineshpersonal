@@ -145,15 +145,13 @@ export default function Skills() {
             bg-clip-text text-transparent font-normal md:text-lg sm:text-md pb-10
             leading-relaxed sm:leading-loose sm:px-2"
         >
-          I am a passionate and curious student of Computer Science and
-          Government at Harvard University, aiming to use my skills in
-          technology solutions, software engineering, and data analytics to
-          create civic software that can improve the lives of people and
-          communities. I have demonstrated internship experience in various
+          I love using my skills in technology solutions, software engineering, and
+          data analytics to create civic software that can improve the lives of
+          people and communities. I have demonstrated internship experience in various
           companies and non-profit organizations. I&apos;ve also developed
           projects focusing on civic software, web development, machine
-          learning, and data science. Currently, I am developing software with a
-          primary focus on improving revenue streams and communication channels.
+          learning, and data science. Currently, I am building software for
+          governments. If you&apos;re in NYC this summer, let&apos;s chat!
         </p>
       </motion.div>
 
