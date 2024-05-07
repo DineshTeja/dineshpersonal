@@ -142,7 +142,7 @@ export default function Skills() {
         <p
           className="mt-6 lg:text-xl animate-gradient bg-gradient-to-r from-[#6f71e2] 
             via-[#712c8f] to-[#7802ff] bg-[length:var(--bg-size)_100%] 
-            bg-clip-text text-transparent font-medium md:text-lg sm:text-md pb-10
+            bg-clip-text text-transparent font-normal md:text-lg sm:text-md pb-10
             leading-relaxed sm:leading-loose sm:px-2"
         >
           I am a passionate and curious student of Computer Science and
