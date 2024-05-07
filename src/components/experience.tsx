@@ -35,7 +35,7 @@ export default function Experience() {
           via-[#9c40ff] to-[#4060ff] bg-[length:var(--bg-size)_100%] 
           bg-clip-text text-transparent font-semibold`}
         >
-          Building in NYC (June-)
+          Building
         </span>
       </AnimatedGradientText>
       
