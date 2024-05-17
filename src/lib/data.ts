@@ -2,28 +2,45 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { AiOutlineDatabase, AiOutlineCloudSync } from "react-icons/ai";
 import { GiMagnifyingGlass, GiArtificialIntelligence } from "react-icons/gi";
-import { DiCode } from 'react-icons/di';
-import { MdOutlineSmartToy } from 'react-icons/md';
+import { DiCode } from "react-icons/di";
+import { MdOutlineSmartToy } from "react-icons/md";
 import climateneutral from "/public/climateneutral.png";
 import anycheck from "/public/anychecklogo.png";
 import polydata from "/public/polydatasmaller_web.png";
 import commonwealth from "/public/commonwealthlogo.png";
+import {
+  FileTextIcon,
+  InputIcon,
+  GlobeIcon,
+  CalendarIcon,
+  BellIcon,
+} from "@radix-ui/react-icons";
+import { FaVoteYea } from "react-icons/fa";
+import Image from "next/image";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import { SiCocacola } from "react-icons/si";
 
 export const reftbl = [
-    { name: "Home",       ref: "#home" },
-    { name: "About",      ref: "#about" },
-    { name: "Skills",     ref: "#skills" },
-    { name: "Projects",   ref: "#projects" },
-    { name: "Experience", ref: "#experience" },
-    { name: "Contact",    ref: "#contact" },
-  ] as const;
+  { name: "Home", ref: "#home" },
+  { name: "About", ref: "#about" },
+  { name: "Skills", ref: "#skills" },
+  { name: "Projects", ref: "#projects" },
+  { name: "Experience", ref: "#experience" },
+  { name: "Contact", ref: "#contact" },
+] as const;
 
 export const experiencesData = [
   {
     title: "LLMs @ GovDash (YC W22)",
     location: "New York City, NY",
-    description:
-        "AI for GovCon. Internship.",
+    description: "AI for GovCon. Internship.",
     icon: React.createElement(AiOutlineCloudSync),
     date: "May 2024 - Present",
   },
@@ -62,9 +79,98 @@ export const experiencesData = [
   {
     title: "AI/ML Research Assistant @ University of Arkansas SEEDS Center",
     location: "Fayetteville, AR",
-    description: "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK’s Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities.",
+    description:
+      "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK’s Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities.",
     icon: React.createElement(MdOutlineSmartToy),
     date: "April 2021 - June 2023",
+  },
+] as const;
+
+export const features = [
+  {
+    Icon: FileTextIcon,
+    name: "Commonwealth.ai",
+    description:
+      "Built a software tool that indexes and performs sentiment analysis on thousands of mainstream political articles daily, allows users to chat with articles via LLMs and RAG (contextualized using political publications and Twitter trends), and maintain day-to-day research threads.",
+    href: "https://commonwealthai.netlify.app/",
+    cta: "View simple demo",
+    background: React.createElement(Image, {
+      src: "/commonwealthlogo.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    tags: ["React", "Next.js", "Langchain", "Google Cloud", "Firebase", "LLMs"],
+  },
+  {
+    Icon: InputIcon,
+    name: "CVSS Base Score Prediction Using an Optimized Machine Learning Scheme",
+    description:
+      "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by TechConnect for Resilience Week 2023 in Washington D.C.",
+    href: "/",
+    cta: "Learn more",
+    background: React.createElement(Image, {
+      src: "/rweek.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+    tags: ["Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
+  },
+  {
+    Icon: GlobeIcon,
+    name: "ClimateNeutral LLM",
+    description:
+      "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
+    href: "/",
+    cta: "Reach out to learn more!",
+    background: React.createElement(Image, {
+      src: "/climateneutral.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+    tags: ["Flask", "Langchain", "Fast.ai", "BERT", "LLMs"],
+  },
+  {
+    Icon: SiCocacola,
+    name: "Coca-Cola ASP Black Box",
+    description:
+      "Led a case team to build a black box for market risk and success simulation in the Asia Pacific Operating Unit powered by neural networks, and deployed in production to drive business decisions for 200+ finance analysts.",
+    href: "/",
+    cta: "Reach out to learn more!",
+    background: React.createElement(Image, {
+      src: "/cocacolalogo.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+    tags: ["PyTorch", "Keras", "Google Cloud", "Streamlit", "Python"],
+  },
+  {
+    Icon: FaVoteYea,
+    name: "PolyData Electoral Innovation",
+    description:
+      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
+    href: "/",
+    cta: "Reach out to learn more!",
+    background: React.createElement(Image, {
+      src: "/polydatasmaller_web.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+    tags: ["React", "Python", "TensorFlow", "Google Cloud", "AWS", "D3.js"],
   },
 ] as const;
 
@@ -88,7 +194,7 @@ export const projectsData = [
   {
     title: "ClimateNeutral LLM",
     description:
-    "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
+      "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
     tags: ["Flask", "Langchain", "Fast.ai", "BERT", "LLMs"],
     imageUrl: climateneutral,
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",
@@ -104,19 +210,19 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Node.js",
-    "AWS",
-    "Python",
-    "TensorFlow",
-    "PyTorch",
-    "NLP",
-    "BERT",
-    "Transformers",
-    "Hugging Face",
-    "Knowledge Graphs",
-    "Prompt Engineering",
-    "Docker"
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Node.js",
+  "AWS",
+  "Python",
+  "TensorFlow",
+  "PyTorch",
+  "NLP",
+  "BERT",
+  "Transformers",
+  "Hugging Face",
+  "Knowledge Graphs",
+  "Prompt Engineering",
+  "Docker",
 ] as const;
