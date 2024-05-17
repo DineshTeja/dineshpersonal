@@ -39,7 +39,7 @@ const BentoGrid = ({
     description: string;
     href: string;
     cta: string;
-    tags: string[];
+    tags: readonly string[];
   }) => (
     <div
       key={name}
