@@ -4,25 +4,26 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { ReactNode } from "react";
 
 const BentoGrid = ({
-    children,
-    className,
-  }: {
-    children: ReactNode;
-    className?: string;
-  }) => {
-    return (
-      <div
-        className={cn(
-          "grid w-full auto-rows-[20rem] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2",
-          className
-        )}
-      >
-        {children}
-      </div>
-    );
-  };
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        "grid w-full auto-rows-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
   
-  const BentoCard = ({
+const BentoCard = ({
     name,
     className,
     background,
@@ -47,6 +48,7 @@ const BentoGrid = ({
         "group relative flex flex-col justify-between overflow-hidden rounded-xl",
         "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         "transform-gpu dark:bg-black dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "h-auto",
         className
       )}
     >
@@ -66,7 +68,8 @@ const BentoGrid = ({
               style={{
                 background: "linear-gradient(to right, #FF6666, indigo)",
               }}
-              className="px-3 py-1 text-[0.7rem] font-medium uppercase tracking-wider text-white rounded-lg whitespace-nowrap"              key={index}
+              className="px-3 py-1 text-[0.7rem] font-medium uppercase tracking-wider text-white rounded-lg whitespace-nowrap"              
+              key={index}
             >
               {tag}
             </li>

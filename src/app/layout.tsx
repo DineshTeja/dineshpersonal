@@ -21,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth overflow-x-hidden">
       <head>
-        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0"/> */}
         <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
-        {/* <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> */}
       </head>
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 overflow-x-hidden`}

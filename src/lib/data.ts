@@ -109,8 +109,8 @@ export const features = [
     name: "CVSS Base Score Prediction Using an Optimized Machine Learning Scheme",
     description:
       "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by TechConnect for Resilience Week 2023 in Washington D.C.",
-    href: "/",
-    cta: "Learn more",
+    href: "https://ieeexplore.ieee.org/document/10284627",
+    cta: "View IEEE Publication",
     background: React.createElement(Image, {
       src: "/rweek.png",
       alt: "Background",
