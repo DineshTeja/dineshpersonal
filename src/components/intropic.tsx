@@ -17,12 +17,13 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { motion } from "framer-motion";
 import ResumeDialog from "@/components/ui/resumedialog";
+import { BsTwitter } from "react-icons/bs";
 
 const Intro: React.FC = () => {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useSectionContext();
 
-  const fullText = "software engineer | AI & govtech.";
+  const fullText = "software engineer | believer in unusual spaces.";
   const initialText = "software engineer";
   const [text, setText] = useState(initialText);
 
@@ -86,8 +87,8 @@ const Intro: React.FC = () => {
 
       {/* Social Links */}
       <div
-        className="grid grid-cols-3 sm:pb-1 gap-6 w-full max-w-md mx-auto"
-        style={{ gridTemplateColumns: "1fr 1fr 1fr" }}
+        className="grid grid-cols-4 sm:pb-1 gap-6 w-full max-w-md mx-auto justify-items-center justify-center"
+        style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr" }}
       >
         <AnimatedGradientText
           onClick={() => window.open("https://github.com/DineshTeja", "_blank")}
@@ -140,6 +141,25 @@ const Intro: React.FC = () => {
           bg-clip-text text-transparent font-semibold`}
           >
             Email
+          </span>
+        </AnimatedGradientText>
+
+        <AnimatedGradientText
+          onClick={() =>
+            (window.location.href =
+              "https://twitter.com/VasireddyDinesh")
+          }
+        >
+          <span role="img" aria-label="Email" className="sm:w-6 sm:h-6">
+            <BsTwitter className="sm:w-6 sm:h-6" />
+          </span>
+          <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300 hidden sm:block" />{" "}
+          <span
+            className={`hidden sm:inline animate-gradient bg-gradient-to-r from-[#5340ff] 
+          via-[#9c40ff] to-[#ff4040] bg-[length:var(--bg-size)_100%] 
+          bg-clip-text text-transparent font-semibold`}
+          >
+            Twitter
           </span>
         </AnimatedGradientText>
       </div>

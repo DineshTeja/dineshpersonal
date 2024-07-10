@@ -38,9 +38,9 @@ export const reftbl = [
 
 export const experiencesData = [
   {
-    title: "LLMs @ GovDash (YC W22)",
+    title: "Software Engineer @ GovDash (YC W22)",
     location: "New York City, NY",
-    description: "AI for GovCon. Internship.",
+    description: "AI for GovCon.",
     icon: React.createElement(AiOutlineCloudSync),
     date: "May 2024 - Present",
   },
@@ -93,7 +93,8 @@ export const features = [
     description:
       "Built a software tool that indexes and performs sentiment analysis on thousands of mainstream political articles daily, allows users to chat with articles via LLMs and RAG (contextualized using political publications and Twitter trends), and maintain day-to-day research threads.",
     href: "https://commonwealthai.netlify.app/",
-    cta: "View simple demo",
+    // cta: "View simple demo",
+    cta: "Reach out to learn more!",
     background: React.createElement(Image, {
       src: "/commonwealthlogo.png",
       alt: "Background",
@@ -181,7 +182,8 @@ export const projectsData = [
       "Built a software tool that indexes and performs sentiment analysis on thousands of mainstream political articles daily, allows users to chat with articles via LLMs and RAG (contextualized using political publications and Twitter trends), and maintain day-to-day research threads.",
     tags: ["React", "Next.js", "Langchain", "Google Cloud", "Firebase", "LLMs"],
     imageUrl: commonwealth,
-    url: "https://commonwealthai.netlify.app/",
+    // url: "https://commonwealthai.netlify.app/",
+    url: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
   {
     title: "AnyCheck",

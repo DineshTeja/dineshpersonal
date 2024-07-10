@@ -76,10 +76,10 @@ export default function Experience() {
                     {item.icon}
                   </div>
                   <div className="flex-1">
-                    <div className="text-left mb-4 text-gray-500">
+                    <div className="text-left mb-2 text-gray-500">
                       {item.date}
                     </div>
-                    <h3 className="font-semibold capitalize">{item.title}</h3>
+                    <h3 className="text-lg font-semibold capitalize">{item.title}</h3>
                     <p className="font-normal !mt-0">{item.location}</p>
                     <p className="!mt-1 !font-normal text-gray-700">
                       {item.description}

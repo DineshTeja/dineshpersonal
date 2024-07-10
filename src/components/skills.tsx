@@ -145,13 +145,9 @@ export default function Skills() {
             bg-clip-text text-transparent font-normal md:text-lg sm:text-md pb-10
             leading-relaxed sm:leading-loose sm:px-2"
         >
-          I love using my skills in technology solutions, software engineering, and
-          data analytics to create civic software that can improve the lives of
-          people and communities. I have demonstrated internship experience in various
-          companies and non-profit organizations. I&apos;ve also developed
-          projects focusing on civic software, web development, machine
-          learning, and data science. Currently, I am building software for
-          governments. If you&apos;re in NYC this summer, let&apos;s chat!
+          I&apos;m a software engineer that loves building products that improve the lives of people and communities that I&apos;m passionate about. 
+          I&apos;ve worked in e-commerce software, government automation, campaign tech, etc. Previously, I built PolyData, a suite of products for campaign back office automation and electoral analysis, selling to various non-profits and political campaigns. 
+          Currently, I am building software for a variety of spaces. If you&apos;re in NYC this summer, let&apos;s chat!
         </p>
       </motion.div>
 
