@@ -93,8 +93,7 @@ export const features = [
     description:
       "Built a software tool that indexes and performs sentiment analysis on thousands of mainstream political articles daily, allows users to chat with articles via LLMs and RAG (contextualized using political publications and Twitter trends), and maintain day-to-day research threads.",
     href: "https://commonwealthai.netlify.app/",
-    // cta: "View simple demo",
-    cta: "Reach out to learn more!",
+    cta: "Take a look!",
     background: React.createElement(Image, {
       src: "/commonwealthlogo.png",
       alt: "Background",
@@ -161,8 +160,8 @@ export const features = [
     name: "PolyData Electoral Innovation",
     description:
       "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
-    href: "/",
-    cta: "Reach out to learn more!",
+    href: "https://polydataelect.com/",
+    cta: "Take a look!",
     background: React.createElement(Image, {
       src: "/polydatasmaller_web.png",
       alt: "Background",
@@ -182,8 +181,7 @@ export const projectsData = [
       "Built a software tool that indexes and performs sentiment analysis on thousands of mainstream political articles daily, allows users to chat with articles via LLMs and RAG (contextualized using political publications and Twitter trends), and maintain day-to-day research threads.",
     tags: ["React", "Next.js", "Langchain", "Google Cloud", "Firebase", "LLMs"],
     imageUrl: commonwealth,
-    // url: "https://commonwealthai.netlify.app/",
-    url: "https://www.linkedin.com/in/dinesh-vasireddy/",
+    url: "https://commonwealthai.netlify.app/",
   },
   {
     title: "AnyCheck",
