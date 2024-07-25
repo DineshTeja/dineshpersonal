@@ -178,7 +178,7 @@ export const projectsData = [
   {
     title: "Commonwealth.ai",
     description:
-      "Built a software tool that indexes and performs sentiment analysis on thousands of mainstream political articles daily, allows users to chat with articles via LLMs and RAG (contextualized using political publications and Twitter trends), and maintain day-to-day research threads.",
+      "Built a political research engine that indexes and performs sentiment analysis on political articles to create an efficient standard and verifiable structure for news articles, enables semantic search via LLMs and RAG, facilitates instant LLM-powered structured list creation, bulk data extraction on a granular level, and supports research thread management. We're creating a high-speed pipeline for extracting structured data from the treasure trove that is news media.",
     tags: ["React", "Next.js", "Langchain", "Google Cloud", "Firebase", "LLMs"],
     imageUrl: commonwealth,
     url: "https://commonwealthai.netlify.app/",
