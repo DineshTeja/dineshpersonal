@@ -91,7 +91,7 @@ export const features = [
     Icon: FileTextIcon,
     name: "Commonwealth.ai",
     description:
-      "Built a software tool that indexes and performs sentiment analysis on thousands of mainstream political articles daily, allows users to chat with articles via LLMs and RAG (contextualized using political publications and Twitter trends), and maintain day-to-day research threads.",
+      "Built a political research engine that indexes and performs sentiment analysis on political articles to create an efficient standard and verifiable structure for news articles, enables semantic search via LLMs and RAG, facilitates instant LLM-powered structured list creation, bulk data extraction on a granular level, and supports research thread management. We're creating a high-speed pipeline for extracting structured data from the treasure trove that is news media.",
     href: "https://commonwealthai.netlify.app/",
     cta: "Take a look!",
     background: React.createElement(Image, {
@@ -102,7 +102,7 @@ export const features = [
       className: "absolute -right-20 -top-20 opacity-60",
     }),
     className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-    tags: ["React", "Next.js", "Langchain", "Google Cloud", "Firebase", "LLMs"],
+    tags: ["React", "Next.js", "Supabase", "OpenAI", "Deno", "LLMs"],
   },
   {
     Icon: InputIcon,
@@ -136,7 +136,7 @@ export const features = [
       className: "absolute -right-20 -top-20 opacity-60",
     }),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
-    tags: ["Flask", "Langchain", "Fast.ai", "BERT", "LLMs"],
+    tags: ["Flask", "Langchain", "Fast.ai", "LLMs"],
   },
   {
     Icon: SiCocacola,
@@ -179,7 +179,7 @@ export const projectsData = [
     title: "Commonwealth.ai",
     description:
       "Built a political research engine that indexes and performs sentiment analysis on political articles to create an efficient standard and verifiable structure for news articles, enables semantic search via LLMs and RAG, facilitates instant LLM-powered structured list creation, bulk data extraction on a granular level, and supports research thread management. We're creating a high-speed pipeline for extracting structured data from the treasure trove that is news media.",
-    tags: ["React", "Next.js", "Langchain", "Google Cloud", "Firebase", "LLMs"],
+    tags: ["React", "Next.js", "Supabase", "OpenAI", "Deno", "LLMs"],
     imageUrl: commonwealth,
     url: "https://commonwealthai.netlify.app/",
   },
@@ -187,7 +187,7 @@ export const projectsData = [
     title: "AnyCheck",
     description:
       "Assembled an application utilizing a custom-trained large language model enhanced via relevant news articles, integrated speech recognition, and real-time analytical feedback, designed to enhance information accuracy through voice-activated claims submission and comprehensive PDF essay analysis.",
-    tags: ["Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
+    tags: ["Flask", "Google Cloud", "Fast.ai", "BERT", "LLMs"],
     imageUrl: anycheck,
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
@@ -195,7 +195,7 @@ export const projectsData = [
     title: "ClimateNeutral LLM",
     description:
       "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
-    tags: ["Flask", "Langchain", "Fast.ai", "BERT", "LLMs"],
+    tags: ["Flask", "Langchain", "Fast.ai", "LLMs"],
     imageUrl: climateneutral,
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
