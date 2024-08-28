@@ -56,6 +56,28 @@ const Intro: React.FC = () => {
     );
   };
 
+  const socialLinks = [
+    { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
+    { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
+    { Icon: BsTwitter, href: "https://twitter.com/dineshatypical" },
+    { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
+  ];
+  
+  const iconVariants = {
+    initial: { scale: 0, opacity: 0 },
+    animate: (i: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
+    }),
+    hover: { scale: 1.2, transition: { duration: 0.2 } },
+  };
+
   return (
     <main className="flex w-full min-h-screen flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-gray-50">
 <div className="flex flex-col md:flex-row w-full max-w-4xl gap-4 md:gap-6">
@@ -78,9 +100,20 @@ const Intro: React.FC = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Dinesh Vasireddy</h1>
         <div className="flex space-x-4">
-          {[FaGithubSquare, BsLinkedin, BsTwitter, EnvelopeClosedIcon].map((Icon, index) => (
-            <Icon key={index} className="w-5 h-5 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
-          ))}
+        {socialLinks.map(({ Icon, href }, index) => (
+                  <motion.div
+                    key={index}
+                    variants={iconVariants}
+                    initial="initial"
+                    animate="animate"
+                    whileHover="hover"
+                    custom={index}
+                  >
+                    <Link href={href} target="_blank" rel="noopener noreferrer">
+                      <Icon className="w-5 h-5 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
+                    </Link>
+                  </motion.div>
+                ))}
         </div>
       </div>
       <motion.div
