@@ -45,6 +45,7 @@ export const experiencesData = [
     icon: React.createElement(FaYCombinator),
     date: "2024",
     src: "/govdash.png",
+    href: "https://govdash.com/",
   },
   // {
   //   title: "Case Team Lead @ Harvard Data Analytics Group",
@@ -63,6 +64,7 @@ export const experiencesData = [
     icon: React.createElement(DiCode),
     date: "2022 - 2023",
     src: "/arkansasunited.png",
+    href: "https://www.arkansasunited.org/",
   },
   {
     title: "Machine Learning",
@@ -73,16 +75,7 @@ export const experiencesData = [
     icon: React.createElement(GiArtificialIntelligence),
     date: "2022",
     src: "/datategy.png",
-  },
-  {
-    title: "Software Engineer",
-    company: "Walmart Global Tech",
-    location: "Bentonville, AR",
-    description:
-      "Created and deployed a global E-Commerce Demand Forecasting Model (80% Accuracy, Used by 152K Merchants, Impacts 300M+ Users, Optimized Sales for 6.5M+ Products) of Walmart.com sales to optimize online Apparel sales.",
-    icon: React.createElement(SiWalmart),
-    date: "2021 - 2022",
-    src: "/walmart.png",
+    href: "https://www.datategy.net/",
   },
   {
     title: "AI/ML Research",
@@ -93,6 +86,18 @@ export const experiencesData = [
     icon: React.createElement(FaUniversity),
     date: "2021 - 2023",
     src: "/uark.png",
+    href: "https://www.linkedin.com/in/dinesh-vasireddy/",
+  },
+  {
+    title: "Software Engineer",
+    company: "Walmart Global Tech",
+    location: "Bentonville, AR",
+    description:
+      "Created and deployed a global E-Commerce Demand Forecasting Model (80% Accuracy, Used by 152K Merchants, Impacts 300M+ Users, Optimized Sales for 6.5M+ Products) of Walmart.com sales to optimize online Apparel sales.",
+    icon: React.createElement(SiWalmart),
+    date: "2021 - 2022",
+    src: "/walmart.png",
+    href: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
   {
     title: "Founder & CEO",
@@ -103,6 +108,7 @@ export const experiencesData = [
     icon: React.createElement(FaVoteYea),
     date: "2021 - 2022",
     src: "/polydatasmaller_web.png",
+    href: "https://polydataelect.com/",
   }
 ] as const;
 
@@ -110,7 +116,7 @@ export const features = [
   {
     Icon: FileTextIcon,
     name: "Commonwealth.ai",
-    tagline: "simple political research and structured data engine",
+    tagline: "political research and structured data engine",
     description:
       "Built a political research engine that indexes and performs sentiment analysis on political articles to create an efficient standard and verifiable structure for news articles, enables semantic search via LLMs and RAG, facilitates instant LLM-powered structured list creation, bulk data extraction on a granular level, and supports research thread management. We're creating a high-speed pipeline for extracting structured data from the treasure trove that is news media.",
     href: "https://commonwealthai.netlify.app/",
@@ -128,9 +134,29 @@ export const features = [
     date: "2024",
   },
   {
+    Icon: FileTextIcon,
+    name: "Varsa",
+    tagline: "open-source multilingual LLM playground",
+    description:
+      "Built a multilingual LLM playground that allows users to fine-tune and test models in multiple languages. The playground supports a wide range of models and tasks, and allows users to easily switch between languages and models.",
+    href: "https://varsa.vercel.app/",
+    cta: "Take a look!",
+    background: React.createElement(Image, {
+      src: "/varsa.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    tags: ["Next.js", "Supabase", "Various LLMs"],
+    src: "/varsa.png",
+    date: "2024",
+  },
+  {
     Icon: SiCocacola,
     name: "Coca-Cola Black Box",
-    tagline: "a market risk and success simulation engine",
+    tagline: "market risk and success simulation system",
     description:
       "Led a case team to build a black box for market risk and success simulation in the Asia Pacific Operating Unit powered by neural networks, and deployed in production to drive business decisions for 200+ finance analysts.",
     href: "/",

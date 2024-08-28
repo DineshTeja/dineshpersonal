@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { ChevronRight, CloudLightning, Dot } from "lucide-react";
+import { ChevronRight, CloudLightning, Dot, Rabbit } from "lucide-react";
 import { BsBoxArrowInUpRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,6 +21,11 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import Link from "next/link";
+
+const badgeVariants = {
+  initial: { scale: 1 },
+  hover: { scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 10 } }
+};
 
 const Intro: React.FC = () => {
   const fullText = "software engineer | believer in unusual spaces.";
@@ -125,20 +130,37 @@ const Intro: React.FC = () => {
         {text}
       </motion.div>
       <div className="flex flex-wrap gap-2 text-xs sm:text-sm md:text-base font-medium text-gray-600">
-        <span className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200">
+        <motion.span 
+          className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200"
+          variants={badgeVariants}
+          initial="initial"
+          whileHover="hover"
+        >
           <AcademicCapIcon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-red-800" />
           CS @ Harvard
-        </span>
-        <span className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200">
-          <FaYCombinator className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-orange-500" />
-          Eng @ GovDash
-        </span>
+        </motion.span>
+        <Link href="https://govdash.com/" target="_blank">
+          <motion.span 
+            className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs sm:text-sm md:text-base"
+            variants={badgeVariants}
+            initial="initial"
+            whileHover="hover"
+          >
+            <FaYCombinator className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-orange-500" />
+            Eng @ GovDash
+          </motion.span>
+        </Link>
         <Link href="https://lightspeedads.netlify.app/" target="_blank">
-          <span className="flex items-center bg-gray-100 text-blue-600 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200">
+          <motion.span 
+            className="text-blue-500 flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs sm:text-sm md:text-base"
+            variants={badgeVariants}
+            initial="initial"
+            whileHover="hover"
+          >
             <CloudLightning className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
             Check out Lightspeed
             <BsBoxArrowInUpRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1" />
-          </span>
+          </motion.span>
         </Link>
       </div>
     </div>
@@ -147,7 +169,7 @@ const Intro: React.FC = () => {
             
       <div className="mt-8 sm:mt-12 w-full max-w-4xl">
         <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-          I&apos;m a software engineer passionate about building products that matter. 
+          I&apos;m a software engineer focused on building products that matter. 
         </p>
         <p className="text-base sm:text-lg text-gray-700 mt-4 leading-relaxed">
           I&apos;ve built a $70K ARR business in political tech, created Arkansas&apos; largest immigrant resources portal, deployed an e-comm demand forecasting system with millions of users at Walmart, and spent the past few months helping build the best AI government contracting tool.
@@ -155,56 +177,35 @@ const Intro: React.FC = () => {
       </div>
 
       <div className="mt-5 sm:mt-10 w-full max-w-4xl">
-  <h2 className="text-2xl sm:text-2xl font-medium mb-3 text-gray-800">work</h2>
-  <div>
-    {experiencesData.map((job, index) => (
-      <Collapsible
-        key={index}
-        open={openWorkItems.includes(index)}
-        onOpenChange={() => toggleWorkItem(index)}
-        className="border-b-2 border-gray-400"
-      >
-        <CollapsibleTrigger className="px-2 flex items-center justify-between w-full cursor-pointer py-4 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center space-x-2">
-              <Image
-                src={job.src}
-                alt={`${job.company} logo`}
-                width={32}
-                height={32}
-                className="rounded-lg mr-2"
-              />
-              <h3 className="text-base sm:text-lg font-medium text-gray-800 truncate">{job.company}</h3>
-            </div>
-            <span className="hidden sm:inline text-sm text-gray-500">{job.title}</span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-500">{job.date}</span>
-            {/* <AnimatePresence>
-              {openWorkItems.includes(index) ? (
-                <motion.div
-                  key="up"
-                  initial={{ opacity: 0, rotate: -180 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 180 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronUp className="h-4 w-4 text-gray-500" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="down"
-                  initial={{ opacity: 0, rotate: 180 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: -180 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronDown className="h-4 w-4 text-gray-500" />
-                </motion.div>
-              )}
-            </AnimatePresence> */}
-          </div>
-        </CollapsibleTrigger>
+        <h2 className="text-2xl sm:text-2xl font-medium mb-3 text-gray-800">work</h2>
+        <div>
+          {experiencesData.map((job, index) => (
+            <Collapsible
+              key={index}
+              open={openWorkItems.includes(index)}
+              onOpenChange={() => toggleWorkItem(index)}
+              className={`border-b-2 border-dashed border-gray-300 ${index === 0 ? 'border-t-2' : ''}`}
+            >
+              <CollapsibleTrigger className="px-2 flex items-center justify-between w-full cursor-pointer py-4 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
+                <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2">
+                    <Link href={job.href} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src={job.src}
+                        alt={`${job.company} logo`}
+                        width={32}
+                        height={32}
+                        className="rounded-lg mr-2"
+                      />
+                    </Link>
+                    <h3 className="text-base sm:text-lg font-medium text-gray-800 truncate">{job.company}</h3>
+                  </div>
+                  <span className="hidden sm:inline text-sm text-gray-500">{job.title}</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-sm text-gray-500">{job.date}</span>
+                </div>
+              </CollapsibleTrigger>
               <AnimatePresence initial={false}>
                 {openWorkItems.includes(index) && (
                   <CollapsibleContent forceMount>
@@ -215,8 +216,8 @@ const Intro: React.FC = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-4 pl-9 pr-4 text-gray-700">
-                        <p className="text-sm sm:text-base mb-2 font-medium">{job.location}</p>
+                                  <div className="pl-9 pr-4 py-5 text-gray-700">
+                                  <p className="text-sm sm:text-base mb-2 font-medium">{job.location}</p>
                         <p className="text-sm sm:text-base">{job.description}</p>
                       </div>
                     </motion.div>
@@ -229,77 +230,56 @@ const Intro: React.FC = () => {
       </div>
 
       <div className="mt-5 sm:mt-10 w-full max-w-4xl">
-  <h2 className="text-2xl sm:text-2xl font-medium mb-3 text-gray-800">builds</h2>
-  <div>
-    {features.map((feature, index) => (
-      <Collapsible
-        key={index}
-        open={openItems.includes(index)}
-        onOpenChange={() => toggleItem(index)}
-        className="border-b-2 border-gray-400"
-      >
-        <CollapsibleTrigger className="px-2 flex items-center justify-between w-full cursor-pointer py-4 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center space-x-2">
-              <Image
-                src={feature.src}
-                alt={`${feature.name} logo`}
-                width={32}
-                height={32}
-                className="rounded-lg mr-2"
-              />
-              <h3 className="text-base sm:text-lg font-medium text-gray-800">{feature.name}</h3>
-            </div>
-            <span className="hidden sm:inline text-sm text-gray-500">{feature.tagline}</span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-500">{feature.date}</span>
-            {/* <AnimatePresence>
-              {openItems.includes(index) ? (
-                <motion.div
-                  key="up"
-                  initial={{ opacity: 0, rotate: -180 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 180 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronUp className="h-4 w-4 text-gray-500" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="down"
-                  initial={{ opacity: 0, rotate: 180 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: -180 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ChevronDown className="h-4 w-4 text-gray-500" />
-                </motion.div>
-              )}
-            </AnimatePresence> */}
-          </div>
-        </CollapsibleTrigger>
-        <AnimatePresence initial={false}>
-          {openItems.includes(index) && (
-            <CollapsibleContent forceMount>
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="mt-4 pl-9 pr-4 text-gray-700">
-                  <p className="text-sm sm:text-base">{feature.description}</p>
+        <h2 className="text-2xl sm:text-2xl font-medium mb-3 text-gray-800">builds & contracts</h2>
+        <div>
+          {features.map((feature, index) => (
+            <Collapsible
+              key={index}
+              open={openItems.includes(index)}
+              onOpenChange={() => toggleItem(index)}
+              className={`border-b-2 border-dashed border-gray-300 ${index === 0 ? 'border-t-2' : ''}`}
+            >
+              <CollapsibleTrigger className="px-2 flex items-center justify-between w-full cursor-pointer py-4 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
+                <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2">
+                    <Link href={feature.href} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src={feature.src}
+                        alt={`${feature.name} logo`}
+                        width={32}
+                        height={32}
+                        className="rounded-lg mr-2"
+                      />
+                    </Link>
+                    <h3 className="text-base sm:text-lg font-medium text-gray-800">{feature.name}</h3>
+                  </div>
+                  <span className="hidden sm:inline text-sm text-gray-500">{feature.tagline}</span>
                 </div>
-              </motion.div>
-            </CollapsibleContent>
-          )}
-        </AnimatePresence>
-      </Collapsible>
-    ))}
-  </div>
-</div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-sm text-gray-500">{feature.date}</span>
+                </div>
+              </CollapsibleTrigger>
+              <AnimatePresence initial={false}>
+                {openItems.includes(index) && (
+                  <CollapsibleContent forceMount>
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-9 pr-4 py-5 text-gray-700">
+                        <p className="text-sm sm:text-base">{feature.description}</p>
+                      </div>
+                    </motion.div>
+                  </CollapsibleContent>
+                )}
+              </AnimatePresence>
+            </Collapsible>
+          ))}
+      </div>
+      </div>
     </main>
   );
 };
