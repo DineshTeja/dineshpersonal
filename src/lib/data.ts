@@ -15,7 +15,7 @@ import {
   CalendarIcon,
   BellIcon,
 } from "@radix-ui/react-icons";
-import { FaVoteYea } from "react-icons/fa";
+import { FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
 import Image from "next/image";
 import {
   Command,
@@ -25,7 +25,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { SiCocacola } from "react-icons/si";
+import { SiCocacola, SiWalmart } from "react-icons/si";
 
 export const reftbl = [
   { name: "Home", ref: "#home" },
@@ -38,58 +38,79 @@ export const reftbl = [
 
 export const experiencesData = [
   {
-    title: "Software Engineer @ GovDash (YC W22)",
+    title: "Software Engineer",
+    company: "GovDash (YC W22)",
     location: "New York City, NY",
     description: "AI for GovCon.",
-    icon: React.createElement(AiOutlineCloudSync),
-    date: "May 2024 - Present",
+    icon: React.createElement(FaYCombinator),
+    date: "2024",
+    src: "/govdash.png",
   },
+  // {
+  //   title: "Case Team Lead @ Harvard Data Analytics Group",
+  //   location: "Cambridge, MA",
+  //   description:
+  //     "Managing high-volume consulting cases for Fortune 500 clients in aviation, beverages, etc. Employing advanced statistical methods, including Monte Carlo Risk Analysis, Market Segmentation Modelling, in Python/ R to analyze high-volume datasets and predict market risks and trends.",
+  //   icon: React.createElement(CgWorkAlt),
+  //   date: "October 2023 - Present",
+  // },
   {
-    title: "Case Team Lead @ Harvard Data Analytics Group",
-    location: "Cambridge, MA",
-    description:
-      "Managing high-volume consulting cases for Fortune 500 clients in aviation, beverages, etc. Employing advanced statistical methods, including Monte Carlo Risk Analysis, Market Segmentation Modelling, in Python/ R to analyze high-volume datasets and predict market risks and trends.",
-    icon: React.createElement(CgWorkAlt),
-    date: "October 2023 - Present",
-  },
-  {
-    title: "Software Engineer @ Arkansas United",
+    title: "Software Engineer",
+    company: "Arkansas United",
     location: "Fayetteville, AR",
     description:
       "Developed and launched an online automated resources portal AUNow (2K+ National Users, 10+ Partners, 50K Visits, Largest in Arkansas). Created machine learning models for electoral analysis and social media listening to develop optimized technology-related policy proposals.",
     icon: React.createElement(DiCode),
-    date: "October 2022 - June 2023",
+    date: "2022 - 2023",
+    src: "/arkansasunited.png",
   },
   {
-    title: "Machine Learning Intern @ Datategy NextGen AI",
+    title: "Machine Learning",
+    company: "Datategy NextGen AI",
     location: "Paris, France",
     description:
       "Developed, optimized, and deployed three new machine learning algorithms, focused on financial analysis and data management, for Datategy’s PapAI Business AI Platform (20+ International Clients).",
     icon: React.createElement(GiArtificialIntelligence),
-    date: "June 2022 - September 2022",
+    date: "2022",
+    src: "/datategy.png",
   },
   {
-    title: "Software Engineering & Data Science Intern @ Walmart Global Tech",
+    title: "Software Engineer",
+    company: "Walmart Global Tech",
     location: "Bentonville, AR",
     description:
       "Created and deployed a global E-Commerce Demand Forecasting Model (80% Accuracy, Used by 152K Merchants, Impacts 300M+ Users, Optimized Sales for 6.5M+ Products) of Walmart.com sales to optimize online Apparel sales.",
-    icon: React.createElement(AiOutlineDatabase),
-    date: "September 2021 - May 2022",
+    icon: React.createElement(SiWalmart),
+    date: "2021 - 2022",
+    src: "/walmart.png",
   },
   {
-    title: "AI/ML Research Assistant @ University of Arkansas SEEDS Center",
+    title: "AI/ML Research",
+    company: "University of Arkansas",
     location: "Fayetteville, AR",
     description:
       "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK’s Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities.",
-    icon: React.createElement(MdOutlineSmartToy),
-    date: "April 2021 - June 2023",
+    icon: React.createElement(FaUniversity),
+    date: "2021 - 2023",
+    src: "/uark.png",
   },
+  {
+    title: "Founder & CEO",
+    company: "PolyData",
+    location: "Bentonville, AR",
+    description:
+      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
+    icon: React.createElement(FaVoteYea),
+    date: "2021 - 2022",
+    src: "/polydatasmaller_web.png",
+  }
 ] as const;
 
 export const features = [
   {
     Icon: FileTextIcon,
     name: "Commonwealth.ai",
+    tagline: "simple political research and structured data engine",
     description:
       "Built a political research engine that indexes and performs sentiment analysis on political articles to create an efficient standard and verifiable structure for news articles, enables semantic search via LLMs and RAG, facilitates instant LLM-powered structured list creation, bulk data extraction on a granular level, and supports research thread management. We're creating a high-speed pipeline for extracting structured data from the treasure trove that is news media.",
     href: "https://commonwealthai.netlify.app/",
@@ -103,44 +124,13 @@ export const features = [
     }),
     className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
     tags: ["React", "Next.js", "Supabase", "OpenAI", "Deno", "LLMs"],
-  },
-  {
-    Icon: InputIcon,
-    name: "CVSS Base Score Prediction Using an Optimized Machine Learning Scheme",
-    description:
-      "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by TechConnect for Resilience Week 2023 in Washington D.C.",
-    href: "https://ieeexplore.ieee.org/document/10284627",
-    cta: "View IEEE Publication",
-    background: React.createElement(Image, {
-      src: "/rweek.png",
-      alt: "Background",
-      layout: "fill",
-      objectFit: "cover",
-      className: "absolute -right-20 -top-20 opacity-60",
-    }),
-    className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
-    tags: ["Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
-  },
-  {
-    Icon: GlobeIcon,
-    name: "ClimateNeutral LLM",
-    description:
-      "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
-    href: "/",
-    cta: "Reach out to learn more!",
-    background: React.createElement(Image, {
-      src: "/climateneutral.png",
-      alt: "Background",
-      layout: "fill",
-      objectFit: "cover",
-      className: "absolute -right-20 -top-20 opacity-60",
-    }),
-    className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
-    tags: ["Flask", "Langchain", "Fast.ai", "LLMs"],
+    src: "/commonwealthlogo.png",
+    date: "2024",
   },
   {
     Icon: SiCocacola,
-    name: "Coca-Cola ASP Black Box",
+    name: "Coca-Cola Black Box",
+    tagline: "a market risk and success simulation engine",
     description:
       "Led a case team to build a black box for market risk and success simulation in the Asia Pacific Operating Unit powered by neural networks, and deployed in production to drive business decisions for 200+ finance analysts.",
     href: "/",
@@ -154,24 +144,66 @@ export const features = [
     }),
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
     tags: ["PyTorch", "Keras", "Google Cloud", "Streamlit", "Python"],
+    src: "/cocacolalogo.png",
+    date: "2024",
   },
   {
-    Icon: FaVoteYea,
-    name: "PolyData Electoral Innovation",
+    Icon: InputIcon,
+    name: "Resilience Week 2023",
+    tagline: "a solid paper on LLMs & Cybersecurity (IEEE published)",
     description:
-      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
-    href: "https://polydataelect.com/",
-    cta: "Take a look!",
+      "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by TechConnect for Resilience Week 2023 in Washington D.C.",
+    href: "https://ieeexplore.ieee.org/document/10284627",
+    cta: "View IEEE Publication",
     background: React.createElement(Image, {
-      src: "/polydatasmaller_web.png",
+      src: "/rweek.png",
       alt: "Background",
       layout: "fill",
       objectFit: "cover",
       className: "absolute -right-20 -top-20 opacity-60",
     }),
-    className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
-    tags: ["React", "Python", "TensorFlow", "Google Cloud", "AWS", "D3.js"],
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+    tags: ["Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
+    src: "/rweek.png",
+    date: "2023",
   },
+  {
+    Icon: GlobeIcon,
+    name: "ClimateNeutral LLM",
+    tagline: "a sustainability assistant",
+    description:
+      "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
+    href: "/",
+    cta: "Reach out to learn more!",
+    background: React.createElement(Image, {
+      src: "/climateneutral.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+    tags: ["Flask", "Langchain", "Fast.ai", "LLMs"],
+    src: "/climateneutral.png",
+    date: "2023",
+  },
+  // {
+  //   Icon: FaVoteYea,
+  //   name: "PolyData Electoral Innovation",
+  //   description:
+  //     "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
+  //   href: "https://polydataelect.com/",
+  //   cta: "Take a look!",
+  //   background: React.createElement(Image, {
+  //     src: "/polydatasmaller_web.png",
+  //     alt: "Background",
+  //     layout: "fill",
+  //     objectFit: "cover",
+  //     className: "absolute -right-20 -top-20 opacity-60",
+  //   }),
+  //   className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+  //   tags: ["React", "Python", "TensorFlow", "Google Cloud", "AWS", "D3.js"],
+  // },
 ] as const;
 
 export const projectsData = [

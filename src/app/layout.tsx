@@ -24,9 +24,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
       </head>
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 overflow-x-hidden`}
+        className={`${inter.className} bg-gray-50 text-gray-950 relative overflow-x-hidden`}
       >
-        <div
+        {/* <div
           style={{
             position: "absolute",
             top: 0,
@@ -42,11 +42,11 @@ export default function RootLayout({
               "[mask-image:radial-gradient(2250px_circle_at_center,white,transparent)]"
             }
           />
-        </div>
+        </div> */}
         <SectionContextProvider>
-          <Header />
+          {/* <Header /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </SectionContextProvider>
       </body>
     </html>
