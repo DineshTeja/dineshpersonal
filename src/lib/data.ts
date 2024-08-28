@@ -196,7 +196,7 @@ export const features = [
   {
     Icon: GlobeIcon,
     name: "ClimateNeutral LLM",
-    tagline: "a sustainability assistant",
+    tagline: "a corporate sustainability assistant",
     description:
       "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
     href: "/",
