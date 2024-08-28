@@ -27,6 +27,10 @@ const badgeVariants = {
   hover: { scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 10 } }
 };
 
+import { Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
+
 const Intro: React.FC = () => {
   const fullText = "software engineer | believer in unusual spaces.";
   const initialText = "software engineer";
@@ -84,8 +88,8 @@ const Intro: React.FC = () => {
   };
 
   return (
-    <main className="flex w-full min-h-screen flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-gray-50">
-<div className="flex flex-col md:flex-row w-full max-w-4xl gap-4 md:gap-6">
+    <main className={`flex max-w-4xl min-h-screen flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-gray-50 ${montserrat.className}`}>
+      <div className="flex flex-col md:flex-row w-full max-w-4xl gap-4 md:gap-6">
   {/* <div className="md:w-1/3 flex justify-center md:justify-start mb-4 md:mb-0">
     <Card className="w-40 h-40 sm:w-48 sm:h-48 overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md bg-transparent">
       <CardContent className="p-0 bg-transparent">
@@ -177,7 +181,7 @@ const Intro: React.FC = () => {
       </div>
 
       <div className="mt-5 sm:mt-10 w-full max-w-4xl">
-        <h2 className="text-2xl sm:text-2xl font-medium mb-3 text-gray-800">work</h2>
+        <h2 className="text-2xl sm:text-xl font-medium mb-3 text-gray-800">work</h2>
         <div>
           {experiencesData.map((job, index) => (
             <Collapsible
@@ -229,8 +233,8 @@ const Intro: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-5 sm:mt-10 w-full max-w-4xl">
-        <h2 className="text-2xl sm:text-2xl font-medium mb-3 text-gray-800">builds & contracts</h2>
+      <div className="pt-8 sm:mt-12 w-full max-w-4xl">
+        <h2 className="text-2xl md:text-xl sm:text-xl font-medium mb-3 text-gray-800">builds & contracts</h2>
         <div>
           {features.map((feature, index) => (
             <Collapsible
