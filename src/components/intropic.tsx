@@ -12,7 +12,7 @@ import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 import dineshImage from '/public/dineshcolorpic.png';
 import { Card, CardContent } from "@/components/ui/card"; 
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
-import { FaYCombinator } from "react-icons/fa6";
+import { FaX, FaXTwitter, FaYCombinator } from "react-icons/fa6";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { features, experiencesData } from "@/lib/data";
 import {
@@ -64,7 +64,7 @@ const Intro: React.FC = () => {
   const socialLinks = [
     { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
     { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
-    { Icon: BsTwitter, href: "https://twitter.com/dineshatypical" },
+    { Icon: FaXTwitter, href: "https://twitter.com/dineshatypical" },
     { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
   ];
   
