@@ -32,7 +32,7 @@ import { Montserrat } from 'next/font/google';
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 const Intro: React.FC = () => {
-  const fullText = "software engineer | believer in unusual spaces.";
+  const fullText = "software engineer | building products that matter.";
   const initialText = "software engineer";
   const [text, setText] = useState(initialText);
   const [openItems, setOpenItems] = useState<number[]>([]);
@@ -88,126 +88,124 @@ const Intro: React.FC = () => {
   };
 
   return (
-    <main className={`flex max-w-4xl min-h-screen flex-col items-center justify-center p-4 sm:p-6 md:p-10 bg-gray-50 ${montserrat.className}`}>
-      <div className="flex flex-col md:flex-row w-full max-w-4xl gap-4 md:gap-6">
-  {/* <div className="md:w-1/3 flex justify-center md:justify-start mb-4 md:mb-0">
-    <Card className="w-40 h-40 sm:w-48 sm:h-48 overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md bg-transparent">
-      <CardContent className="p-0 bg-transparent">
-        <Image 
-          src={dineshImage} 
-          alt="Dinesh Pic" 
-          className="rounded-lg object-cover w-full h-full"
-          width={192}
-          height={192}
-        />
-      </CardContent>
-    </Card>
-  </div> */}
-
-  <div className="w-full flex flex-col justify-between">
-    <div className="space-y-2 sm:space-y-3">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Dinesh Vasireddy</h1>
-        <div className="flex space-x-4">
-        {socialLinks.map(({ Icon, href }, index) => (
-                  <motion.div
-                    key={index}
-                    variants={iconVariants}
-                    initial="initial"
-                    animate="animate"
-                    whileHover="hover"
-                    custom={index}
-                  >
-                    <Link href={href} target="_blank" rel="noopener noreferrer">
-                      <Icon className="w-5 h-5 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
-                    </Link>
-                  </motion.div>
-                ))}
+    <main className={`flex flex-col items-center bg-gray-50 ${montserrat.className}`}>
+      <div className="sticky top-0 z-10 w-full bg-gray-50/80 backdrop-blur-sm">
+        <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 pt-8">
+          <div className="flex flex-col md:flex-row w-full gap-3 md:gap-4">
+            <div className="w-full flex flex-col justify-between">
+              <div className="space-y-1 sm:space-y-2">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-2">
+                  <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold text-gray-800">Dinesh Vasireddy</h1>
+                  <div className="flex space-x-3">
+                    {socialLinks.map(({ Icon, href }, index) => (
+                      <motion.div
+                        key={index}
+                        variants={iconVariants}
+                        initial="initial"
+                        animate="animate"
+                        whileHover="hover"
+                        custom={index}
+                      >
+                        <Link href={href} target="_blank" rel="noopener noreferrer">
+                          <Icon className="w-4 h-4 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+                <motion.div
+                  className="text-sm sm:text-base md:text-lg font-medium text-gray-600"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {text}
+                </motion.div>
+                <div className="flex flex-wrap gap-1 text-xs sm:text-sm font-medium text-gray-600">
+              <motion.span 
+                  className="flex items-center bg-gray-100 rounded-full px-1.5 py-0.5 transition-colors duration-300 hover:bg-gray-200 text-xs"
+                  variants={badgeVariants}
+                initial="initial"
+                whileHover="hover"
+              >
+                <AcademicCapIcon className="h-3 w-3 mr-1 text-red-800" />
+                CS @ Harvard
+              </motion.span>
+              <Link href="https://govdash.com/" target="_blank">
+                <motion.span 
+                  className="flex items-center bg-gray-100 rounded-full px-1.5 py-0.5 transition-colors duration-300 hover:bg-gray-200 text-xs"
+                  variants={badgeVariants}
+                  initial="initial"
+                  whileHover="hover"
+                >
+                  <FaYCombinator className="h-3 w-3 mr-1 text-orange-500" />
+                  Eng @ GovDash
+                </motion.span>
+              </Link>
+              <Link href="https://lightspeedads.netlify.app/" target="_blank">
+                <motion.span 
+                  className="text-blue-500 flex items-center bg-gray-100 rounded-full px-1.5 py-0.5 transition-colors duration-300 hover:bg-gray-200 text-xs"
+                  variants={badgeVariants}
+                  initial="initial"
+                  whileHover="hover"
+                >
+                  <CloudLightning className="h-3 w-3 mr-1" />
+                  Check out Lightspeed
+                  <BsBoxArrowInUpRight className="h-3 w-3 ml-1" />
+                </motion.span>
+              </Link>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <motion.div
-        className="text-base sm:text-lg md:text-xl font-medium text-gray-600"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        {text}
-      </motion.div>
-      <div className="flex flex-wrap gap-2 text-xs sm:text-sm md:text-base font-medium text-gray-600">
-        <motion.span 
-          className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200"
-          variants={badgeVariants}
-          initial="initial"
-          whileHover="hover"
-        >
-          <AcademicCapIcon className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-red-800" />
-          CS @ Harvard
-        </motion.span>
-        <Link href="https://govdash.com/" target="_blank">
-          <motion.span 
-            className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs sm:text-sm md:text-base"
-            variants={badgeVariants}
-            initial="initial"
-            whileHover="hover"
-          >
-            <FaYCombinator className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-orange-500" />
-            Eng @ GovDash
-          </motion.span>
-        </Link>
-        <Link href="https://lightspeedads.netlify.app/" target="_blank">
-          <motion.span 
-            className="text-blue-500 flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs sm:text-sm md:text-base"
-            variants={badgeVariants}
-            initial="initial"
-            whileHover="hover"
-          >
-            <CloudLightning className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
-            Check out Lightspeed
-            <BsBoxArrowInUpRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1" />
-          </motion.span>
-        </Link>
-      </div>
-    </div>
-  </div>
-</div>
-            
-      <div className="mt-8 sm:mt-12 w-full max-w-4xl">
-        <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-          I&apos;m a software engineer focused on building products that matter. 
+
+      <div className="mt-4 sm:mt-6 w-full max-w-3xl px-3 sm:px-4 md:px-6">
+        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+          👋 I&apos;m Dinesh.
         </p>
-        <p className="text-base sm:text-lg text-gray-700 mt-4 leading-relaxed">
-          I&apos;ve built a $70K ARR business in political tech, created Arkansas&apos; largest immigrant resources portal, deployed an e-comm demand forecasting system with millions of users at Walmart, and spent the past few months helping build the best AI government contracting tool.
+        <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
+          I&apos;ve built a $70K ARR company in <span className="border-b border-dashed border-gray-400">political tech</span>, created Arkansas&apos; largest  <span className="border-b border-dashed border-gray-400">immigrant resources portal</span>, deployed an e-comm demand forecasting system with millions of users at <span className="border-b border-dashed border-gray-400">Walmart</span>, and spent the past few months helping build the best AI <span className="border-b border-dashed border-gray-400">government contracting</span> tool.
+        </p>
+        <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
+          I&apos;m based in <span className="border-b border-dashed border-gray-400">Boston/NYC</span>. I also like <span className="border-b border-dashed border-gray-400">movies</span> and finding <span className="border-b border-dashed border-gray-400">good eats</span>.
         </p>
       </div>
 
-      <div className="mt-5 sm:mt-10 w-full max-w-4xl">
-        <h2 className="text-2xl sm:text-xl font-medium mb-3 text-gray-800">work</h2>
+      <div className="mt-4 sm:mt-6 w-full max-w-3xl px-3 sm:px-4 md:px-6">
+        <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">work</h2>
         <div>
           {experiencesData.map((job, index) => (
             <Collapsible
               key={index}
               open={openWorkItems.includes(index)}
               onOpenChange={() => toggleWorkItem(index)}
-              className={`border-b-2 border-dashed border-gray-300 ${index === 0 ? 'border-t-2' : ''}`}
+              className={`border-b border-dashed border-gray-300 ${index === 0 ? 'border-t' : ''}`}
             >
-              <CollapsibleTrigger className="px-2 flex items-center justify-between w-full cursor-pointer py-4 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center space-x-2">
-                    <Link href={job.href} target="_blank" rel="noopener noreferrer">
-                      <Image
-                        src={job.src}
-                        alt={`${job.company} logo`}
-                        width={32}
-                        height={32}
-                        className="rounded-lg mr-2"
-                      />
+              <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-1">
+                  <Link href={job.href} target="_blank" rel="noopener noreferrer">
+                        <motion.div
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                          <Image
+                            src={job.src}
+                            alt={`${job.company} logo`}
+                            width={24}
+                            height={24}
+                            className="rounded-lg mr-1"
+                          />
+                        </motion.div>
                     </Link>
-                    <h3 className="text-base sm:text-lg font-medium text-gray-800 truncate">{job.company}</h3>
+                    <h3 className="text-sm sm:text-base font-medium text-gray-800 truncate">{job.company}</h3>
                   </div>
-                  <span className="hidden sm:inline text-sm text-gray-500">{job.title}</span>
+                  <span className="hidden sm:inline text-xs text-gray-500">{job.title}</span>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <span className="text-sm text-gray-500">{job.date}</span>
+                <div className="flex items-center space-x-2">
+                  <span className="text-xs text-gray-500">{job.date}</span>
                 </div>
               </CollapsibleTrigger>
               <AnimatePresence initial={false}>
@@ -220,9 +218,9 @@ const Intro: React.FC = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                                  <div className="pl-9 pr-4 py-5 text-gray-700">
-                                  <p className="text-sm sm:text-base mb-2 font-medium">{job.location}</p>
-                        <p className="text-sm sm:text-base">{job.description}</p>
+                      <div className="pl-7 pr-3 py-3 text-gray-700">
+                        <p className="text-xs sm:text-sm mb-1 font-medium">{job.location}</p>
+                        <p className="text-xs sm:text-sm">{job.description}</p>
                       </div>
                     </motion.div>
                   </CollapsibleContent>
@@ -233,34 +231,39 @@ const Intro: React.FC = () => {
         </div>
       </div>
 
-      <div className="pt-8 sm:mt-12 w-full max-w-4xl">
-        <h2 className="text-2xl md:text-xl sm:text-xl font-medium mb-3 text-gray-800">builds & contracts</h2>
+      <div className="sm:mt-6 w-full max-w-3xl px-3 sm:px-4 md:px-6 pt-3">
+        <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">builds & contracts</h2>
         <div>
           {features.map((feature, index) => (
             <Collapsible
               key={index}
               open={openItems.includes(index)}
               onOpenChange={() => toggleItem(index)}
-              className={`border-b-2 border-dashed border-gray-300 ${index === 0 ? 'border-t-2' : ''}`}
+              className={`border-b border-dashed border-gray-300 ${index === 0 ? 'border-t' : ''}`}
             >
-              <CollapsibleTrigger className="px-2 flex items-center justify-between w-full cursor-pointer py-4 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center space-x-2">
+              <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-1">
                     <Link href={feature.href} target="_blank" rel="noopener noreferrer">
-                      <Image
-                        src={feature.src}
-                        alt={`${feature.name} logo`}
-                        width={32}
-                        height={32}
-                        className="rounded-lg mr-2"
-                      />
+                        <motion.div
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                          <Image
+                            src={feature.src}
+                            alt={`${feature.name} logo`}
+                            width={24}
+                            height={24}
+                            className="rounded-lg mr-1"
+                          />
+                        </motion.div>
                     </Link>
-                    <h3 className="text-base sm:text-lg font-medium text-gray-800">{feature.name}</h3>
+                    <h3 className="text-sm sm:text-base font-medium text-gray-800">{feature.name}</h3>
                   </div>
-                  <span className="hidden sm:inline text-sm text-gray-500">{feature.tagline}</span>
+                  <span className="hidden sm:inline text-xs text-gray-500">{feature.tagline}</span>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <span className="text-sm text-gray-500">{feature.date}</span>
+                <div className="flex items-center space-x-2">
+                  <span className="text-xs text-gray-500">{feature.date}</span>
                 </div>
               </CollapsibleTrigger>
               <AnimatePresence initial={false}>
@@ -273,8 +276,8 @@ const Intro: React.FC = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pl-9 pr-4 py-5 text-gray-700">
-                        <p className="text-sm sm:text-base">{feature.description}</p>
+                      <div className="pl-7 pr-3 py-3 text-gray-700">
+                        <p className="text-xs sm:text-sm">{feature.description}</p>
                       </div>
                     </motion.div>
                   </CollapsibleContent>
@@ -282,7 +285,7 @@ const Intro: React.FC = () => {
               </AnimatePresence>
             </Collapsible>
           ))}
-      </div>
+        </div>
       </div>
     </main>
   );

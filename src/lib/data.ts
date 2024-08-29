@@ -118,7 +118,7 @@ export const features = [
     name: "Commonwealth.ai",
     tagline: "political research and structured data engine",
     description:
-      "Built a political research engine that indexes and performs sentiment analysis on political articles to create an efficient standard and verifiable structure for news articles, enables semantic search via LLMs and RAG, facilitates instant LLM-powered structured list creation, bulk data extraction on a granular level, and supports research thread management. We're creating a high-speed pipeline for extracting structured data from the treasure trove that is news media.",
+    "Built a political research engine that indexes articles, enables semantic search, and extracts structured data using LLMs and RAG. 2150+ users, 12000+ articles indexed, and 15 campaign users on our first product.",
     href: "https://commonwealthai.netlify.app/",
     cta: "Take a look!",
     background: React.createElement(Image, {
@@ -174,6 +174,26 @@ export const features = [
     date: "2024",
   },
   {
+    Icon: SiCocacola,
+    name: "AccesSOS",
+    tagline: "translation tool for globalizing web products.",
+    description:
+      "Led a team of software engineers to build a translation database tool for AccesSOS' devs to easily convert their websites into multiple languages. The tool is built with React, Next.js, and Supabase.",
+    href: "/",
+    cta: "Reach out to learn more!",
+    background: React.createElement(Image, {
+      src: "/accessos.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+    tags: ["React", "Next.js", "Supabase", "Google Cloud", "Python"],
+    src: "/accessos.png",
+    date: "2024",
+  },
+  {
     Icon: InputIcon,
     name: "Resilience Week 2023",
     tagline: "a solid paper on LLMs & Cybersecurity (IEEE published)",
@@ -192,6 +212,26 @@ export const features = [
     tags: ["Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
     src: "/rweek.png",
     date: "2023",
+  },
+  {
+    Icon: SiCocacola,
+    name: "SkyGrid",
+    tagline: "market seg modeling system.",
+    description: "Confidential.",
+    // "Developed a market segmentation modeling system using Monte Carlo Risk Analysis and advanced statistical methods in Python/R. Analyzed high-volume datasets to predict market risks, trends, and generate business recommendations for improving high-value sales channels.",
+    href: "/",
+    cta: "Reach out to learn more!",
+    background: React.createElement(Image, {
+      src: "/skygrid.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+    tags: ["Python", "R","Statistics"],
+    src: "/skygrid.png",
+    date: "2024",
   },
   {
     Icon: GlobeIcon,
