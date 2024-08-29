@@ -14,15 +14,16 @@ import Intro from "@/components/intropic";
 import Experience from "@/components/experience";
 import Skills from "@/components/skills";
 import Contact from "@/components/contact";
+import Header from "@/components/header";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
-      <Intro />
-      {/* <Skills /> */}
-      {/* <Projects /> */}
-      {/* <Experience /> */}
-      {/* <Contact /> */}
-    </main>
+    <>
+    <Header>
+      <main className="flex flex-col items-center px-4 min-h-screen overflow-scroll">
+        <Intro />
+      </main>
+    </Header>
+    </>
   );
 }

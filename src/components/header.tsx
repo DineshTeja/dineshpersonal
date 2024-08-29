@@ -1,81 +1,106 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { reftbl } from "@/lib/data";
 import Link from "next/link";
-import clsx from "clsx";
-import { useSectionContext } from "@/context/sectioncontext";
-import { useState } from "react";
-import { FaBars } from "react-icons/fa";
-import { BorderBeam } from "@/components/ui/border-beam";
+import { motion } from "framer-motion";
+import { FaGithubSquare } from "react-icons/fa";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
+import { BsBoxArrowInUpRight, BsLinkedin } from "react-icons/bs";
+import { useState, useEffect } from "react";
+import { AcademicCapIcon } from '@heroicons/react/24/solid';
+import { FaYCombinator } from "react-icons/fa";
+import { CloudLightning } from "lucide-react";
 
-const Header: React.FC = () => {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useSectionContext();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  return (
-    <>
-      <style>
-        {`
-                @media (max-width: 500px) {
-                    .header-mobile-hidden {
-                        display: block;
-                    }
-                }
-                `}
-      </style>
-      <header className="z-[999] relative header-mobile-hidden overflow-x-hidden">
-        <motion.div
-          className="fixed top-0 left-1/2 h-[3.5rem] w-full rounded-none border
-                border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg
-                shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] 
-                sm:rounded-full"
-          initial={{ y: -100, x: "-50%", opacity: 0 }}
-          animate={{ y: 0, x: "-50%", opacity: 1 }}
-        ></motion.div>
-        <nav className="md:mt-1.5 lg:mt-1.5 flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-          <button
-            className="sm:hidden bg-gray-100 rounded-md w-60 flex items-center justify-center"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <FaBars className="mr-2" />
-            <p className="text-blue-950 my-1 font-semibold">Welcome! Explore</p>
-          </button>
-          <ul
-            className={`absolute top-12 left-0 w-full bg-white shadow-md rounded-md transition-transform transform ${
-              isMobileMenuOpen ? "scale-y-100" : "scale-y-0"
-            } origin-top sm:relative sm:top-0 sm:left-0 sm:w-auto sm:bg-transparent sm:shadow-none sm:scale-y-100 sm:flex sm:items-center sm:gap-1`}
-          >
-            {reftbl.map((ref) => (
-              <li
-                className="h-3/4 flex items-center justify-center relative px-4 py-2 w-full sm:w-auto min-w-[200px] sm:min-w-0"
-                key={ref.ref}
-              >
-                <Link
-                  className={clsx(
-                    "flex w-full items-center justify-center hover:text-gray-950 transition whitespace-nowrap text-ellipsis",
-                    {
-                      "text-gray-950 bg-gray-100 rounded-full":
-                        activeSection === ref.name,
-                    }
-                  )}
-                  href={ref.ref}
-                  onClick={() => {
-                    setActiveSection(ref.name);
-                    setTimeOfLastClick(Date.now());
-                  }}
-                >
-                  {ref.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
-    </>
-  );
+const badgeVariants = {
+  initial: { scale: 1 },
+  hover: { scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 10 } }
 };
 
-export default Header;
+const socialLinks = [
+    { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
+    { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
+    { Icon: FaXTwitter, href: "https://twitter.com/dineshatypical" },
+    { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
+  ];
+  
+  const iconVariants = {
+    initial: { scale: 0, opacity: 0 },
+    animate: (i: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
+    }),
+    hover: { scale: 1.2, transition: { duration: 0.2 } },
+  };
+
+  import { Montserrat } from 'next/font/google';
+
+  const montserrat = Montserrat({ subsets: ['latin'] });
+
+  export default function Header({children}: {children: React.ReactNode}) {
+    const fullText = "building products that matter.";
+    const initialText = "";
+    const [text, setText] = useState(initialText);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setText((currentText) => {
+          if (currentText.length < fullText.length) {
+            return fullText.substring(0, currentText.length + 1);
+          } else {
+            clearInterval(interval);
+            return currentText;
+          }
+        });
+      }, 60);
+  
+      return () => clearInterval(interval);
+    }, [fullText]);
+  
+    return (
+      <div className={`flex flex-col min-h-screen ${montserrat.className}`}>
+        <header className="fixed top-0 w-full bg-gray-50/80 backdrop-blur-sm z-50">
+          <div className="max-w-3xl mx-auto px-4 md:px-0 lg:px-0 py-4">
+            <div className="flex justify-between items-center">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mr-2">
+                Dinesh Vasireddy
+              </h1>
+              <div className="flex space-x-2 sm:space-x-3">
+                {socialLinks.map(({ Icon, href }, index) => (
+                  <motion.div
+                    key={index}
+                    variants={iconVariants}
+                    initial="initial"
+                    animate="animate"
+                    whileHover="hover"
+                    custom={index}
+                  >
+                    <Link href={href} target="_blank" rel="noopener noreferrer">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </header>
+ 
+        <main className="flex-grow mt-[50px] sm:mt-[50px]">
+          {children}
+        </main>
+
+        <footer className="flex-grow mt-[50px] sm:mt-[50px]">
+          <div className="max-w-3xl mx-auto px-4 md:px-0 lg:px-0 py-4">
+            <div className="flex justify-center items-center">
+              <p className="text-sm text-gray-600 text-center">© 2024 Dinesh Vasireddy</p>            
+            </div>
+          </div>
+        </footer>
+      </div>
+    );
+  }

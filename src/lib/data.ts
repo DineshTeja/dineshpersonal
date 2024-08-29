@@ -324,3 +324,62 @@ export const skillsData = [
   "Prompt Engineering",
   "Docker",
 ] as const;
+
+export const favoriteMovies = [
+  {
+    title: "The Shawshank Redemption",
+    year: 1994,
+    director: "Frank Darabont",
+    genre: "Drama",
+    posterUrl: "/shawshank_redemption_poster.jpg",
+  },
+  {
+    title: "Rocky",
+    year: 1976,
+    director: "John G. Avildsen",
+    genre: "Sports Drama",
+    posterUrl: "/rocky_poster.jpg",
+  },
+  {
+    title: "Logan",
+    year: 2017,
+    director: "James Mangold",
+    genre: "Superhero Drama",
+    posterUrl: "/logan_poster.jpg",
+  },
+  {
+    title: "The Pursuit of Happyness",
+    year: 2006,
+    director: "Gabriele Muccino",
+    genre: "Biographical Drama",
+    posterUrl: "/pursuit_of_happyness_poster.jpg",
+  },
+  {
+    title: "KGF: Chapter 1",
+    year: 2018,
+    director: "Prashanth Neel",
+    genre: "Action Drama",
+    posterUrl: "/kgf_poster.jpg",
+  },
+  {
+    title: "Baahubali: The Beginning",
+    year: 2015,
+    director: "S. S. Rajamouli",
+    genre: "Epic Action",
+    posterUrl: "/baahubali_poster.jpg",
+  },
+  {
+    title: "Jersey",
+    year: 2019,
+    director: "Gowtam Tinnanuri",
+    genre: "Sports Drama",
+    posterUrl: "/jersey_poster.jpg",
+  },
+  {
+    title: "Pokiri",
+    year: 2006,
+    director: "Puri Jagannadh",
+    genre: "Action Thriller",
+    posterUrl: "/pokiri_poster.jpg",
+  },
+] as const;

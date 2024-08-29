@@ -2,18 +2,11 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { ChevronRight, CloudLightning, Dot, Rabbit } from "lucide-react";
-import { BsBoxArrowInUpRight, BsLinkedin } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
+import { CloudLightning } from "lucide-react";
+import { BsBoxArrowInUpRight } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
-import { BsTwitter } from "react-icons/bs";
-import { Dock, DockIcon } from "@/components/magicui/dock";
-import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
-import dineshImage from '/public/dineshcolorpic.png';
-import { Card, CardContent } from "@/components/ui/card"; 
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
-import { FaX, FaXTwitter, FaYCombinator } from "react-icons/fa6";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { FaYCombinator } from "react-icons/fa6";
 import { features, experiencesData } from "@/lib/data";
 import {
   Collapsible,
@@ -21,6 +14,10 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import Link from "next/link";
+import dineshColorPic from '/public/dineshcolorpic.png';
+import { FileText } from "lucide-react";
+import { FaFilm } from "react-icons/fa";
+import { favoriteMovies } from "@/lib/data";
 
 const badgeVariants = {
   initial: { scale: 1 },
@@ -65,103 +62,81 @@ const Intro: React.FC = () => {
     );
   };
 
-  const socialLinks = [
-    { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
-    { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
-    { Icon: FaXTwitter, href: "https://twitter.com/dineshatypical" },
-    { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
-  ];
-  
-  const iconVariants = {
-    initial: { scale: 0, opacity: 0 },
-    animate: (i: number) => ({
-      scale: 1,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-      },
-    }),
-    hover: { scale: 1.2, transition: { duration: 0.2 } },
-  };
-
   return (
-    <main className={`flex flex-col items-center bg-gray-50 ${montserrat.className}`}>
-      <div className="sticky top-0 z-10 w-full bg-gray-50/80 backdrop-blur-sm">
-        <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 pt-8">
-          <div className="flex flex-col md:flex-row w-full gap-3 md:gap-4">
-            <div className="w-full flex flex-col justify-between">
-              <div className="space-y-1 sm:space-y-2">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-2">
-                  <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold text-gray-800">Dinesh Vasireddy</h1>
-                  <div className="flex space-x-3">
-                    {socialLinks.map(({ Icon, href }, index) => (
-                      <motion.div
-                        key={index}
-                        variants={iconVariants}
-                        initial="initial"
-                        animate="animate"
-                        whileHover="hover"
-                        custom={index}
-                      >
-                        <Link href={href} target="_blank" rel="noopener noreferrer">
-                          <Icon className="w-4 h-4 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-                <motion.div
-                  className="text-sm sm:text-base md:text-lg font-medium text-gray-600"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {text}
-                </motion.div>
-                <div className="flex flex-wrap gap-1 text-xs sm:text-sm font-medium text-gray-600">
+    <>
+<main className={`flex flex-col items-center bg-gray-50 z-10 ${montserrat.className}`}>
+{/* <div className="sticky top-0 w-full bg-gray-50/80 backdrop-blur-sm z-100">
+  <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 py-4">
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left mb-2 sm:mb-0">
+        Dinesh Vasireddy
+      </h1>
+      <div className="flex space-x-3 justify-center sm:justify-end">
+        {socialLinks.map(({ Icon, href }, index) => (
+          <motion.div
+            key={index}
+            variants={iconVariants}
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
+            custom={index}
+          >
+            <Link href={href} target="_blank" rel="noopener noreferrer">
+              <Icon className="w-5 h-5 sm:w-4 sm:h-4 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div> */}
+
+
+      <div className="mt-2 sm:mt-3 w-full max-w-3xl">
+        <div className="mb-6">
+          <motion.div
+            className="text-base sm:text-base md:text-lg font-medium text-gray-600 text-left"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {text}
+          </motion.div>
+          <div className="flex flex-wrap justify-start gap-2 text-xs sm:text-sm font-medium text-gray-600 mt-3">
+            <motion.span 
+              className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs"
+              variants={badgeVariants}
+              initial="initial"
+              whileHover="hover"
+            >
+              <AcademicCapIcon className="h-3 w-3 mr-1 text-red-800" />
+              CS @ Harvard
+            </motion.span>
+            <Link href="https://govdash.com/" target="_blank">
               <motion.span 
-                  className="flex items-center bg-gray-100 rounded-full px-1.5 py-0.5 transition-colors duration-300 hover:bg-gray-200 text-xs"
-                  variants={badgeVariants}
+                className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs"
+                variants={badgeVariants}
                 initial="initial"
                 whileHover="hover"
               >
-                <AcademicCapIcon className="h-3 w-3 mr-1 text-red-800" />
-                CS @ Harvard
+                <FaYCombinator className="h-3 w-3 mr-1 text-orange-500" />
+                Eng @ GovDash
               </motion.span>
-              <Link href="https://govdash.com/" target="_blank">
-                <motion.span 
-                  className="flex items-center bg-gray-100 rounded-full px-1.5 py-0.5 transition-colors duration-300 hover:bg-gray-200 text-xs"
-                  variants={badgeVariants}
-                  initial="initial"
-                  whileHover="hover"
-                >
-                  <FaYCombinator className="h-3 w-3 mr-1 text-orange-500" />
-                  Eng @ GovDash
-                </motion.span>
-              </Link>
-              <Link href="https://lightspeedads.netlify.app/" target="_blank">
-                <motion.span 
-                  className="text-blue-500 flex items-center bg-gray-100 rounded-full px-1.5 py-0.5 transition-colors duration-300 hover:bg-gray-200 text-xs"
-                  variants={badgeVariants}
-                  initial="initial"
-                  whileHover="hover"
-                >
-                  <CloudLightning className="h-3 w-3 mr-1" />
-                  Check out Lightspeed
-                  <BsBoxArrowInUpRight className="h-3 w-3 ml-1" />
-                </motion.span>
-              </Link>
-              </div>
-              </div>
-            </div>
+            </Link>
+            <Link href="https://lightspeedads.netlify.app/" target="_blank">
+              <motion.span 
+                className="text-blue-500 flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs"
+                variants={badgeVariants}
+                initial="initial"
+                whileHover="hover"
+              >
+                <CloudLightning className="h-3 w-3 mr-1" />
+                Check out Lightspeed
+                <BsBoxArrowInUpRight className="h-3 w-3 ml-1" />
+              </motion.span>
+            </Link>
           </div>
         </div>
-      </div>
-
-      <div className="mt-4 sm:mt-6 w-full max-w-3xl px-3 sm:px-4 md:px-6">
         <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
           👋 I&apos;m Dinesh.
         </p>
@@ -173,8 +148,22 @@ const Intro: React.FC = () => {
         </p>
       </div>
 
-      <div className="mt-4 sm:mt-6 w-full max-w-3xl px-3 sm:px-4 md:px-6">
-        <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">work</h2>
+      <div className="mt-4 sm:mt-6 w-full max-w-3xl"> 
+        {/* px-3 sm:px-4 md:px-6 */}
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-lg sm:text-xl font-medium text-gray-800">work</h2>
+          <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <motion.span 
+              className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <FileText className="w-3 h-3 mr-1" />
+              Resume
+            </motion.span>
+          </Link>
+        </div>
         <div>
           {experiencesData.map((job, index) => (
             <Collapsible
@@ -231,7 +220,7 @@ const Intro: React.FC = () => {
         </div>
       </div>
 
-      <div className="sm:mt-6 w-full max-w-3xl px-3 sm:px-4 md:px-6 pt-3">
+      <div className="sm:mt-6 w-full max-w-3xl pt-3">
         <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">builds & contracts</h2>
         <div>
           {features.map((feature, index) => (
@@ -287,7 +276,32 @@ const Intro: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <div className="sm:mt-6 w-full max-w-3xl py-3">
+        <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">favorite films</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          {favoriteMovies.map((movie, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-100 rounded-md overflow-hidden w-full"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <div className="p-2 text-xs">
+                <h3 className="font-medium text-gray-800 truncate">{movie.title}</h3>
+                <p className="text-gray-600">{movie.year}</p>
+                <p className="text-gray-600 truncate">{movie.director}</p>
+                <div className="flex items-center mt-1">
+                  <FaFilm className="text-red-500 mr-1 w-3 h-3 flex-shrink-0" />
+                  <span className="text-gray-700 truncate">{movie.genre}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </main>
+    </>
   );
 };
 
