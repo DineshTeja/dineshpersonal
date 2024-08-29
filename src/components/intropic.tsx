@@ -148,7 +148,7 @@ const Intro: React.FC = () => {
         </p>
       </div>
 
-      <div className="mt-4 sm:mt-6 w-full max-w-3xl"> 
+      <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
         {/* px-3 sm:px-4 md:px-6 */}
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-lg sm:text-xl font-medium text-gray-800">work</h2>
@@ -220,7 +220,7 @@ const Intro: React.FC = () => {
         </div>
       </div>
 
-      <div className="sm:mt-6 w-full max-w-3xl pt-3">
+      <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
         <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">builds & contracts</h2>
         <div>
           {features.map((feature, index) => (
@@ -277,7 +277,7 @@ const Intro: React.FC = () => {
         </div>
       </div>
 
-      <div className="sm:mt-6 w-full max-w-3xl py-3">
+      <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
         <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">favorite films</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {favoriteMovies.map((movie, index) => (
