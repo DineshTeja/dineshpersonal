@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Dinesh Vasireddy",
   description: "Dinesh Vasireddy Personal Portfolio",
+  icons: {
+    icon: '/gradient.png', 
+  },
 };
 
 export default function RootLayout({
