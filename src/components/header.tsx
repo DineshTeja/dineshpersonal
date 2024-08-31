@@ -64,7 +64,7 @@ const socialLinks = [
   
     return (
       <div className={`flex flex-col min-h-screen ${montserrat.className}`}>
-        <header className="fixed top-0 w-full bg-gray-50/80 backdrop-blur-sm z-50">
+        <header className="fixed top-0 w-full bg-gray-50/80 backdrop-blur-sm z-50 mt-8">
           <div className="max-w-3xl mx-auto px-4 md:px-0 lg:px-0 py-4">
             <div className="flex justify-between items-center">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mr-2">
@@ -90,7 +90,7 @@ const socialLinks = [
           </div>
         </header>
  
-        <main className="flex-grow mt-[50px] sm:mt-[50px]">
+        <main className="flex-grow mt-[90px] sm:mt-[90px]">
           {children}
         </main>
 

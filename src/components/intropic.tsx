@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { CloudLightning } from "lucide-react";
-import { BsBoxArrowInUpRight } from "react-icons/bs";
+import { BsBoxArrowInUpRight, BsRocket } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import { FaYCombinator } from "react-icons/fa6";
@@ -18,6 +18,7 @@ import dineshColorPic from '/public/dineshcolorpic.png';
 import { FileText } from "lucide-react";
 import { FaFilm } from "react-icons/fa";
 import { favoriteMovies } from "@/lib/data";
+import { FaStar } from "react-icons/fa";
 
 const badgeVariants = {
   initial: { scale: 1 },
@@ -65,33 +66,6 @@ const Intro: React.FC = () => {
   return (
     <>
 <main className={`flex flex-col items-center bg-gray-50 z-10 ${montserrat.className}`}>
-{/* <div className="sticky top-0 w-full bg-gray-50/80 backdrop-blur-sm z-100">
-  <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 py-4">
-    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left mb-2 sm:mb-0">
-        Dinesh Vasireddy
-      </h1>
-      <div className="flex space-x-3 justify-center sm:justify-end">
-        {socialLinks.map(({ Icon, href }, index) => (
-          <motion.div
-            key={index}
-            variants={iconVariants}
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            custom={index}
-          >
-            <Link href={href} target="_blank" rel="noopener noreferrer">
-              <Icon className="w-5 h-5 sm:w-4 sm:h-4 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
-            </Link>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div> */}
-
-
       <div className="mt-2 sm:mt-3 w-full max-w-3xl">
         <div className="mb-6">
           <motion.div
@@ -294,6 +268,10 @@ const Intro: React.FC = () => {
                 <div className="flex items-center mt-1">
                   <FaFilm className="text-red-500 mr-1 w-3 h-3 flex-shrink-0" />
                   <span className="text-gray-700 truncate">{movie.genre}</span>
+                </div>
+                <div className="flex items-center mt-1">
+                  <BsRocket className="text-yellow-500 mr-1 w-3 h-3 flex-shrink-0" />
+                  <span className="text-gray-700">{movie.rating.toFixed(1)}</span>
                 </div>
               </div>
             </motion.div>

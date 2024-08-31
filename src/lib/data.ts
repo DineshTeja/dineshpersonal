@@ -325,6 +325,7 @@ export const skillsData = [
   "Docker",
 ] as const;
 
+
 export const favoriteMovies = [
   {
     title: "The Shawshank Redemption",
@@ -332,6 +333,7 @@ export const favoriteMovies = [
     director: "Frank Darabont",
     genre: "Drama",
     posterUrl: "/shawshank_redemption_poster.jpg",
+    rating: 9.5,
   },
   {
     title: "Rocky",
@@ -339,6 +341,7 @@ export const favoriteMovies = [
     director: "John G. Avildsen",
     genre: "Sports Drama",
     posterUrl: "/rocky_poster.jpg",
+    rating: 9.0,
   },
   {
     title: "Logan",
@@ -346,6 +349,7 @@ export const favoriteMovies = [
     director: "James Mangold",
     genre: "Superhero Drama",
     posterUrl: "/logan_poster.jpg",
+    rating: 8.5,
   },
   {
     title: "The Pursuit of Happyness",
@@ -353,6 +357,7 @@ export const favoriteMovies = [
     director: "Gabriele Muccino",
     genre: "Biographical Drama",
     posterUrl: "/pursuit_of_happyness_poster.jpg",
+    rating: 8.5,
   },
   {
     title: "KGF: Chapter 1",
@@ -360,6 +365,7 @@ export const favoriteMovies = [
     director: "Prashanth Neel",
     genre: "Action Drama",
     posterUrl: "/kgf_poster.jpg",
+    rating: 9.0,
   },
   {
     title: "Baahubali: The Beginning",
@@ -367,6 +373,7 @@ export const favoriteMovies = [
     director: "S. S. Rajamouli",
     genre: "Epic Action",
     posterUrl: "/baahubali_poster.jpg",
+    rating: 9.0,
   },
   {
     title: "Jersey",
@@ -374,6 +381,7 @@ export const favoriteMovies = [
     director: "Gowtam Tinnanuri",
     genre: "Sports Drama",
     posterUrl: "/jersey_poster.jpg",
+    rating: 8.5,
   },
   {
     title: "Pokiri",
@@ -381,5 +389,6 @@ export const favoriteMovies = [
     director: "Puri Jagannadh",
     genre: "Action Thriller",
     posterUrl: "/pokiri_poster.jpg",
+    rating: 8.5,
   },
 ] as const;
