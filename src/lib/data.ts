@@ -176,7 +176,7 @@ export const features = [
   },
   {
     Icon: SiCocacola,
-    name: "Coca-Cola Black Box",
+    name: "Coca-Cola",
     tagline: "market risk and success simulation system",
     description:
       "Led a case team to build a black box for market risk and success simulation in the Asia Pacific Operating Unit powered by neural networks, and deployed in production to drive business decisions for 200+ finance analysts.",
@@ -217,9 +217,9 @@ export const features = [
   {
     Icon: InputIcon,
     name: "Resilience Week 2023",
-    tagline: "a solid paper on LLMs & Cybersecurity (IEEE published)",
+    tagline: "a cool paper on LLMs, Cybersecurity, & Defense (IEEE published)",
     description:
-      "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by TechConnect for Resilience Week 2023 in Washington D.C.",
+      "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by Defense TechConnect for Resilience Week 2023 in Washington D.C.",
     href: "https://ieeexplore.ieee.org/document/10284627",
     cta: "View IEEE Publication",
     background: React.createElement(Image, {
@@ -256,7 +256,7 @@ export const features = [
   },
   {
     Icon: GlobeIcon,
-    name: "ClimateNeutral LLM",
+    name: "ClimateNeutral",
     tagline: "a corporate sustainability assistant",
     description:
       "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
