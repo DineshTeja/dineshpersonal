@@ -36,9 +36,8 @@ export const reftbl = [
   { name: "Contact", ref: "#contact" },
 ] as const;
 
-export const experiencesData = [
+export const educationData = [
   {
-    title: "Venture",
     company: "Z Fellows",
     location: "San Francisco, CA",
     description: "https://www.zfellows.com/",
@@ -47,6 +46,18 @@ export const experiencesData = [
     src: "/z_fellows.jpeg",
     href: "https://www.zfellows.com/",
   },
+  {
+    company: "Harvard",
+    location: "Cambridge, MA",
+    description: "CS & Gov",
+    icon: React.createElement(FaUniversity),
+    date: "2023",
+    src: "/harvard.png",
+    href: "https://www.linkedin.com/in/dinesh-vasireddy/",
+  },
+]
+
+export const experiencesData = [
   {
     title: "Software Engineer",
     company: "GovDash (YC W22)",
@@ -241,7 +252,7 @@ export const features = [
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
     tags: ["Python", "R","Statistics"],
     src: "/skygrid.png",
-    date: "2024",
+    date: "2023",
   },
   {
     Icon: GlobeIcon,

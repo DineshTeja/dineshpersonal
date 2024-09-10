@@ -7,7 +7,7 @@ import { BsBoxArrowInUpRight, BsRocket } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import { FaYCombinator } from "react-icons/fa6";
-import { features, experiencesData } from "@/lib/data";
+import { features, experiencesData, educationData } from "@/lib/data";
 import {
   Collapsible,
   CollapsibleContent,
@@ -33,6 +33,7 @@ const HomePage: React.FC = () => {
   const [text, setText] = useState(initialText);
   const [openItems, setOpenItems] = useState<number[]>([]);
   const [openWorkItems, setOpenWorkItems] = useState<number[]>([]);
+  const [openEducationItems, setOpenEducationItems] = useState<number[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,6 +58,12 @@ const HomePage: React.FC = () => {
 
   const toggleWorkItem = (index: number) => {
     setOpenWorkItems(prev => 
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
+
+  const toggleEducationItem = (index: number) => {
+    setOpenEducationItems(prev => 
       prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
     );
   };
@@ -116,7 +123,7 @@ const HomePage: React.FC = () => {
           I&apos;ve built a $70K ARR company in <span className="border-b border-dashed border-gray-400">political tech</span>, created Arkansas&apos; largest  <span className="border-b border-dashed border-gray-400">immigrant resources portal</span>, deployed an e-comm demand forecasting system with millions of users at <span className="border-b border-dashed border-gray-400">Walmart</span>, and spent the past few months helping build the best AI <span className="border-b border-dashed border-gray-400">government contracting</span> tool.
         </p>
         <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
-          I&apos;m based in <span className="border-b border-dashed border-gray-400">Boston/NYC</span>. I also like <span className="border-b border-dashed border-gray-400">movies</span> and finding <span className="border-b border-dashed border-gray-400">good eats</span>.
+          I&apos;m based in <span className="border-b border-dashed border-gray-400">Boston/NYC</span>. I also like <span className="border-b border-dashed border-gray-400">movies</span> and finding <span className="border-b border-dashed border-gray-400">good food</span>.
         </p>
       </div>
 
@@ -239,6 +246,66 @@ const HomePage: React.FC = () => {
                     >
                       <div className="pl-7 pr-3 py-3 text-gray-700">
                         <p className="text-xs sm:text-sm">{feature.description}</p>
+                      </div>
+                    </motion.div>
+                  </CollapsibleContent>
+                )}
+              </AnimatePresence>
+            </Collapsible>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
+        {/* px-3 sm:px-4 md:px-6 */}
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-lg sm:text-xl font-medium text-gray-800">education</h2>
+        </div>
+        <div>
+          {educationData.map((job, index) => (
+            <Collapsible
+              key={index}
+              open={openEducationItems.includes(index)}
+              onOpenChange={() => toggleEducationItem(index)}
+              className={`border-b border-dashed border-gray-300 ${index === 0 ? 'border-t' : ''}`}
+            >
+              <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-1">
+                  <Link href={job.href} target="_blank" rel="noopener noreferrer">
+                        <motion.div
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                          <Image
+                            src={job.src}
+                            alt={`${job.company} logo`}
+                            width={24}
+                            height={24}
+                            className="rounded-lg mr-1"
+                          />
+                        </motion.div>
+                    </Link>
+                    <h3 className="text-sm sm:text-base font-medium text-gray-800 truncate">{job.company}</h3>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-xs text-gray-500">{job.date}</span>
+                </div>
+              </CollapsibleTrigger>
+              <AnimatePresence initial={false}>
+                {openEducationItems.includes(index) && (
+                  <CollapsibleContent forceMount>
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-7 pr-3 py-3 text-gray-700">
+                        <p className="text-xs sm:text-sm mb-1 font-medium">{job.location}</p>
+                        <p className="text-xs sm:text-sm">{job.description}</p>
                       </div>
                     </motion.div>
                   </CollapsibleContent>
