@@ -38,6 +38,16 @@ export const reftbl = [
 
 export const experiencesData = [
   {
+    title: "Venture",
+    company: "Z Fellows",
+    location: "San Francisco, CA",
+    description: "https://www.zfellows.com/",
+    icon: React.createElement(FaYCombinator),
+    date: "2024",
+    src: "/z_fellows.jpeg",
+    href: "https://www.zfellows.com/",
+  },
+  {
     title: "Software Engineer",
     company: "GovDash (YC W22)",
     location: "New York City, NY",

@@ -14,11 +14,9 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import Link from "next/link";
-import dineshColorPic from '/public/dineshcolorpic.png';
 import { FileText } from "lucide-react";
 import { FaFilm } from "react-icons/fa";
 import { favoriteMovies } from "@/lib/data";
-import { FaStar } from "react-icons/fa";
 
 const badgeVariants = {
   initial: { scale: 1 },
@@ -29,7 +27,7 @@ import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
-const Intro: React.FC = () => {
+const HomePage: React.FC = () => {
   const fullText = "software engineer | building products that matter.";
   const initialText = "software engineer";
   const [text, setText] = useState(initialText);
@@ -283,4 +281,4 @@ const Intro: React.FC = () => {
   );
 };
 
-export default Intro;
+export default HomePage;
