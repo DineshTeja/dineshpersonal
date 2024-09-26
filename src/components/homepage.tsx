@@ -7,7 +7,7 @@ import { BsBoxArrowInUpRight, BsRocket } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import { FaYCombinator } from "react-icons/fa6";
-import { features, experiencesData, educationData } from "@/lib/data";
+import { projectData, experiencesData, educationData } from "@/lib/data";
 import {
   Collapsible,
   CollapsibleContent,
@@ -17,11 +17,7 @@ import Link from "next/link";
 import { FileText } from "lucide-react";
 import { FaFilm } from "react-icons/fa";
 import { favoriteMovies } from "@/lib/data";
-
-const badgeVariants = {
-  initial: { scale: 1 },
-  hover: { scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 10 } }
-};
+import { cn } from "@/lib/utils";
 
 import { Montserrat } from 'next/font/google';
 
@@ -72,7 +68,7 @@ const HomePage: React.FC = () => {
     <>
 <main className={`flex flex-col items-center bg-gray-50 z-10 ${montserrat.className}`}>
       <div className="mt-2 sm:mt-3 w-full max-w-3xl">
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <motion.div
             className="text-base sm:text-base md:text-lg font-medium text-gray-600 text-left"
             initial={{ opacity: 0 }}
@@ -115,15 +111,15 @@ const HomePage: React.FC = () => {
               </motion.span>
             </Link>
           </div>
-        </div>
+        </div> */}
         <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
           👋 I&apos;m Dinesh.
         </p>
         <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
-          I&apos;ve built a $70K ARR company in <span className="border-b border-dashed border-gray-400">political tech</span>, created Arkansas&apos; largest  <span className="border-b border-dashed border-gray-400">immigrant resources portal</span>, deployed an e-comm demand forecasting system with millions of users at <span className="border-b border-dashed border-gray-400">Walmart</span>, and spent the past few months helping build the best AI <span className="border-b border-dashed border-gray-400">government contracting</span> tool.
+          I&apos;ve built a $70K ARR company in <span className="border-b border-dashed border-gray-400">political tech</span>, created Arkansas&apos; largest  <span className="border-b border-dashed border-gray-400">immigrant resources portal</span>, deployed an e-comm demand forecasting system with millions of users at <span className="border-b border-dashed border-gray-400">Walmart</span>, and spent the past few months helping build the best AI <span className="border-b border-dashed border-gray-400">government contracting</span> tool. Now, I&apos;m building <span className="border-b border-dashed border-gray-400">AI for democracy</span>.
         </p>
         <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
-          I&apos;m based in <span className="border-b border-dashed border-gray-400">Boston/NYC</span>. I also like <span className="border-b border-dashed border-gray-400">movies</span> and finding <span className="border-b border-dashed border-gray-400">good food</span>.
+          I&apos;m based in <span className="border-b border-dashed border-gray-400">Boston/NYC</span>. I also like <span className="border-b border-dashed border-gray-400">movies</span> and finding <span className="border-b border-dashed border-gray-400">good food</span>. 
         </p>
       </div>
 
@@ -189,6 +185,13 @@ const HomePage: React.FC = () => {
                       <div className="pl-7 pr-3 py-3 text-gray-700">
                         <p className="text-xs sm:text-sm mb-1 font-medium">{job.location}</p>
                         <p className="text-xs sm:text-sm">{job.description}</p>
+                        <div className="flex flex-wrap gap-1 mt-3">
+                          {job.tags.map((tag, tagIndex) => (
+                              <CustomBadge key={tagIndex} className="text-xs">
+                                {tag}
+                              </CustomBadge>
+                            ))}
+                          </div>
                       </div>
                     </motion.div>
                   </CollapsibleContent>
@@ -202,7 +205,7 @@ const HomePage: React.FC = () => {
       <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
         <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">builds & contracts</h2>
         <div>
-          {features.map((feature, index) => (
+          {projectData.map((project, index) => (
             <Collapsible
               key={index}
               open={openItems.includes(index)}
@@ -212,52 +215,58 @@ const HomePage: React.FC = () => {
               <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
                 <div className="flex items-center space-x-2">
                   <div className="flex items-center space-x-1">
-                    <Link href={feature.href} target="_blank" rel="noopener noreferrer">
+                    <Link href={project.href} target="_blank" rel="noopener noreferrer">
                         <motion.div
                           whileHover={{ scale: 1.1 }}
                           transition={{ type: "spring", stiffness: 400, damping: 10 }}
                         >
                           <Image
-                            src={feature.src}
-                            alt={`${feature.name} logo`}
+                            src={project.src}
+                            alt={`${project.name} logo`}
                             width={24}
                             height={24}
                             className="rounded-lg mr-1"
                           />
                         </motion.div>
                     </Link>
-                    <h3 className="text-sm sm:text-base font-medium text-gray-800">{feature.name}</h3>
+                    <h3 className="text-sm sm:text-base font-medium text-gray-800">{project.name}</h3>
                   </div>
-                  <span className="hidden sm:inline text-xs text-gray-500">{feature.tagline}</span>
+                  <span className="hidden sm:inline text-xs text-gray-500">{project.tagline}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <span className="text-xs text-gray-500">{feature.date}</span>
+                  <span className="text-xs text-gray-500">{project.date}</span>
                 </div>
               </CollapsibleTrigger>
               <AnimatePresence initial={false}>
-                {openItems.includes(index) && (
-                  <CollapsibleContent forceMount>
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pl-7 pr-3 py-3 text-gray-700">
-                        <p className="text-xs sm:text-sm">{feature.description}</p>
-                      </div>
-                    </motion.div>
-                  </CollapsibleContent>
-                )}
-              </AnimatePresence>
-            </Collapsible>
+                  {openItems.includes(index) && (
+                    <CollapsibleContent forceMount>
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-7 pr-3 py-3 text-gray-700">
+                          <p className="text-xs sm:text-sm mb-2">{project.description}</p>
+                          <div className="flex flex-wrap gap-1 mt-3">
+                          {project.tags.map((tag, tagIndex) => (
+                              <CustomBadge key={tagIndex} className="text-xs">
+                                {tag}
+                              </CustomBadge>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    </CollapsibleContent>
+                  )}
+                </AnimatePresence>
+              </Collapsible>
           ))}
         </div>
       </div>
 
       <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-        {/* px-3 sm:px-4 md:px-6 */}
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-lg sm:text-xl font-medium text-gray-800">education</h2>
         </div>
@@ -347,5 +356,16 @@ const HomePage: React.FC = () => {
     </>
   );
 };
+
+const CustomBadge: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
+  <span className={cn(
+    "inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800",
+    "transition-colors duration-200 ease-in-out",
+    "hover:bg-gray-200",
+    className
+  )}>
+    {children}
+  </span>
+);
 
 export default HomePage;
