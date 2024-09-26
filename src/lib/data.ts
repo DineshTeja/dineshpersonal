@@ -136,7 +136,7 @@ export const projectData = [
     name: "Lightspeed",
     tagline: "AI platform that helps political organizations create winning ads faster.",
     description:
-    "I'm currently co-building Lightspeed, a single AI workflow for political media monitoring, PR, & advertising teams. Lightspeed allows political organizations to make smarter political ads faster and cheaper through real-time insights, social listening, AI ad creation, targeted messaging, and more.",
+    "I'm currently bootstrapping and building Lightspeed, a single AI workflow for political media monitoring, PR, & advertising teams. Lightspeed allows political organizations to make smarter political ads faster and cheaper through real-time insights, social listening, AI ad creation, targeted messaging, and more.",
     href: "https://lightspeedads.netlify.app/",
     tags: ["Next.js", "Python", "OpenAI", "Perplexity", "Supabase"],
     src: "/lightspeed.png",
