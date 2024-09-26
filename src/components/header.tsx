@@ -19,7 +19,7 @@ const badgeVariants = {
 const socialLinks = [
     { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
     { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
-    { Icon: FaXTwitter, href: "https://twitter.com/dineshatypical" },
+    { Icon: FaXTwitter, href: "https://twitter.com/dineshtva" },
     { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
   ];
   

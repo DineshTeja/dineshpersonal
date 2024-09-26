@@ -136,6 +136,26 @@ export const experiencesData = [
 export const features = [
   {
     Icon: FileTextIcon,
+    name: "Rally AI",
+    tagline: "AI personas for political video ads",
+    description:
+    "(PennApps Winner) Built a robust AI video generation tool that creates hyper-realistic AI candidate personas, fetches intelligent B-roll, and syncs audio/video to create full video political ads in one place. Each generation is strictly cross-checked against compliance standards at the state level and none of this content will be distributed for non-educational purposes.",
+    href: "https://rally-ai.vercel.app/",
+    cta: "Take a look!",
+    background: React.createElement(Image, {
+      src: "/rally.png",
+      alt: "Background",
+      layout: "fill",
+      objectFit: "cover",
+      className: "absolute -right-20 -top-20 opacity-60",
+    }),
+    className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+    tags: ["React", "Next.js", "Supabase", "OpenAI", "Deno", "LLMs"],
+    src: "/rally.png",
+    date: "2024",
+  },
+  {
+    Icon: FileTextIcon,
     name: "Commonwealth.ai",
     tagline: "political research and structured data engine",
     description:
