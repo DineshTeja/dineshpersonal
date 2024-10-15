@@ -124,7 +124,6 @@ const HomePage: React.FC = () => {
       </div>
 
       <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-        {/* px-3 sm:px-4 md:px-6 */}
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-lg sm:text-xl font-medium text-gray-800">work</h2>
           <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
@@ -254,6 +253,13 @@ const HomePage: React.FC = () => {
                               <CustomBadge key={tagIndex} className="text-xs">
                                 {tag}
                               </CustomBadge>
+                            ))}
+                            {project.links && project.links.map((link, linkIndex) => (
+                              <Link key={linkIndex} href={link.href} target="_blank" rel="noopener noreferrer">
+                                <CustomBadge className="text-xs bg-blue-100 hover:bg-blue-200 text-blue-800 flex items-center">
+                                  {link.name} <BsBoxArrowInUpRight className="h-3 w-3 ml-1" />
+                                </CustomBadge>
+                              </Link>
                             ))}
                           </div>
                         </div>

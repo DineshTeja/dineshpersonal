@@ -131,7 +131,18 @@ export const experiencesData = [
   }
 ] as const;
 
-export const projectData = [
+type Project = {
+  name: string;
+  tagline: string;
+  description: string;
+  href: string;
+  tags: string[];
+  src: string;
+  date: string;
+  links?: { name: string; href: string }[];
+}
+
+export const projectData: Project[] = [
   {
     name: "Lightspeed",
     tagline: "AI platform that helps political organizations create winning ads faster.",
@@ -141,6 +152,12 @@ export const projectData = [
     tags: ["Next.js", "Python", "OpenAI", "Perplexity", "Supabase"],
     src: "/lightspeed.png",
     date: "2024",
+    links: [
+      {
+        name: "Check it out!",
+        href: "https://lightspeedads.netlify.app/",
+      },
+    ]
   },
   {
     name: "Aria",
@@ -150,6 +167,20 @@ export const projectData = [
     tags: ["Next.js", "Python", "OpenAI", "Groq", "Llama", "Supabase", "Anam.ai"],
     src: "/aria.png",
     date: "2024",
+    links: [
+      {
+        name: "Try it out!",
+        href: "https://ariamed.vercel.app/",
+      },
+      {
+        name: "Github",
+        href: "https://github.com/DineshTeja/aria",
+      }, 
+      {
+        name: "Devpost",
+        href: "https://devpost.com/software/aria-sc10g2",
+      }
+    ]
   },
   {
     name: "Rally AI",
@@ -160,6 +191,12 @@ export const projectData = [
     tags: ["Next.js", "Firecrawl", "OpenAI", "Perplexity", "Cartesia.ai", "SyncLabs", "Llama"],
     src: "/rally.png",
     date: "2024",
+    links: [
+      {
+        name: "Try it out!",
+        href: "https://rally-ai.vercel.app/",
+      },
+    ]
   },
   {
     name: "Commonwealth.ai",
@@ -180,6 +217,12 @@ export const projectData = [
     tags: ["Next.js", "Supabase", "Python", "Various LLMs"],
     src: "/varsa.png",
     date: "2024",
+    links: [
+      {
+        name: "Use it now!",
+        href: "https://varsa.vercel.app/",
+      },
+    ]
   },
   {
     name: "Coca-Cola",
@@ -210,6 +253,12 @@ export const projectData = [
     tags: ["Python", "Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
     src: "/rweek.png",
     date: "2023",
+    links: [
+      {
+        name: "Publication",
+        href: "https://ieeexplore.ieee.org/document/10284627",
+      },
+    ]
   },
   {
     name: "SkyGrid",
