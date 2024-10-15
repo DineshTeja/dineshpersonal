@@ -143,6 +143,15 @@ export const projectData = [
     date: "2024",
   },
   {
+    name: "Aria",
+    tagline: "conversational video AI for healthcare intelligence",
+    description: "Co-built Aria, the first realtime (and human-like) video conversational AI for healthcare intelligence. Aria helps patients ask healthcare questions, receive medical recommendations backed by PubMed and MedlineHealth, and find physician from a network of 100,000+ doctors. Early design partner for Anam.ai, a state-of-the-art AI conversational video API.",
+    href: "https://ariamed.vercel.app/",
+    tags: ["Next.js", "Python", "OpenAI", "Groq", "Llama", "Supabase", "Anam.ai"],
+    src: "/aria.png",
+    date: "2024",
+  },
+  {
     name: "Rally AI",
     tagline: "AI personas for political video ads",
     description:
@@ -156,7 +165,7 @@ export const projectData = [
     name: "Commonwealth.ai",
     tagline: "Political research and structured data engine",
     description:
-    "Built a political research engine that indexes articles, enables semantic search, and extracts structured data using LLMs and RAG. 2150+ users, 12000+ articles indexed, and 15 campaign users on our first product.",
+    "Built a political research engine that indexes articles, enables semantic search, and extracts structured data using LLMs and RAG. 2150+ users (a few paid), 12000+ articles indexed, and 15 campaign users on our first product.",
     href: "https://commonwealthai.netlify.app/",
     tags: ["React", "Next.js", "Supabase", "OpenAI", "Deno", "LLMs"],
     src: "/commonwealthlogo.png",
