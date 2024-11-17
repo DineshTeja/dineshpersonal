@@ -64,8 +64,8 @@ export default function Header({ children }: { children: React.ReactNode }) {
 
   return (
     <div className={`flex flex-col min-h-screen ${montserrat.className}`}>
-      <header className="fixed top-0 w-full bg-gray-50/90 backdrop-blur-sm z-50 pt-8 px-0">
-        <div className="max-w-3xl mx-auto px-0 py-4">
+      <header className="fixed top-0 w-full bg-gray-50/90 backdrop-blur-sm z-50 pt-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-0 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
               Dinesh Vasireddy
@@ -95,7 +95,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
       </main>
 
       <footer className="mt-[50px]">
-        <div className="max-w-3xl mx-auto px-0 py-4">
+        <div className="max-w-3xl mx-auto px-4 sm:px-0 py-4">
           <div className="flex justify-center items-center">
             <p className="text-sm text-gray-600 text-center">© 2024 Dinesh Vasireddy</p>
           </div>
