@@ -58,6 +58,17 @@ export const educationData = [
 ]
 
 export const experiencesData = [
+  // {
+  //   title: "Engineering",
+  //   company: "CoFrame",
+  //   location: "San Francisco, CA",
+  //   description: "Agents for Web Optimization. Backed by Neo, Khosla, and Nat Friedman.",
+  //   icon: React.createElement(FaYCombinator),
+  //   date: "2025",
+  //   src: "/coframe.png",
+  //   href: "https://www.coframe.com/",
+  //   tags: ["Next.js", "Python", "OpenAI", "Anthropic"],
+  // },
   {
     title: "Software Engineer",
     company: "GovDash (YC W22)",

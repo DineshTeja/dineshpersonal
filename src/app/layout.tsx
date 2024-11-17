@@ -6,6 +6,9 @@ import DotPattern from "@/components/ui/dot-pattern";
 import Skills from "@/components/skills";
 import Meteors from "@/components/ui/meteors";
 const inter = Inter({ subsets: ["latin"] });
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Dinesh Vasireddy",
@@ -26,7 +29,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
       </head>
       <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative overflow-x-hidden`}
+        className={`${montserrat.className} bg-gray-50 relative overflow-x-hidden`}
       >
         {/* <div
           style={{
