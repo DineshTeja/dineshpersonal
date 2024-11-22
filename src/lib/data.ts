@@ -93,7 +93,19 @@ export const experiencesData = [
     tags: ["Next.js", "Python", "Firebase", "Render"],
   },
   {
-    title: "ML Research",
+    title: "Founder & CEO",
+    company: "PolyData",
+    location: "Bentonville, AR",
+    description:
+      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections. Bootstrapped and scaled to $70K ARR.",
+    icon: React.createElement(FaVoteYea),
+    date: "2021 - 2023",
+    src: "/polydatasmaller_web.png",
+    href: "https://polydataelect.com/",
+    tags: ["React", "Python", "TensorFlow", "Supabase", "Google Cloud", "AWS", "D3.js"],
+  },
+  {
+    title: "ML Engineer",
     company: "Datategy",
     location: "Paris, France",
     description:
@@ -117,7 +129,7 @@ export const experiencesData = [
     tags: ["Python", "Flask", "Fast.ai", "BERT", "Doc2Vec"],
   },
   {
-    title: "ML Research",
+    title: "ML Engineer",
     company: "Walmart Global Tech",
     location: "Bentonville, AR",
     description:
@@ -128,18 +140,6 @@ export const experiencesData = [
     href: "https://www.linkedin.com/in/dinesh-vasireddy/",
     tags: ["Python", "PyTorch", "Keras", "AWS", "Element"],
   },
-  {
-    title: "Founder & CEO",
-    company: "PolyData",
-    location: "Bentonville, AR",
-    description:
-      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections. Scaled to $70K ARR.",
-    icon: React.createElement(FaVoteYea),
-    date: "2021 - 2022",
-    src: "/polydatasmaller_web.png",
-    href: "https://polydataelect.com/",
-    tags: ["React", "Python", "TensorFlow", "Supabase", "Google Cloud", "AWS", "D3.js"],
-  }
 ] as const;
 
 type Project = {
