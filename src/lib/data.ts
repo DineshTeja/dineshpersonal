@@ -105,7 +105,7 @@ export const experiencesData = [
     tags: ["Python", "PyTorch", "TensorFlow", "Keras", "AWS"],
   },
   {
-    title: "AI/ML Research",
+    title: "ML Research",
     company: "University of Arkansas",
     location: "Fayetteville, AR",
     description:
@@ -117,7 +117,7 @@ export const experiencesData = [
     tags: ["Python", "Flask", "Fast.ai", "BERT", "Doc2Vec"],
   },
   {
-    title: "Software Engineer",
+    title: "ML Research",
     company: "Walmart Global Tech",
     location: "Bentonville, AR",
     description:
