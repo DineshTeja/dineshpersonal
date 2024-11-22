@@ -62,7 +62,7 @@ export const experiencesData = [
     title: "Engineering",
     company: "CoFrame",
     location: "San Francisco, CA",
-    description: "Agents for Web Optimization. Incoming Winter 2025.",
+    description: "Living Interfaces. Winter 2025.",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/coframe.png",
