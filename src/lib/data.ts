@@ -93,7 +93,7 @@ export const experiencesData = [
     tags: ["Next.js", "Python", "Firebase", "Render"],
   },
   {
-    title: "Machine Learning",
+    title: "ML Research",
     company: "Datategy",
     location: "Paris, France",
     description:
