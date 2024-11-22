@@ -94,7 +94,7 @@ export const experiencesData = [
   },
   {
     title: "Machine Learning",
-    company: "Datategy NextGen AI",
+    company: "Datategy",
     location: "Paris, France",
     description:
       "Developed, optimized, and deployed three new machine learning algorithms, focused on financial analysis and data management, for Datategy's PapAI Business AI Platform (20+ International Clients).",
@@ -133,7 +133,7 @@ export const experiencesData = [
     company: "PolyData",
     location: "Bentonville, AR",
     description:
-      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
+      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections. Scaled to $70K ARR.",
     icon: React.createElement(FaVoteYea),
     date: "2021 - 2022",
     src: "/polydatasmaller_web.png",
