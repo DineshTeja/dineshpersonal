@@ -81,7 +81,7 @@ export const experiencesData = [
     tags: ["Next.js", "Python", "OpenAI", "Anthropic", "Prisma", "Redis", "AWS", "PostgreSQL", "TRPC"],
   },
   {
-    title: "Software Engineer",
+    title: "Head of Engineering",
     company: "Arkansas United",
     location: "Fayetteville, AR",
     description:
