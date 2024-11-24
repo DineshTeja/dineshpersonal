@@ -332,30 +332,43 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">favorite films</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            {favoriteMovies.map((movie, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-100 rounded-md overflow-hidden w-full"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <div className="p-2 text-xs">
-                  <h3 className="font-medium text-gray-800 truncate">{movie.title}</h3>
-                  <p className="text-gray-600">{movie.year}</p>
-                  <p className="text-gray-600 truncate">{movie.director}</p>
-                  <div className="flex items-center mt-1">
-                    <FaFilm className="text-red-500 mr-1 w-3 h-3 flex-shrink-0" />
-                    <span className="text-gray-700 truncate">{movie.genre}</span>
+          <h2 className="text-lg sm:text-xl font-medium mb-4 text-gray-800">favorite films</h2>
+          <div className="w-full">
+            <div className="grid grid-cols-8 gap-2 sm:gap-3">
+              {favoriteMovies.map((movie, index) => (
+                <motion.div
+                  key={index}
+                  className="relative aspect-[2/3] rounded-lg overflow-hidden group w-full"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <Image
+                    src={movie.posterUrl}
+                    alt={`${movie.title} poster`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 25vw, (max-width: 1024px) 25vw, 25vw"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Text overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-white font-medium text-xs line-clamp-2 mb-0.5">
+                      {movie.title}
+                    </h3>
+                    <div className="flex items-center gap-1 text-[10px] text-gray-200">
+                      <span>{movie.year}</span>
+                      <span>•</span>
+                      <span className="flex items-center">
+                        <BsRocket className="w-2.5 h-2.5 mr-0.5" />
+                        {movie.rating.toFixed(1)}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center mt-1">
-                    <BsRocket className="text-yellow-500 mr-1 w-3 h-3 flex-shrink-0" />
-                    <span className="text-gray-700">{movie.rating.toFixed(1)}</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </main>

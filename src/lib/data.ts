@@ -345,14 +345,22 @@ export const skillsData = [
   "Docker",
 ] as const;
 
+interface Movie {
+  title: string;
+  year: number;
+  director: string;
+  genre: string;
+  rating: number;
+  posterUrl: string;
+}
 
-export const favoriteMovies = [
+export const favoriteMovies: Movie[] = [
   {
     title: "The Shawshank Redemption",
     year: 1994,
     director: "Frank Darabont",
     genre: "Drama",
-    posterUrl: "/shawshank_redemption_poster.jpg",
+    posterUrl: "/posters/shawshank.png",
     rating: 9.5,
   },
   {
@@ -360,7 +368,7 @@ export const favoriteMovies = [
     year: 1976,
     director: "John G. Avildsen",
     genre: "Sports Drama",
-    posterUrl: "/rocky_poster.jpg",
+    posterUrl: "/posters/rocky.png",
     rating: 9.0,
   },
   {
@@ -368,7 +376,7 @@ export const favoriteMovies = [
     year: 2017,
     director: "James Mangold",
     genre: "Superhero Drama",
-    posterUrl: "/logan_poster.jpg",
+    posterUrl: "/posters/logan.png",
     rating: 8.5,
   },
   {
@@ -376,15 +384,15 @@ export const favoriteMovies = [
     year: 2006,
     director: "Gabriele Muccino",
     genre: "Biographical Drama",
-    posterUrl: "/pursuit_of_happyness_poster.jpg",
+    posterUrl: "/posters/pursuit.png",
     rating: 8.5,
   },
   {
-    title: "KGF: Chapter 1",
-    year: 2018,
+    title: "KGF: Chapter 2",
+    year: 2022,
     director: "Prashanth Neel",
     genre: "Action Drama",
-    posterUrl: "/kgf_poster.jpg",
+    posterUrl: "/posters/kgf2.png",
     rating: 9.0,
   },
   {
@@ -392,7 +400,7 @@ export const favoriteMovies = [
     year: 2015,
     director: "S. S. Rajamouli",
     genre: "Epic Action",
-    posterUrl: "/baahubali_poster.jpg",
+    posterUrl: "/posters/baahubali.png",
     rating: 9.0,
   },
   {
@@ -400,7 +408,7 @@ export const favoriteMovies = [
     year: 2019,
     director: "Gowtam Tinnanuri",
     genre: "Sports Drama",
-    posterUrl: "/jersey_poster.jpg",
+    posterUrl: "/posters/jersey.png",
     rating: 8.5,
   },
   {
@@ -408,7 +416,7 @@ export const favoriteMovies = [
     year: 2006,
     director: "Puri Jagannadh",
     genre: "Action Thriller",
-    posterUrl: "/pokiri_poster.jpg",
+    posterUrl: "/posters/pokiri.png",
     rating: 8.5,
   },
 ] as const;
