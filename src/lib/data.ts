@@ -60,14 +60,27 @@ export const educationData = [
 export const experiencesData = [
   {
     title: "Engineering",
+    company: "Cartesia",
+    location: "San Francisco, CA",
+    description: "Productizing real-time multimodal intelligence.",
+    icon: React.createElement(FaYCombinator),
+    date: "2025",
+    src: "/cartesia.png",
+    href: "https://www.cartesia.ai/",
+    // tags: ["Next.js", "Python", "OpenAI", "Anthropic"],
+    tags: [],
+  },
+  {
+    title: "Engineering",
     company: "CoFrame",
     location: "San Francisco, CA",
-    description: "Building living interfaces. Winter 2025.",
+    description: "Building living interfaces for the web.",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/coframe.png",
     href: "https://www.coframe.com/",
-    tags: ["Next.js", "Python", "OpenAI", "Anthropic"],
+    // tags: ["Next.js", "Python", "OpenAI", "Anthropic"],
+    tags: [],
   },
   {
     title: "Software Engineer",
@@ -95,7 +108,7 @@ export const experiencesData = [
   {
     title: "Founder & CEO",
     company: "PolyData",
-    location: "Bentonville, AR",
+    location: "United States of America",
     description:
       "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections. Bootstrapped and scaled to $70K ARR.",
     icon: React.createElement(FaVoteYea),
