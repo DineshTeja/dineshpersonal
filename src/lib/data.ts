@@ -59,7 +59,7 @@ export const educationData = [
 
 export const experiencesData = [
   {
-    title: "Engineering",
+    title: "Engineering, AI",
     company: "Cartesia",
     location: "San Francisco, CA",
     description: "Productizing real-time multimodal intelligence.",
