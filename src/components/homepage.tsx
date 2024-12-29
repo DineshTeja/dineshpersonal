@@ -132,7 +132,7 @@ const HomePage: React.FC = () => {
             <span className="border-b border-dashed border-gray-400">something new</span>.
           </p>
           <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
-            I float between{' '}
+            I usually float between{' '}
             <span className="border-b border-dashed border-gray-400">Boston/NYC/SF</span>. 
             I also love{' '}
             <span className="border-b border-dashed border-gray-400">movies</span>{' '}
