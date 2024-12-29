@@ -116,10 +116,28 @@ const HomePage: React.FC = () => {
             👋 I&apos;m Dinesh.
           </p>
           <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
-            I&apos;ve built a $70K ARR company in <span className="border-b border-dashed border-gray-400">political tech</span>, created Arkansas&apos; largest  <span className="border-b border-dashed border-gray-400">immigrant resources portal</span>, deployed an e-comm demand forecasting system with millions of users at <span className="border-b border-dashed border-gray-400">Walmart</span>, and spent the past few months helping build the best AI <span className="border-b border-dashed border-gray-400">government contracting</span> tool. Now, I&apos;m bootstrapping and building <span className="border-b border-dashed border-gray-400">something new</span>.
+            I&apos;ve built a $70K ARR company in{' '}
+            <span className="border-b border-dashed border-gray-400">political tech</span>, 
+            created Arkansas&apos; largest{' '}
+            <span className="border-b border-dashed border-gray-400">immigrant resources portal</span>, 
+            deployed an e-comm demand forecasting system with millions of users at{' '}
+            <span className="border-b border-dashed border-gray-400">Walmart</span>, 
+            and spent the past few months helping build the best AI{' '}
+            <span className="border-b border-dashed border-gray-400">government contracting</span>{' '}
+            tool.
           </p>
           <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
-            I&apos;m based in <span className="border-b border-dashed border-gray-400">Boston/NYC</span>. I also love <span className="border-b border-dashed border-gray-400">movies</span> and finding <span className="border-b border-dashed border-gray-400">great food</span>.
+            I&apos;m always building products around {' '}
+            <span className="border-b border-dashed border-gray-400">agentic and multimodal intelligence</span>. Now, I&apos;m bootstrapping and building{' '}
+            <span className="border-b border-dashed border-gray-400">something new</span>.
+          </p>
+          <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
+            I float between{' '}
+            <span className="border-b border-dashed border-gray-400">Boston/NYC/SF</span>. 
+            I also love{' '}
+            <span className="border-b border-dashed border-gray-400">movies</span>{' '}
+            and finding{' '}
+            <span className="border-b border-dashed border-gray-400">great food</span>.
           </p>
         </div>
 
