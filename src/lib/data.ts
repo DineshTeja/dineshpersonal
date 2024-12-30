@@ -70,6 +70,12 @@ export const tinyTools = [
     href: "https://github.com/DineshTeja/groqinterface",
     demo: "https://groq70.vercel.app/",
   },
+  {
+    name: "varsa",
+    tagline: "open-source multilingual LLM playground",
+    href: "https://github.com/DineshTeja/varsa",
+    demo: "https://varsa.vercel.app/",
+  },
 ]
 
 export const experiencesData = [
@@ -246,22 +252,6 @@ export const projectData: Project[] = [
     tags: ["React", "Next.js", "Supabase", "OpenAI", "Deno", "LLMs"],
     src: "/commonwealthlogo.png",
     date: "2024",
-  },
-  {
-    name: "Varsa",
-    tagline: "Open-source multilingual LLM playground",
-    description:
-      "Built a multilingual LLM playground that allows users to fine-tune and test models in multiple languages. The playground supports a wide range of models and tasks, and allows users to easily switch between languages and models.",
-    href: "https://varsa.vercel.app/",
-    tags: ["Next.js", "Supabase", "Python", "Various LLMs"],
-    src: "/varsa.png",
-    date: "2024",
-    links: [
-      {
-        name: "Use it now!",
-        href: "https://varsa.vercel.app/",
-      },
-    ]
   },
   {
     name: "Coca-Cola",
