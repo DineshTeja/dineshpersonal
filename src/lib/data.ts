@@ -72,7 +72,7 @@ export const tinyTools = [
   },
   {
     name: "varsa",
-    tagline: "open-source multilingual LLM playground",
+    description: "open-source multilingual LLM playground",
     href: "https://github.com/DineshTeja/varsa",
     demo: "https://varsa.vercel.app/",
   },
