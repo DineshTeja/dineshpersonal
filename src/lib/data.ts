@@ -57,6 +57,21 @@ export const educationData = [
   },
 ]
 
+export const tinyTools = [
+  {
+    name: "subscriptions",
+    description: "one page tool for tracking your subscriptions.",
+    href: "https://github.com/DineshTeja/subscriptions",
+    demo: "https://subsva.vercel.app/",
+  },
+  {
+    name: "groq70",
+    description: "simple personal chat interface, using llama 3.1 70b.",
+    href: "https://github.com/DineshTeja/groqinterface",
+    demo: "https://groq70.vercel.app/",
+  },
+]
+
 export const experiencesData = [
   {
     title: "Engineering, AI",

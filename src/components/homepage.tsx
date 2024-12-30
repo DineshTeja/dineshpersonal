@@ -2,24 +2,29 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { CloudLightning } from "lucide-react";
-import { BsBoxArrowInUpRight, BsRocket } from "react-icons/bs";
+import { CloudLightning, FileText, Link2 } from "lucide-react";
+import { BsBoxArrowInUpRight, BsRocket, BsGithub } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import { FaYCombinator } from "react-icons/fa6";
-import { projectData, experiencesData, educationData } from "@/lib/data";
+import { projectData, experiencesData, educationData, tinyTools } from "@/lib/data";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import Link from "next/link";
-import { FileText } from "lucide-react";
-import { FaFilm } from "react-icons/fa";
 import { favoriteMovies } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 import { Montserrat } from 'next/font/google';
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -387,6 +392,61 @@ const HomePage: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+
+        <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
+          <h2 className="text-lg sm:text-xl font-medium mb-4 text-gray-800">tiny tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {tinyTools.map((tool, index) => (
+              <div key={index} className="p-4 rounded-lg border border-dashed border-gray-300 hover:bg-gray-50 transition-colors duration-300">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-sm font-medium text-gray-800">
+                    {tool.name}
+                  </h3>
+                  <div className="flex items-center gap-2">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Link 
+                            href={tool.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                          >
+                            <Link2 className="h-3 w-3" />
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="text-xs">Live Demo</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Link 
+                            href={tool.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                          >
+                            <BsGithub className="h-3 w-3" />
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="text-xs">Source Code</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-600">
+                  {tool.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </main>
