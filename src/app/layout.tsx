@@ -14,7 +14,7 @@ export const metadata = {
   title: "Dinesh Vasireddy",
   description: "Dinesh Vasireddy Personal Portfolio",
   icons: {
-    icon: '/gradient.png', 
+    icon: '/gradient.png',
   },
 };
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth overflow-x-hidden">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=0.6"/>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6" />
       </head>
       <body
         className={`${montserrat.className} bg-gray-50 relative overflow-x-hidden`}

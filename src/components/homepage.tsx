@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import { favoriteMovies } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import _ from "lodash";
 
 import { Montserrat } from 'next/font/google';
 
@@ -148,7 +149,7 @@ const HomePage: React.FC = () => {
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-lg sm:text-xl font-medium text-gray-800">work</h2>
+            <h2 className="text-lg sm:text-xl font-medium text-gray-800">work & contracts</h2>
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               <motion.span
                 className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-300"
@@ -188,7 +189,7 @@ const HomePage: React.FC = () => {
                       </Link>
                       <h3 className="text-sm sm:text-base font-medium text-gray-800 truncate">{job.company}</h3>
                     </div>
-                    <span className="hidden sm:inline text-xs text-gray-500">{job.title}</span>
+                    <span className="text-xs text-gray-500">{job.title}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="text-xs text-gray-500">{job.date}</span>
@@ -225,7 +226,7 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">builds & contracts</h2>
+          <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">builds</h2>
           <div>
             {projectData.map((project, index) => (
               <Collapsible
@@ -253,7 +254,9 @@ const HomePage: React.FC = () => {
                       </Link>
                       <h3 className="text-sm sm:text-base font-medium text-gray-800">{project.name}</h3>
                     </div>
-                    <span className="hidden sm:inline text-xs text-gray-500">{project.tagline}</span>
+                    <span className="hidden sm:inline text-xs text-gray-500">
+                      {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)}
+                    </span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="text-xs text-gray-500">{project.date}</span>
@@ -270,7 +273,10 @@ const HomePage: React.FC = () => {
                         className="overflow-hidden"
                       >
                         <div className="pl-7 pr-3 py-3 text-gray-700">
-                          <p className="text-xs sm:text-sm mb-2">{project.description}</p>
+                          <p className="text-xs font-medium sm:text-sm mb-1 sm:hidden">
+                            {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)}
+                          </p>
+                          <p className="text-xs sm:text-sm">{project.description}</p>
                           <div className="flex flex-wrap gap-1 mt-3">
                             {project.tags.map((tag, tagIndex) => (
                               <CustomBadge key={tagIndex} className="text-xs">
