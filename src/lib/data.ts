@@ -198,6 +198,15 @@ type Project = {
 
 export const projectData: Project[] = [
   {
+    name: "SpiceX", 
+    tagline: "Explanation framework for LLMs centered around bias-probing",
+    description: "Co-developed SPICE-X, a framework that identifies and explains biases in large language models by combining global and contrastive explanation techniques. It analyzes how model outputs shift across demographic attributes, providing actionable insights for bias detection and mitigation in critical domains like healthcare and finance.",
+    href: "https://spicexbias.vercel.app/",
+    tags: ["Python", "OpenAI", "Next.js", "PyTorch"],
+    src: "/spicex.png",
+    date: "2024",
+  },
+  {
     name: "Lightspeed",
     tagline: "AI platform that helps political organizations create winning ads faster.",
     description:
