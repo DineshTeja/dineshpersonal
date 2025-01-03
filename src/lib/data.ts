@@ -59,6 +59,12 @@ export const educationData = [
 
 export const tinyTools = [
   {
+    name: "stack.wrld",
+    description: "a single tool to track all of your tech stacks with notion-like notetaking functionality.",
+    href: "https://github.com/DineshTeja/stackwrld",
+    demo: "https://stackwrld.vercel.app/",
+  },
+  {
     name: "subscriptions",
     description: "one page tool for tracking your subscriptions.",
     href: "https://github.com/DineshTeja/subscriptions",
