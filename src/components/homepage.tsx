@@ -307,7 +307,7 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-4 text-gray-800">tiny tools</h2>
+          <h2 className="text-lg sm:text-xl font-medium mb-4 text-gray-800">wrld.sh</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {tinyTools.map((tool, index) => (
               <div key={index} className="p-4 rounded-lg border border-dashed border-gray-300 hover:bg-gray-50 transition-colors duration-300">

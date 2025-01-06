@@ -62,25 +62,25 @@ export const tinyTools = [
     name: "stack.wrld",
     description: "a beautiful tool to track all of your tech stacks with notion-like notetaking functionality.",
     href: "https://github.com/DineshTeja/stackwrld",
-    demo: "https://stackwrld.vercel.app/",
+    demo: "https://stackwrld.com/",
   },
   {
-    name: "subscriptions",
+    name: "subs.wrld",
     description: "one page tool for tracking your subscriptions.",
     href: "https://github.com/DineshTeja/subscriptions",
-    demo: "https://subsva.vercel.app/",
+    demo: "https://subs.wrld.sh/",
   },
   {
-    name: "groq70",
+    name: "groq70.wrld",
     description: "simple personal chat interface, using llama 3.1 70b.",
     href: "https://github.com/DineshTeja/groqinterface",
-    demo: "https://groq70.vercel.app/",
+    demo: "https://groq70.wrld.sh/",
   },
   {
-    name: "varsa",
+    name: "varsa.wrld",
     description: "open-source multilingual LLM playground",
     href: "https://github.com/DineshTeja/varsa",
-    demo: "https://varsa.vercel.app/",
+    demo: "https://varsa.wrld.sh/",
   },
 ]
 
