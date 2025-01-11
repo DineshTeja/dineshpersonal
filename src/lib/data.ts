@@ -174,7 +174,7 @@ export const experiencesData = [
     icon: React.createElement(FaVoteYea),
     date: "2021-23",
     src: "/polydatasmaller_web.png",
-    href: "https://polydataelect.com/",
+    href: "https://polydataelect.vercel.app/",
     tags: ["React", "Python", "TensorFlow", "Supabase", "Google Cloud", "AWS", "D3.js"],
   },
   {
