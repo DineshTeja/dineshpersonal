@@ -2,27 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaGithubSquare } from "react-icons/fa";
-import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
-import { BsBoxArrowInUpRight, BsLinkedin } from "react-icons/bs";
-import { useState, useEffect } from "react";
-import { AcademicCapIcon } from '@heroicons/react/24/solid';
-import { FaYCombinator } from "react-icons/fa";
-import { CloudLightning } from "lucide-react";
+import { socialLinks } from "@/lib/data";
 import { ThemeToggle } from "@/components/theme-toggle";
-
-const badgeVariants = {
-  initial: { scale: 1 },
-  hover: { scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 10 } }
-};
-
-const socialLinks = [
-  { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
-  { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
-  { Icon: FaXTwitter, href: "https://twitter.com/dineshtva" },
-  { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
-];
 
 const iconVariants = {
   initial: { scale: 0, opacity: 0 },
@@ -43,26 +24,7 @@ import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
-export default function Header({ children }: { children: React.ReactNode }) {
-  const fullText = "building products that matter.";
-  const initialText = "";
-  const [text, setText] = useState(initialText);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setText((currentText) => {
-        if (currentText.length < fullText.length) {
-          return fullText.substring(0, currentText.length + 1);
-        } else {
-          clearInterval(interval);
-          return currentText;
-        }
-      });
-    }, 60);
-
-    return () => clearInterval(interval);
-  }, [fullText]);
-
+export default function BaseLayout({ children }: { children: React.ReactNode }) {    
   return (
     <div className={`flex flex-col min-h-screen bg-background ${montserrat.className}`}>
       <header className="fixed top-0 w-full bg-background/90 backdrop-blur-sm z-50 pt-8">

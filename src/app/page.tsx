@@ -3,16 +3,16 @@
 
 import "@magiclabs/ui/dist/cjs/index.css";
 import HomePage from "@/components/homepage";
-import Header from "@/components/header";
+import BaseLayout from "@/components/base-layout";
 
 export default function Home() {
   return (
     <>
-      <Header>
+      <BaseLayout>
         <main className="flex flex-col items-center bg-background px-4 sm:px-0 min-h-screen">
           <HomePage />
         </main>
-      </Header>
+      </BaseLayout>
     </>
   );
 }

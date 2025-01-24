@@ -6,6 +6,16 @@ import { useTheme } from "next-themes"
 
 export function ThemeToggle() {
     const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = React.useState(false)
+
+    // useEffect only runs on the client, so now we can safely show the UI
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null // or a placeholder that matches server-side dimensions
+    }
 
     return (
         <button

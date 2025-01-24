@@ -1,13 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { CloudLightning, FileText, Link2 } from "lucide-react";
+import React, { useState } from "react";
+import { FileText, Link2 } from "lucide-react";
 import { BsBoxArrowInUpRight, BsRocket, BsGithub } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
-import { AcademicCapIcon } from '@heroicons/react/24/solid';
-import { FaYCombinator } from "react-icons/fa6";
-import { projectData, experiencesData, educationData, tinyTools } from "@/lib/data";
+import { projectData, experiencesData, tinyTools } from "@/lib/data";
 import {
   Collapsible,
   CollapsibleContent,
@@ -18,8 +16,6 @@ import { favoriteMovies } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import _ from "lodash";
 
-import { Montserrat } from 'next/font/google';
-
 import {
   Tooltip,
   TooltipContent,
@@ -27,33 +23,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-const montserrat = Montserrat({ subsets: ['latin'] });
-
 const HomePage: React.FC = () => {
-  const fullText = "software engineer | building products that matter.";
-  const initialText = "software engineer";
-  const [text, setText] = useState(initialText);
-  const [openItems, setOpenItems] = useState<number[]>([]);
   const [openWorkItems, setOpenWorkItems] = useState<number[]>([]);
+  const [openProjectsItems, setOpenProjectsItems] = useState<number[]>([]);
   const [openEducationItems, setOpenEducationItems] = useState<number[]>([]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setText((currentText) => {
-        if (currentText.length < fullText.length) {
-          return fullText.substring(0, currentText.length + 1);
-        } else {
-          clearInterval(interval);
-          return currentText;
-        }
-      });
-    }, 60);
-
-    return () => clearInterval(interval);
-  }, [fullText]);
-
-  const toggleItem = (index: number) => {
-    setOpenItems(prev =>
+  const toggleProjectsItem = (index: number) => {
+    setOpenProjectsItems(prev =>
       prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
     );
   };
@@ -74,50 +50,6 @@ const HomePage: React.FC = () => {
     <>
       <main className="flex flex-col items-center bg-background z-10 mx-auto">
         <div className="mt-2 sm:mt-3 w-full max-w-3xl">
-          {/* <div className="mb-6">
-          <motion.div
-            className="text-base sm:text-base md:text-lg font-medium text-gray-600 text-left"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            {text}
-          </motion.div>
-          <div className="flex flex-wrap justify-start gap-2 text-xs sm:text-sm font-medium text-gray-600 mt-3">
-            <motion.span 
-              className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs"
-              variants={badgeVariants}
-              initial="initial"
-              whileHover="hover"
-            >
-              <AcademicCapIcon className="h-3 w-3 mr-1 text-red-800" />
-              CS @ Harvard
-            </motion.span>
-            <Link href="https://govdash.com/" target="_blank">
-              <motion.span 
-                className="flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs"
-                variants={badgeVariants}
-                initial="initial"
-                whileHover="hover"
-              >
-                <FaYCombinator className="h-3 w-3 mr-1 text-orange-500" />
-                Eng @ GovDash
-              </motion.span>
-            </Link>
-            <Link href="https://lightspeedads.netlify.app/" target="_blank">
-              <motion.span 
-                className="text-blue-500 flex items-center bg-gray-100 rounded-full px-2 py-1 transition-colors duration-300 hover:bg-gray-200 text-xs"
-                variants={badgeVariants}
-                initial="initial"
-                whileHover="hover"
-              >
-                <CloudLightning className="h-3 w-3 mr-1" />
-                Check out Lightspeed
-                <BsBoxArrowInUpRight className="h-3 w-3 ml-1" />
-              </motion.span>
-            </Link>
-          </div>
-        </div> */}
           <p className="text-sm sm:text-base text-foreground leading-relaxed">
             👋 I&apos;m Dinesh.
           </p>
@@ -236,8 +168,8 @@ const HomePage: React.FC = () => {
             {projectData.map((project, index) => (
               <Collapsible
                 key={index}
-                open={openItems.includes(index)}
-                onOpenChange={() => toggleItem(index)}
+                open={openProjectsItems.includes(index)}
+                onOpenChange={() => toggleProjectsItem(index)}
                 className={`border-b border-dashed border-border ${index === 0 ? 'border-t' : ''}`}
               >
                 <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-accent rounded-lg">
@@ -268,7 +200,7 @@ const HomePage: React.FC = () => {
                   </div>
                 </CollapsibleTrigger>
                 <AnimatePresence initial={false}>
-                  {openItems.includes(index) && (
+                  {openProjectsItems.includes(index) && (
                     <CollapsibleContent forceMount>
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}

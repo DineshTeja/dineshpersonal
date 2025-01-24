@@ -1,42 +1,24 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { AiOutlineDatabase, AiOutlineCloudSync } from "react-icons/ai";
-import { GiMagnifyingGlass, GiArtificialIntelligence } from "react-icons/gi";
-import { DiCode } from "react-icons/di";
-import { MdOutlineSmartToy } from "react-icons/md";
 import climateneutral from "/public/climateneutral.png";
 import anycheck from "/public/anychecklogo.png";
 import polydata from "/public/polydatasmaller_web.png";
 import commonwealth from "/public/commonwealthlogo.png";
-import {
-  FileTextIcon,
-  InputIcon,
-  GlobeIcon,
-  CalendarIcon,
-  BellIcon,
-} from "@radix-ui/react-icons";
-import { FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
-import Image from "next/image";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
+import { DiCode } from "react-icons/di";
+import { FaGithubSquare, FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
 import { SiCocacola, SiWalmart } from "react-icons/si";
+import { Education, Experience, Project, TinyTool, Movie } from "./types";
+import { BsLinkedin } from "react-icons/bs";
+import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
+import { FaXTwitter } from "react-icons/fa6";
 
-export const reftbl = [
-  { name: "Home", ref: "#home" },
-  { name: "About", ref: "#about" },
-  { name: "Skills", ref: "#skills" },
-  { name: "Projects", ref: "#projects" },
-  { name: "Experience", ref: "#experience" },
-  { name: "Contact", ref: "#contact" },
-] as const;
+export const socialLinks = [
+  { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
+  { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
+  { Icon: FaXTwitter, href: "https://twitter.com/dineshtva" },
+  { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
+];
 
-export const educationData = [
+export const educationData: Education[] = [
   {
     company: "Harvard",
     location: "Cambridge, MA",
@@ -47,7 +29,7 @@ export const educationData = [
     href: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
   {
-    company: "Z Fellows",
+    company: "Z Fel lows",
     location: "San Francisco, CA",
     description: "https://www.zfellows.com/",
     icon: React.createElement(FaYCombinator),
@@ -57,7 +39,7 @@ export const educationData = [
   },
 ]
 
-export const tinyTools = [
+export const tinyTools: TinyTool[] = [
   {
     name: "stack.wrld",
     description: "a beautiful tool to track all of your tech stacks with notion-like notetaking functionality.",
@@ -84,7 +66,7 @@ export const tinyTools = [
   },
 ]
 
-export const experiencesData = [
+export const experiencesData: Experience[] = [
   {
     title: "Engineering, AI",
     company: "Cartesia",
@@ -94,7 +76,6 @@ export const experiencesData = [
     date: "2025",
     src: "/cartesia.png",
     href: "https://www.cartesia.ai/",
-    // tags: ["Next.js", "Python", "OpenAI", "Anthropic"],
     tags: [],
   },
   {
@@ -106,7 +87,6 @@ export const experiencesData = [
     date: "2025",
     src: "/coframe.png",
     href: "https://www.coframe.com/",
-    // tags: ["Next.js", "Python", "OpenAI", "Anthropic"],
     tags: [],
   },
   {
@@ -153,18 +133,6 @@ export const experiencesData = [
     href: "/",
     tags: ["Python", "Flask", "LangChain/LangGraph", "Fast.ai", "OpenAI"],
   },
-  // {
-  //   title: "Head of Engineering",
-  //   company: "Arkansas United",
-  //   location: "Fayetteville, AR",
-  //   description:
-  //     "Developed and launched an online automated resources portal AUNow (2K+ National Users, 10+ Partners, 50K Visits, Largest in Arkansas). Created machine learning models for electoral analysis and social media listening to develop optimized technology-related policy proposals.",
-  //   icon: React.createElement(DiCode),
-  //   date: "2022 - 2023",
-  //   src: "/arkansasunited.png",
-  //   href: "https://www.arkansasunited.org/",
-  //   tags: ["Next.js", "Python", "Firebase", "Render"],
-  // },
   {
     title: "Founder & CEO",
     company: "PolyData",
@@ -190,17 +158,6 @@ export const experiencesData = [
     tags: ["Python", "PyTorch", "Keras", "AWS", "Element"],
   },
 ] as const;
-
-type Project = {
-  name: string;
-  tagline: string;
-  description: string;
-  href: string;
-  tags: string[];
-  src: string;
-  date: string;
-  links?: { name: string; href: string }[];
-}
 
 export const projectData: Project[] = [
   {
@@ -358,33 +315,6 @@ export const projectsData = [
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
 ] as const;
-
-export const skillsData = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "AWS",
-  "Python",
-  "TensorFlow",
-  "PyTorch",
-  "NLP",
-  "BERT",
-  "Transformers",
-  "Hugging Face",
-  "Knowledge Graphs",
-  "Prompt Engineering",
-  "Docker",
-] as const;
-
-interface Movie {
-  title: string;
-  year: number;
-  director: string;
-  genre: string;
-  rating: number;
-  posterUrl: string;
-}
 
 export const favoriteMovies: Movie[] = [
   {
