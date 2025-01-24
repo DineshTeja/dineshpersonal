@@ -24,7 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth overflow-x-hidden" suppressHydrationWarning>
+    <html style={{
+      transform: 'scale(0.8)',
+      transformOrigin: 'top left',
+      width: '125%',
+      height: '125%'
+    }} lang="en" className="!scroll-smooth overflow-x-hidden" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=0.6" />
       </head>
