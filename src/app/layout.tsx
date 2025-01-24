@@ -19,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html style={{
-      transform: 'scale(0.8)',
+      transform: 'scale(0.9)',
       transformOrigin: 'top left',
-      width: '125%',
-      height: '125%'
+      width: '111.11%',  
+      height: '111.11%'
     }} lang="en" className="!scroll-smooth overflow-x-hidden" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=0.6" />
