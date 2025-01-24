@@ -72,7 +72,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <main className={`flex flex-col items-center bg-gray-50 z-10 mx-auto`}>
+      <main className="flex flex-col items-center bg-background z-10 mx-auto">
         <div className="mt-2 sm:mt-3 w-full max-w-3xl">
           {/* <div className="mb-6">
           <motion.div
@@ -118,46 +118,46 @@ const HomePage: React.FC = () => {
             </Link>
           </div>
         </div> */}
-          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+          <p className="text-sm sm:text-base text-foreground leading-relaxed">
             👋 I&apos;m Dinesh.
           </p>
-          <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
             I&apos;ve built a $70K ARR company in{' '}
-            <span className="border-b border-dashed border-gray-400">political tech</span>,
+            <span className="border-b border-dashed border-border">political tech</span>,
             created Arkansas&apos; largest{' '}
-            <span className="border-b border-dashed border-gray-400">immigrant resources portal</span>,
+            <span className="border-b border-dashed border-border">immigrant resources portal</span>,
             deployed an e-comm demand forecasting system with millions of users at{' '}
-            <span className="border-b border-dashed border-gray-400">Walmart</span>,
+            <span className="border-b border-dashed border-border">Walmart</span>,
             and spent the past few months helping build the best AI{' '}
-            <span className="border-b border-dashed border-gray-400">government contracting</span>{' '}
+            <span className="border-b border-dashed border-border">government contracting</span>{' '}
             tool.
           </p>
-          <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
             I study computer science at{' '}
-            <span className="border-b border-dashed border-gray-400">Harvard</span>.{' '} I&apos;m also a{' '}
-            <span className="border-b border-dashed border-gray-400">Z Fellow</span>.
+            <span className="border-b border-dashed border-border">Harvard</span>.{' '} I&apos;m also a{' '}
+            <span className="border-b border-dashed border-border">Z Fellow</span>.
           </p>
-          <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
             I&apos;m always building products around {' '}
-            <span className="border-b border-dashed border-gray-400">agentic and multimodal intelligence</span>. Now, I&apos;m bootstrapping and building{' '}
-            <span className="border-b border-dashed border-gray-400">something new</span>.
+            <span className="border-b border-dashed border-border">agentic and multimodal intelligence</span>. Now, I&apos;m bootstrapping and building{' '}
+            <span className="border-b border-dashed border-border">something new</span>.
           </p>
-          <p className="text-sm sm:text-base text-gray-700 mt-2 leading-relaxed">
+          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
             I usually float between{' '}
-            <span className="border-b border-dashed border-gray-400">Boston/NYC/SF</span>.
+            <span className="border-b border-dashed border-border">Boston/NYC/SF</span>.
             I also love{' '}
-            <span className="border-b border-dashed border-gray-400">movies</span>{' '}
+            <span className="border-b border-dashed border-border">movies</span>{' '}
             and finding{' '}
-            <span className="border-b border-dashed border-gray-400">great food</span>.
+            <span className="border-b border-dashed border-border">great food</span>.
           </p>
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-lg sm:text-xl font-medium text-gray-800">work & contracts</h2>
+            <h2 className="text-lg sm:text-xl font-medium text-foreground">work & contracts</h2>
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               <motion.span
-                className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors duration-300"
+                className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-medium bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -173,9 +173,9 @@ const HomePage: React.FC = () => {
                 key={index}
                 open={openWorkItems.includes(index)}
                 onOpenChange={() => toggleWorkItem(index)}
-                className={`border-b border-dashed border-gray-300 ${index === 0 ? 'border-t' : ''}`}
+                className={`border-b border-dashed border-border ${index === 0 ? 'border-t' : ''}`}
               >
-                <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
+                <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-accent rounded-lg">
                   <div className="flex items-center space-x-2">
                     <div className="flex items-center space-x-1">
                       <Link href={job.href} target="_blank" rel="noopener noreferrer">
@@ -192,12 +192,12 @@ const HomePage: React.FC = () => {
                           />
                         </motion.div>
                       </Link>
-                      <h3 className="text-sm sm:text-base font-medium text-gray-800 truncate">{job.company}</h3>
+                      <h3 className="text-sm sm:text-base font-medium text-foreground truncate">{job.company}</h3>
                     </div>
-                    <span className="text-xs text-gray-500">{job.title}</span>
+                    <span className="text-xs text-muted-foreground">{job.title}</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs text-gray-500">{job.date}</span>
+                    <span className="text-xs text-muted-foreground">{job.date}</span>
                   </div>
                 </CollapsibleTrigger>
                 <AnimatePresence initial={false}>
@@ -210,7 +210,7 @@ const HomePage: React.FC = () => {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-7 pr-3 py-3 text-gray-700">
+                        <div className="pl-7 pr-3 py-3 text-foreground">
                           <p className="text-xs sm:text-sm mb-1 font-medium">{job.location}</p>
                           <p className="text-xs sm:text-sm">{job.description}</p>
                           <div className="flex flex-wrap gap-1 mt-3">
@@ -231,16 +231,16 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-2 text-gray-800">builds</h2>
+          <h2 className="text-lg sm:text-xl font-medium mb-2 text-foreground">builds</h2>
           <div>
             {projectData.map((project, index) => (
               <Collapsible
                 key={index}
                 open={openItems.includes(index)}
                 onOpenChange={() => toggleItem(index)}
-                className={`border-b border-dashed border-gray-300 ${index === 0 ? 'border-t' : ''}`}
+                className={`border-b border-dashed border-border ${index === 0 ? 'border-t' : ''}`}
               >
-                <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-gray-100 rounded-lg">
+                <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-accent rounded-lg">
                   <div className="flex items-center space-x-2">
                     <div className="flex items-center space-x-1">
                       <Link href={project.href} target="_blank" rel="noopener noreferrer">
@@ -257,14 +257,14 @@ const HomePage: React.FC = () => {
                           />
                         </motion.div>
                       </Link>
-                      <h3 className="text-sm sm:text-base font-medium text-gray-800">{project.name}</h3>
+                      <h3 className="text-sm sm:text-base font-medium text-foreground">{project.name}</h3>
                     </div>
-                    <span className="hidden sm:inline text-xs text-gray-500">
+                    <span className="hidden sm:inline text-xs text-muted-foreground">
                       {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs text-gray-500">{project.date}</span>
+                    <span className="text-xs text-muted-foreground">{project.date}</span>
                   </div>
                 </CollapsibleTrigger>
                 <AnimatePresence initial={false}>
@@ -277,7 +277,7 @@ const HomePage: React.FC = () => {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-7 pr-3 py-3 text-gray-700">
+                        <div className="pl-7 pr-3 py-3 text-foreground">
                           <p className="text-xs font-medium sm:text-sm mb-1 sm:hidden">
                             {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)}
                           </p>
@@ -290,7 +290,7 @@ const HomePage: React.FC = () => {
                             ))}
                             {project.links && project.links.map((link, linkIndex) => (
                               <Link key={linkIndex} href={link.href} target="_blank" rel="noopener noreferrer">
-                                <CustomBadge className="text-xs bg-blue-100 hover:bg-blue-200 text-blue-800 flex items-center">
+                                <CustomBadge className="text-xs bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-100 flex items-center">
                                   {link.name} <BsBoxArrowInUpRight className="h-3 w-3 ml-1" />
                                 </CustomBadge>
                               </Link>
@@ -307,12 +307,12 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-4 text-gray-800">wrld.sh</h2>
+          <h2 className="text-lg sm:text-xl font-medium mb-4 text-foreground">wrld.sh</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {tinyTools.map((tool, index) => (
-              <div key={index} className="p-4 rounded-lg border border-dashed border-gray-300 hover:bg-gray-50 transition-colors duration-300">
+              <div key={index} className="p-4 rounded-lg border border-dashed border-border hover:bg-accent transition-colors duration-300">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-sm font-medium text-gray-800">
+                  <h3 className="text-sm font-medium text-foreground">
                     {tool.name}
                   </h3>
                   <div className="flex items-center gap-2">
@@ -323,7 +323,7 @@ const HomePage: React.FC = () => {
                             href={tool.demo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
                           >
                             <Link2 className="h-3 w-3" />
                           </Link>
@@ -341,7 +341,7 @@ const HomePage: React.FC = () => {
                             href={tool.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-gray-700 transition-colors"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
                           >
                             <BsGithub className="h-3 w-3" />
                           </Link>
@@ -353,7 +353,7 @@ const HomePage: React.FC = () => {
                     </TooltipProvider>
                   </div>
                 </div>
-                <p className="text-xs text-gray-600">
+                <p className="text-xs text-muted-foreground">
                   {tool.description}
                 </p>
               </div>
@@ -362,7 +362,7 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-4 text-gray-800">favorite films</h2>
+          <h2 className="text-lg sm:text-xl font-medium mb-4 text-foreground">favorite films</h2>
           <div className="w-full">
             <div className="grid grid-cols-8 gap-2 sm:gap-3">
               {favoriteMovies.map((movie, index) => (
@@ -408,9 +408,9 @@ const HomePage: React.FC = () => {
 
 const CustomBadge: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
   <span className={cn(
-    "inline-block bg-gray-100 rounded px-2 py-1 text-xs font-medium text-gray-800",
+    "inline-flex items-center bg-secondary rounded px-2 py-1 text-xs font-medium text-foreground",
     "transition-colors duration-200 ease-in-out",
-    "hover:bg-gray-200",
+    "hover:bg-accent",
     className
   )}>
     {children}

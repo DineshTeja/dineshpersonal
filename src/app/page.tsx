@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Header>
-        <main className="flex flex-col items-center px-4 sm:px-0 min-h-screen">
+        <main className="flex flex-col items-center bg-background px-4 sm:px-0 min-h-screen">
           <HomePage />
         </main>
       </Header>

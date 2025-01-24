@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { AcademicCapIcon } from '@heroicons/react/24/solid';
 import { FaYCombinator } from "react-icons/fa";
 import { CloudLightning } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const badgeVariants = {
   initial: { scale: 1 },
@@ -63,14 +64,15 @@ export default function Header({ children }: { children: React.ReactNode }) {
   }, [fullText]);
 
   return (
-    <div className={`flex flex-col min-h-screen ${montserrat.className}`}>
-      <header className="fixed top-0 w-full bg-gray-50/90 backdrop-blur-sm z-50 pt-8">
+    <div className={`flex flex-col min-h-screen bg-background ${montserrat.className}`}>
+      <header className="fixed top-0 w-full bg-background/90 backdrop-blur-sm z-50 pt-8">
         <div className="max-w-3xl mx-auto px-4 sm:px-0 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
               Dinesh Vasireddy
             </h1>
-            <div className="flex space-x-2 sm:space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <ThemeToggle />
               {socialLinks.map(({ Icon, href }, index) => (
                 <motion.div
                   key={index}
@@ -97,7 +99,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
       <footer className="mt-[50px]">
         <div className="max-w-3xl mx-auto px-4 sm:px-0 py-4">
           <div className="flex justify-center items-center">
-            <p className="text-sm text-gray-600 text-center">© 2024 Dinesh Vasireddy</p>
+            <p className="text-sm text-muted-foreground text-center">© 2024 Dinesh Vasireddy</p>
           </div>
         </div>
       </footer>
