@@ -86,7 +86,7 @@ const HomePage: React.FC = () => {
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-lg sm:text-xl font-medium text-foreground">work & contracts</h2>
+            <h2 className="text-md sm:text-lg font-light text-foreground">Work</h2>
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               <motion.span
                 className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-medium bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
@@ -124,12 +124,12 @@ const HomePage: React.FC = () => {
                           />
                         </motion.div>
                       </Link>
-                      <h3 className="text-sm sm:text-base font-medium text-foreground truncate">{job.company}</h3>
+                      <h3 className="text-md sm:text-base font-normal text-foreground truncate">{job.company}</h3>
                     </div>
-                    <span className="text-xs text-muted-foreground">{job.title}</span>
+                    <span className="text-sm text-muted-foreground">{job.title}</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs text-muted-foreground">{job.date}</span>
+                    <span className="text-sm text-muted-foreground">{job.date}</span>
                   </div>
                 </CollapsibleTrigger>
                 <AnimatePresence initial={false}>
@@ -163,7 +163,7 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-2 text-foreground">builds</h2>
+          <h2 className="text-md sm:text-lg font-light mb-2 text-foreground">Builds</h2>
           <div>
             {projectData.map((project, index) => (
               <Collapsible
@@ -189,14 +189,14 @@ const HomePage: React.FC = () => {
                           />
                         </motion.div>
                       </Link>
-                      <h3 className="text-sm sm:text-base font-medium text-foreground">{project.name}</h3>
+                      <h3 className="text-md sm:text-base font-normal text-foreground">{project.name}</h3>
                     </div>
-                    <span className="hidden sm:inline text-xs text-muted-foreground">
+                    <span className="hidden sm:inline text-sm text-muted-foreground">
                       {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs text-muted-foreground">{project.date}</span>
+                    <span className="text-sm text-muted-foreground">{project.date}</span>
                   </div>
                 </CollapsibleTrigger>
                 <AnimatePresence initial={false}>
@@ -239,12 +239,12 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-4 text-foreground">wrld.sh</h2>
+          <h2 className="text-md sm:text-lg font-light mb-4 text-foreground">Wrld.sh</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {tinyTools.map((tool, index) => (
               <div key={index} className="p-4 rounded-lg border border-dashed border-border hover:bg-accent transition-colors duration-300">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-sm font-medium text-foreground">
+                  <h3 className="text-md font-normal text-foreground">
                     {tool.name}
                   </h3>
                   <div className="flex items-center gap-2">
@@ -294,7 +294,7 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-lg sm:text-xl font-medium mb-4 text-foreground">favorite films</h2>
+          <h2 className="text-md sm:text-lg font-light mb-4 text-foreground">Favorite Films</h2>
           <div className="w-full">
             <div className="grid grid-cols-8 gap-2 sm:gap-3">
               {favoriteMovies.map((movie, index) => (
