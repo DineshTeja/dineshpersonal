@@ -49,12 +49,15 @@ const HomePage: React.FC = () => {
   return (
     <>
       <main className="flex flex-col items-center bg-background z-10 mx-auto">
-        <div className="mt-2 sm:mt-3 w-full max-w-3xl">
-          <p className="text-sm sm:text-base text-foreground leading-relaxed">
-            👋 I&apos;m Dinesh.
+        <div className="font-light mt-2 sm:mt-3 w-full max-w-3xl">
+          <p className="text-md sm:text-lg text-foreground leading-relaxed">
+            👋 I&apos;m Dinesh. I&apos;m currently a{' '}
+            <span className="border-b border-dashed border-border">student</span>{' '}
+            at{' '}
+            <span className="border-b border-dashed border-border">Harvard</span>.
           </p>
-          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
-            I&apos;ve built a $70K ARR company in{' '}
+          <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
+            I previously built a company in{' '}
             <span className="border-b border-dashed border-border">political tech</span>,
             created Arkansas&apos; largest{' '}
             <span className="border-b border-dashed border-border">immigrant resources portal</span>,
@@ -64,18 +67,13 @@ const HomePage: React.FC = () => {
             <span className="border-b border-dashed border-border">government contracting</span>{' '}
             tool.
           </p>
-          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
-            I study computer science at{' '}
-            <span className="border-b border-dashed border-border">Harvard</span>.{' '} I&apos;m also a{' '}
-            <span className="border-b border-dashed border-border">Z Fellow</span>.
-          </p>
-          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
-            I&apos;m always building products around {' '}
+          <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
+            I&apos;m always building products around{' '}
             <span className="border-b border-dashed border-border">agentic and multimodal intelligence</span>. Now, I&apos;m bootstrapping and building{' '}
             <span className="border-b border-dashed border-border">something new</span>.
           </p>
-          <p className="text-sm sm:text-base text-foreground mt-2 leading-relaxed">
-            I usually float between{' '}
+          <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
+            I usually float between {' '}
             <span className="border-b border-dashed border-border">Boston/NYC/SF</span>.
             I also love{' '}
             <span className="border-b border-dashed border-border">movies</span>{' '}
@@ -89,7 +87,7 @@ const HomePage: React.FC = () => {
             <h2 className="text-md sm:text-lg font-light text-foreground">Work</h2>
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               <motion.span
-                className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-medium bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
+                className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
