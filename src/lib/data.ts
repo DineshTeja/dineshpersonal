@@ -4,7 +4,7 @@ import anycheck from "/public/anychecklogo.png";
 import polydata from "/public/polydatasmaller_web.png";
 import commonwealth from "/public/commonwealthlogo.png";
 import { DiCode } from "react-icons/di";
-import { FaGithubSquare, FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
+import { FaGithub, FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
 import { SiCocacola, SiWalmart } from "react-icons/si";
 import { Education, Experience, Project, TinyTool, Movie } from "./types";
 import { BsLinkedin } from "react-icons/bs";
@@ -12,7 +12,7 @@ import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const socialLinks = [
-  { Icon: FaGithubSquare, href: "https://github.com/DineshTeja" },
+  { Icon: FaGithub, href: "https://github.com/DineshTeja" },
   { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
   { Icon: FaXTwitter, href: "https://twitter.com/dineshtva" },
   { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },

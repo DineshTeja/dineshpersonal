@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { socialLinks } from "@/lib/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Instrument_Serif } from 'next/font/google';
+import { Button } from "@/components/ui/button";
 
 const iconVariants = {
   initial: { scale: 0, opacity: 0 },
@@ -32,7 +33,7 @@ export default function BaseLayout({ children }: { children: React.ReactNode }) 
             <h1 className={`text-3xl sm:text-4xl font-bold text-foreground ${instrumentSerif.className}`}>
               Dinesh Vasireddy
             </h1>
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="flex items-center space-x-0.5 sm:space-x-0.5">
               <ThemeToggle />
               {socialLinks.map(({ Icon, href }, index) => (
                 <motion.div
@@ -43,9 +44,16 @@ export default function BaseLayout({ children }: { children: React.ReactNode }) 
                   whileHover="hover"
                   custom={index}
                 >
-                  <Link href={href} target="_blank" rel="noopener noreferrer">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
-                  </Link>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    asChild
+                    className="h-8 w-8"
+                  >
+                    <Link href={href} target="_blank" rel="noopener noreferrer">
+                      <Icon className="h-4 w-4" />
+                    </Link>
+                  </Button>
                 </motion.div>
               ))}
             </div>
