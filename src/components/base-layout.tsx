@@ -48,7 +48,7 @@ export default function BaseLayout({ children }: { children: React.ReactNode }) 
                     variant="ghost"
                     size="icon"
                     asChild
-                    className="h-8 w-8"
+                    className="h-8 w-8 hover:bg-accent hover:text-accent-foreground text-foreground"
                   >
                     <Link href={href} target="_blank" rel="noopener noreferrer">
                       <Icon className="h-4 w-4" />
