@@ -71,7 +71,7 @@ export const experiencesData: Experience[] = [
     title: "Engineering, AI",
     company: "Cartesia",
     location: "San Francisco, CA",
-    description: "Productizing real-time multimodal intelligence.",
+    description: "Productizing real-time multimodal intelligence. Incoming Summer 2025.",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/cartesia.png",
