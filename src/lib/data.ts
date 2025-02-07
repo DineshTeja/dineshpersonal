@@ -87,7 +87,7 @@ export const experiencesData: Experience[] = [
     date: "2025",
     src: "/coframe.png",
     href: "https://www.coframe.com/",
-    tags: [],
+    tags: ["Next.js", "Python","LangGraph", "MongoDB", "LLMs"],
   },
   {
     title: "Software Engineer",
@@ -98,7 +98,7 @@ export const experiencesData: Experience[] = [
     date: "2024",
     src: "/govdash.png",
     href: "https://govdash.com/",
-    tags: ["Next.js", "Python", "OpenAI", "Anthropic", "Prisma", "Redis", "AWS", "PostgreSQL", "TRPC"],
+    tags: ["Next.js", "Python", "LLMs", "Prisma", "Redis", "AWS", "PostgreSQL", "TRPC"],
   },
   {
     title: "Engineering",
@@ -131,7 +131,7 @@ export const experiencesData: Experience[] = [
     date: "2023",
     src: "/climateneutral.png",
     href: "/",
-    tags: ["Python", "Flask", "LangChain/LangGraph", "Fast.ai", "OpenAI"],
+    tags: ["Python", "Flask", "LangChain & LangGraph", "Fast.ai", "OpenAI"],
   },
   {
     title: "Founder & CEO",
