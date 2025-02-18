@@ -161,6 +161,22 @@ export const experiencesData: Experience[] = [
 
 export const projectData: Project[] = [
   {
+    name: "Supernova", 
+    tagline: "AI Influencer Ad-maker for Tiktok",
+    description: "Co-developed Supernova, an AI-powered platform that creates TikTok-style ads from just a product link, winning 2nd Place at Stanford Tree Hacks. The system generates realistic short-form content for major brands in under 3 minutes by combining HeyGen and SyncLabs for video generation, Runway for B-roll, Cartesia for voiceovers, and custom market research pipelines powered by Perplexity, Groq, and Deepseek.",
+    href: "https://supernova0.vercel.app/",
+    tags: ["OpenAI", "Next.js", "HeyGen", "SyncLabs", "Runway", "Cartesia", "Perplexity", "Groq"],
+    src: "/supernova.png",
+    date: "2024",
+    links: [
+      {
+        name: "Try it out!",
+        href: "https://supernova0.vercel.app/",
+      },
+      
+    ]
+  },
+  {
     name: "SpiceX", 
     tagline: "Explanation framework for LLMs centered around bias-probing",
     description: "Co-developed SPICE-X, a framework that identifies and explains biases in large language models by combining global and contrastive explanation techniques. It analyzes how model outputs shift across demographic attributes, providing actionable insights for bias detection and mitigation in critical domains like healthcare and finance.",
