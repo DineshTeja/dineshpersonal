@@ -52,7 +52,8 @@ const HomePage: React.FC = () => {
         <div className="font-light mt-2 sm:mt-3 w-full max-w-3xl">
           <p className="text-md sm:text-lg text-foreground leading-relaxed">
             👋 I&apos;m Dinesh. I&apos;m currently a{' '}
-            <span className="border-b border-dashed border-border">student</span>{' '}
+            <span className="border-b border-dashed border-border">student</span>{' '}and{' '}
+            <span className="border-b border-dashed border-border">engineer</span>{' '}
             at{' '}
             <span className="border-b border-dashed border-border">Harvard</span>.
           </p>
@@ -68,8 +69,9 @@ const HomePage: React.FC = () => {
             tool.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            I&apos;m always building products around{' '}
-            <span className="border-b border-dashed border-border">agentic and multimodal intelligence</span>. Now, I&apos;m bootstrapping and building{' '}
+            I&apos;m always researching and building with{' '}
+            <span className="border-b border-dashed border-border">agentic reasoning</span> and{' '}
+            <span className="border-b border-dashed border-border">language models</span>. Now, I&apos;m bootstrapping and building{' '}
             <span className="border-b border-dashed border-border">something new</span>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">

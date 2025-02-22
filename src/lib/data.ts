@@ -82,7 +82,7 @@ export const experiencesData: Experience[] = [
     title: "Engineering",
     company: "CoFrame",
     location: "San Francisco, CA",
-    description: "Building living interfaces for the web.",
+    description: "Building living interfaces for the web. Automating performance marketing for enterprise (JPM, CapitalOne, NerdWallet).",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/coframe.png",
@@ -95,7 +95,7 @@ export const experiencesData: Experience[] = [
     location: "New York, NY",
     description: "AI for GovCon.",
     icon: React.createElement(FaYCombinator),
-    date: "2024",
+    date: "2024-25",
     src: "/govdash.png",
     href: "https://govdash.com/",
     tags: ["Next.js", "Python", "LLMs", "Prisma", "Redis", "AWS", "PostgreSQL", "TRPC"],
@@ -167,7 +167,7 @@ export const projectData: Project[] = [
     href: "https://supernova0.vercel.app/",
     tags: ["OpenAI", "Next.js", "HeyGen", "SyncLabs", "Runway", "Cartesia", "Perplexity", "Groq"],
     src: "/supernova.png",
-    date: "2024",
+    date: "2025",
     links: [
       {
         name: "Try it out!",
