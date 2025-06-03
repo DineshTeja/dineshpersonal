@@ -15,6 +15,7 @@ import Link from "next/link";
 import { favoriteMovies } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import _ from "lodash";
+import { Circle } from "lucide-react";
 
 import {
   Tooltip,
@@ -27,6 +28,8 @@ const HomePage: React.FC = () => {
   const [openWorkItems, setOpenWorkItems] = useState<number[]>([]);
   const [openProjectsItems, setOpenProjectsItems] = useState<number[]>([]);
   const [openEducationItems, setOpenEducationItems] = useState<number[]>([]);
+  const [showAllWork, setShowAllWork] = useState(false);
+  const [showAllBuilds, setShowAllBuilds] = useState(false);
 
   const toggleProjectsItem = (index: number) => {
     setOpenProjectsItems(prev =>
@@ -64,19 +67,21 @@ const HomePage: React.FC = () => {
             <span className="border-b border-dashed border-border">immigrant resources portal</span>,
             deployed an e-comm demand forecasting system with millions of users at{' '}
             <span className="border-b border-dashed border-border">Walmart</span>,
-            and spent the past few months helping build the best AI{' '}
+            and helped build the best AI{' '}
             <span className="border-b border-dashed border-border">government contracting</span>{' '}
-            tool.
+            tool. I&apos;m also a <span className="border-b border-dashed border-border">Z-Fellow</span> and <span className="border-b border-dashed border-border">Soma Scholar</span>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            I&apos;m always researching and building with{' '}
-            <span className="border-b border-dashed border-border">agentic reasoning</span> and{' '}
-            <span className="border-b border-dashed border-border">language models</span>. Now, I&apos;m bootstrapping and building{' '}
+            Lately, I&apos;ve mostly been working on{' '}
+            <span className="border-b border-dashed border-border">agentic software</span> across domains like{' '}
+            <span className="border-b border-dashed border-border">video</span>,{' '}
+            <span className="border-b border-dashed border-border">marketing</span>,{' '}
+            <span className="border-b border-dashed border-border">engineering</span>, and more. Now, I&apos;m bootstrapping and building{' '}
             <span className="border-b border-dashed border-border">something new</span>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I usually float between {' '}
-            <span className="border-b border-dashed border-border">Boston/NYC/SF</span>.
+            <span className="border-b border-dashed border-border">Boston and SF</span>.
             I also love{' '}
             <span className="border-b border-dashed border-border">movies</span>{' '}
             and finding{' '}
@@ -87,20 +92,32 @@ const HomePage: React.FC = () => {
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-md sm:text-lg font-light text-foreground">Work</h2>
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <motion.span
+
+            <div className="flex items-center gap-2">
+              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <motion.span
+                  className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <FileText className="w-3 h-3 mr-1" />
+                  Resume
+                </motion.span>
+              </Link>
+              <motion.button
+                onClick={() => setShowAllWork(!showAllWork)}
                 className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <FileText className="w-3 h-3 mr-1" />
-                Resume
-              </motion.span>
-            </Link>
+                {showAllWork ? 'See less' : 'See more'}
+              </motion.button>
+            </div>
           </div>
           <div>
-            {experiencesData.map((job, index) => (
+            {experiencesData.slice(0, showAllWork ? experiencesData.length : 5).map((job, index) => (
               <Collapsible
                 key={index}
                 open={openWorkItems.includes(index)}
@@ -163,9 +180,20 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-md sm:text-lg font-light mb-2 text-foreground">Builds</h2>
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="text-md sm:text-lg font-light text-foreground">Builds</h2>
+            <motion.button
+              onClick={() => setShowAllBuilds(!showAllBuilds)}
+              className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              {showAllBuilds ? 'See less' : 'See more'}
+            </motion.button>
+          </div>
           <div>
-            {projectData.map((project, index) => (
+            {projectData.slice(0, showAllBuilds ? projectData.length : 5).map((project, index) => (
               <Collapsible
                 key={index}
                 open={openProjectsItems.includes(index)}

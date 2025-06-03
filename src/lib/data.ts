@@ -68,10 +68,10 @@ export const tinyTools: TinyTool[] = [
 
 export const experiencesData: Experience[] = [
   {
-    title: "Engineering, AI",
+    title: "Engineering, API & Agents",
     company: "Cartesia",
     location: "San Francisco, CA",
-    description: "Productizing real-time multimodal intelligence. Incoming Summer 2025.",
+    description: "Productizing real-time multimodal intelligence.",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/cartesia.png",
@@ -79,7 +79,7 @@ export const experiencesData: Experience[] = [
     tags: [],
   },
   {
-    title: "Engineering",
+    title: "Engineering, AI",
     company: "CoFrame",
     location: "San Francisco, CA",
     description: "Building living interfaces for the web. Automating performance marketing for enterprise (JPM, CapitalOne, NerdWallet).",
@@ -90,7 +90,7 @@ export const experiencesData: Experience[] = [
     tags: ["Next.js", "Python","LangGraph", "MongoDB", "LLMs"],
   },
   {
-    title: "Software Engineer",
+    title: "Engineering",
     company: "GovDash (YC W22)",
     location: "New York, NY",
     description: "AI for GovCon.",
@@ -112,7 +112,7 @@ export const experiencesData: Experience[] = [
     tags: ["Python", "PyTorch", "Keras", "Google Cloud", "Streamlit"],
   },
   {
-    title: "Data Scientist",
+    title: "Data Science",
     company: "SkyGrid",
     location: "Cambridge, MA",
     description: "Confidential.",
@@ -123,7 +123,7 @@ export const experiencesData: Experience[] = [
     tags: ["Python", "R", "Statistics"],
   },
   {
-    title: "Software Engineer",
+    title: "Engineering",
     company: "ClimateNeutral",
     location: "Cambridge, MA",
     description: "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
@@ -146,7 +146,7 @@ export const experiencesData: Experience[] = [
     tags: ["React", "Python", "TensorFlow", "Supabase", "Google Cloud", "AWS", "D3.js"],
   },
   {
-    title: "ML Engineer",
+    title: "Engineering, AI",
     company: "Walmart Global Tech",
     location: "Bentonville, AR",
     description:
@@ -161,8 +161,18 @@ export const experiencesData: Experience[] = [
 
 export const projectData: Project[] = [
   {
+    name: "Bulletproof", 
+    tagline: "LLM reasoning enhancement via RL and token simulation",
+    description: "Developed Bulletproof, a lightweight reinforcement learning (RL) framework that enhances the reasoning abilities of open-source LLMs by simulating structured reasoning tokens—such as <think>, <verify>, and <conclude>—using Proximal Policy Optimization (PPO). Our approach rewards models for logical consistency, stepwise correctness, and factual accuracy, while penalizing hallucinations and unsupported claims, among other factors, all without requiring large-scale human-annotated datasets.",
+    href: "https://github.com/DineshTeja/bulletproof",
+    tags: ["HuggingFace", "Llama", "Transformers", "PPO"],
+    src: "/bulletproof.png",
+    date: "2025",
+    links: []
+  },
+  {
     name: "Supernova", 
-    tagline: "AI Influencer Ad-maker for Tiktok",
+    tagline: "AI influencer ad-maker for TikTok",
     description: "Co-developed Supernova, an AI-powered platform that creates TikTok-style ads from just a product link, winning 2nd Place at Stanford Tree Hacks. The system generates realistic short-form content for major brands in under 3 minutes by combining HeyGen and SyncLabs for video generation, Runway for B-roll, Cartesia for voiceovers, and custom market research pipelines powered by Perplexity, Groq, and Deepseek.",
     href: "https://supernova0.vercel.app/",
     tags: ["OpenAI", "Next.js", "HeyGen", "SyncLabs", "Runway", "Cartesia", "Perplexity", "Groq"],
@@ -187,7 +197,7 @@ export const projectData: Project[] = [
   },
   {
     name: "Lightspeed",
-    tagline: "AI platform that helps political organizations create winning ads faster.",
+    tagline: "AI platform that helps political organizations create winning ads faster",
     description:
     "I'm currently bootstrapping and building Lightspeed, a single AI workflow for political media monitoring, PR, & advertising teams. Lightspeed allows political organizations to make smarter political ads faster and cheaper through real-time insights, social listening, AI ad creation, targeted messaging, and more.",
     href: "https://lightspeedads.netlify.app/",
@@ -198,6 +208,22 @@ export const projectData: Project[] = [
       {
         name: "Check it out!",
         href: "https://lightspeedads.netlify.app/",
+      },
+    ]
+  },
+  {
+    name: "Rally AI",
+    tagline: "AI personas for political video ads",
+    description:
+    "Co-built Rally AI, an AI platform that generates personalized political ads featuring candidate personas. Rally scrapes local news and economic data using Firecrawl and Perplexity, then stores curated insights in a Supabase database. GPT4o-mini crafts speeches in the politician's style, while Cartesia.ai's Sonic text-to-speech creates voice narration. Pexels provides B-roll footage, and SyncLabs lip-syncs the narration to existing footage of the candidate. The final ad integrates stock footage and voice to match relevant voter concerns. Rally AI won 2nd Place Overall and Best Design at PennApps 2024.",
+    href: "https://rally-ai.vercel.app/",
+    tags: ["Next.js", "Firecrawl", "OpenAI", "Perplexity", "Cartesia.ai", "SyncLabs", "Llama"],
+    src: "/rally.png",
+    date: "2024",
+    links: [
+      {
+        name: "Try it out!",
+        href: "https://rally-ai.vercel.app/",
       },
     ]
   },
@@ -222,22 +248,6 @@ export const projectData: Project[] = [
         name: "Devpost",
         href: "https://devpost.com/software/aria-sc10g2",
       }
-    ]
-  },
-  {
-    name: "Rally AI",
-    tagline: "AI personas for political video ads",
-    description:
-    "Co-built Rally AI, an AI platform that generates personalized political ads featuring candidate personas. Rally scrapes local news and economic data using Firecrawl and Perplexity, then stores curated insights in a Supabase database. GPT4o-mini crafts speeches in the politician's style, while Cartesia.ai's Sonic text-to-speech creates voice narration. Pexels provides B-roll footage, and SyncLabs lip-syncs the narration to existing footage of the candidate. The final ad integrates stock footage and voice to match relevant voter concerns. Rally AI won 2nd Place Overall and Best Design at PennApps 2024.",
-    href: "https://rally-ai.vercel.app/",
-    tags: ["Next.js", "Firecrawl", "OpenAI", "Perplexity", "Cartesia.ai", "SyncLabs", "Llama"],
-    src: "/rally.png",
-    date: "2024",
-    links: [
-      {
-        name: "Try it out!",
-        href: "https://rally-ai.vercel.app/",
-      },
     ]
   },
   {
