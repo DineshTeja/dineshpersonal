@@ -23,9 +23,9 @@ export function ThemeToggle() {
             className="rounded-md p-2 hover:bg-accent transition-colors"
         >
             {resolvedTheme === "dark" ? (
-                <Sun className="h-4 w-4 text-foreground rotate-0 scale-100 transition-all dark:-rotate-90" />
+                <Sun className="h-4 w-4 text-foreground transition-all" />
             ) : (
-                <Moon className="h-4 w-4 text-foreground rotate-0 scale-100 transition-all dark:rotate-90" />
+                <Moon className="h-4 w-4 text-foreground transition-all" />
             )}
             <span className="sr-only">Toggle theme</span>
         </button>
