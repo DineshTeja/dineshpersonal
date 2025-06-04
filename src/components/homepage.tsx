@@ -24,6 +24,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+const Underline: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="border-b border-dashed border-border">{children}</span>
+);
+
 const HomePage: React.FC = () => {
   const [openWorkItems, setOpenWorkItems] = useState<number[]>([]);
   const [openProjectsItems, setOpenProjectsItems] = useState<number[]>([]);
@@ -55,37 +59,30 @@ const HomePage: React.FC = () => {
         <div className="font-light mt-2 sm:mt-3 w-full max-w-3xl">
           <p className="text-md sm:text-lg text-foreground leading-relaxed">
             👋 I&apos;m Dinesh. I&apos;m currently a{' '}
-            <span className="border-b border-dashed border-border">student</span>{' '}and{' '}
-            <span className="border-b border-dashed border-border">engineer</span>{' '}
-            at{' '}
-            <span className="border-b border-dashed border-border">Harvard</span>.
+            <Underline>student</Underline>{' '}and{' '}
+            <Underline>engineer</Underline>{' '}at{' '}
+            <Underline>Harvard</Underline>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I previously built a company in{' '}
-            <span className="border-b border-dashed border-border">political tech</span>,
-            created Arkansas&apos; largest{' '}
-            <span className="border-b border-dashed border-border">immigrant resources portal</span>,
-            deployed an e-comm demand forecasting system with millions of users at{' '}
-            <span className="border-b border-dashed border-border">Walmart</span>,
-            and helped build the best AI{' '}
-            <span className="border-b border-dashed border-border">government contracting</span>{' '}
-            tool. I&apos;m also a <span className="border-b border-dashed border-border">Z-Fellow</span> and <span className="border-b border-dashed border-border">Soma Scholar</span>.
+            <Underline>political tech</Underline>, created Arkansas&apos; largest{' '}
+            <Underline>immigrant resources portal</Underline>, deployed an e-comm demand forecasting system with millions of users at{' '}
+            <Underline>Walmart</Underline>, and helped build the best AI{' '}
+            <Underline>government contracting</Underline>{' '}tool. I&apos;m also a <Underline>Z-Fellow</Underline> and <Underline>Soma Scholar</Underline>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             Lately, I&apos;ve mostly been working on{' '}
-            <span className="border-b border-dashed border-border">agentic software</span> across domains like{' '}
-            <span className="border-b border-dashed border-border">video</span>,{' '}
-            <span className="border-b border-dashed border-border">marketing</span>,{' '}
-            <span className="border-b border-dashed border-border">engineering</span>, and more. Now, I&apos;m bootstrapping and building{' '}
-            <span className="border-b border-dashed border-border">something new</span>.
+            <Underline>agentic software</Underline> across domains like{' '}
+            <Underline>video</Underline>,{' '}
+            <Underline>marketing</Underline>,{' '}
+            <Underline>engineering</Underline>, and more. Now, I&apos;m bootstrapping and building{' '}
+            <Underline>something new</Underline>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            I usually float between {' '}
-            <span className="border-b border-dashed border-border">Boston and SF</span>.
-            I also love{' '}
-            <span className="border-b border-dashed border-border">movies</span>{' '}
-            and finding{' '}
-            <span className="border-b border-dashed border-border">great food</span>.
+            I usually float between{' '}
+            <Underline>Boston and SF</Underline>. I also love{' '}
+            <Underline>movies</Underline>{' '}and finding{' '}
+            <Underline>great food</Underline>.
           </p>
         </div>
 
