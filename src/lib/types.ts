@@ -47,4 +47,5 @@ export type TinyTool = {
     description: string;
     href: string;
     demo: string;
+    live: boolean;
   }

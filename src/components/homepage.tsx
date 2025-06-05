@@ -265,31 +265,55 @@ const HomePage: React.FC = () => {
 
         <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
           <h2 className="text-md sm:text-lg font-light mb-4 text-foreground">Wrld.sh</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
             {tinyTools.map((tool, index) => (
-              <div key={index} className="p-4 rounded-lg border border-dashed border-border hover:bg-accent transition-colors duration-300">
+              <div key={index} className="p-4 rounded-lg border border-solid border-border hover:bg-accent transition-colors duration-300">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-md font-normal text-foreground">
                     {tool.name}
                   </h3>
                   <div className="flex items-center gap-2">
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Link
-                            href={tool.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-foreground transition-colors"
-                          >
-                            <Link2 className="h-3 w-3" />
-                          </Link>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p className="text-xs">Live Demo</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    {tool.live ? (
+                      <motion.span
+                        className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <Circle className="w-1.5 h-1.5 mr-1 fill-current" />
+                        Live
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        <Circle className="w-1.5 h-1.5 mr-1 fill-current" />
+                        Paused
+                      </motion.span>
+                    )}
+
+                    {tool.live && (
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Link
+                              href={tool.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                              <Link2 className="h-3 w-3" />
+                            </Link>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p className="text-xs">Live Demo</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    )}
 
                     <TooltipProvider>
                       <Tooltip>

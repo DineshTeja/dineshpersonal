@@ -45,24 +45,28 @@ export const tinyTools: TinyTool[] = [
     description: "a beautiful tool to track all of your tech stacks with notion-like notetaking functionality.",
     href: "https://github.com/DineshTeja/stackwrld",
     demo: "https://stackwrld.com/",
+    live: false,
   },
   {
     name: "subs.wrld",
     description: "one page tool for tracking your subscriptions.",
     href: "https://github.com/DineshTeja/subscriptions",
     demo: "https://subs.wrld.sh/",
+    live: true,
   },
   {
     name: "groq70.wrld",
-    description: "simple personal chat interface, using llama 3.1 70b.",
+    description: "simple personal chat interface, using groq models.",
     href: "https://github.com/DineshTeja/groqinterface",
     demo: "https://groq70.wrld.sh/",
+    live: false,
   },
   {
     name: "varsa.wrld",
     description: "open-source multilingual LLM playground",
     href: "https://github.com/DineshTeja/varsa",
     demo: "https://varsa.wrld.sh/",
+    live: true,
   },
 ]
 
