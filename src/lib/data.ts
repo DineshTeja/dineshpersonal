@@ -1,8 +1,8 @@
 import React from "react";
-import climateneutral from "/public/climateneutral.png";
-import anycheck from "/public/anychecklogo.png";
-import polydata from "/public/polydatasmaller_web.png";
-import commonwealth from "/public/commonwealthlogo.png";
+import climateneutral from "/climateneutral.png";
+import anycheck from "/anychecklogo.png";
+import polydata from "/polydatasmaller_web.png";
+import commonwealth from "/commonwealthlogo.png";
 import { DiCode } from "react-icons/di";
 import { FaGithub, FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
 import { SiCocacola, SiWalmart } from "react-icons/si";
@@ -75,7 +75,7 @@ export const experiencesData: Experience[] = [
     title: "Engineering, API & Agents",
     company: "Cartesia",
     location: "San Francisco, CA",
-    description: "Productizing real-time multimodal intelligence.",
+    description: "Productizing real-time multimodal intelligence. Launched https://www.cartesia.ai/ink-whisper",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/cartesia.png",
