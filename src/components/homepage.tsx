@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { FileText, Link2 } from "lucide-react";
-import { BsBoxArrowInUpRight, BsRocket, BsGithub } from "react-icons/bs";
+import { BsBoxArrowInUpRight, BsRocket, BsGithub, BsGoogle } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 import { projectData, experiencesData, tinyTools } from "@/lib/data";
 import {
@@ -66,9 +66,36 @@ const HomePage: React.FC = () => {
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I previously built a company in{' '}
             <Underline>political tech</Underline>, created Arkansas&apos; largest{' '}
-            <Underline>immigrant resources portal</Underline>, deployed an e-comm demand forecasting system with millions of users at{' '}
-            <Underline>Walmart</Underline>, and helped build the best AI{' '}
-            <Underline>government contracting</Underline>{' '}tool. I&apos;m also a <Underline>Z-Fellow</Underline> and <Underline>Soma Scholar</Underline>.
+            <Underline>immigrant resources portal</Underline>, deployed forecasting systems at{' '}
+            <Underline>Walmart</Underline>, helped build the best AI{' '}
+            <Underline>government contracting</Underline>{' '}tool, and launched frontier voice AI models. I&apos;m also a{' '}
+            <motion.span
+              className="inline-flex items-baseline"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Image src="/zfellows.png" alt="Z Fellows" width={16} height={16} className="mr-1" />
+              <Underline>Z-Fellow</Underline>
+            </motion.span>, {' '}
+            <motion.span
+              className="inline-flex items-baseline"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Image src="/soma.png" alt="Soma" width={16} height={16} className="mr-1" />
+              <Underline>Soma Scholar</Underline>
+            </motion.span>, and{' '}
+            <motion.span
+              className="inline-flex items-baseline"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Image src="/humancapital.png" alt="Human Capital" width={16} height={16} className="mr-1" />
+              <Underline>Human Capital Fellow</Underline>
+            </motion.span>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             Lately, I&apos;ve mostly been working on{' '}
