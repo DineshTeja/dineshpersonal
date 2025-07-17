@@ -93,7 +93,7 @@ const HomePage: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Image src="/humancapital.png" alt="Human Capital" width={16} height={16} className="mr-1" />
+              <Image src="/humancapital.png" alt="Human Capital" width={16} height={16} className="mr-1 dark:bg-white dark:rounded-sm" />
               <Underline>Human Capital Fellow</Underline>
             </motion.span>.
           </p>
