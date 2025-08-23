@@ -68,7 +68,7 @@ export default function BaseLayout({ children }: { children: React.ReactNode }) 
       <footer className={`mt-[50px] font-sans antialiased`}>
         <div className="max-w-3xl mx-auto px-4 sm:px-0 py-4">
           <div className="flex justify-center items-center">
-            <p className="text-sm text-muted-foreground text-center">© 2024 Dinesh Vasireddy</p>
+            <p className="text-sm text-muted-foreground text-center">© 2025 Dinesh Vasireddy</p>
           </div>
         </div>
       </footer>

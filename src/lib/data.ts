@@ -150,11 +150,11 @@ export const experiencesData: Experience[] = [
     tags: ["React", "Python", "TensorFlow", "Supabase", "Google Cloud", "AWS", "D3.js"],
   },
   {
-    title: "Engineering, AI",
-    company: "Walmart Global Tech",
+    title: "Engineering, AI & Retail Hardware",
+    company: "Walmart Labs",
     location: "Bentonville, AR",
     description:
-      "Created and deployed a global E-Commerce Demand Forecasting Model (80% Accuracy, Used by 152K Merchants, Impacts 300M+ Users, Optimized Sales for 6.5M+ Products) of Walmart.com sales to optimize online Apparel sales.",
+      "Developed and automated building moving projectors that display signs on retail floors in supercenters nationwide. Created a global E-Commerce Demand Forecasting Model for 6.5M+ Products of Walmart.com sales to optimize online Apparel sales.",
     icon: React.createElement(SiWalmart),
     date: "2021-22",
     src: "/walmartglobal.png",

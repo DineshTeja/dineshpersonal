@@ -58,18 +58,18 @@ const HomePage: React.FC = () => {
       <main className="flex flex-col items-center bg-background z-10 mx-auto">
         <div className="font-light mt-2 sm:mt-3 w-full max-w-3xl">
           <p className="text-md sm:text-lg text-foreground leading-relaxed">
-            👋 I&apos;m Dinesh. I&apos;m currently a{' '}
-            <Underline>student</Underline>{' '}and{' '}
-            <Underline>engineer</Underline>{' '}at{' '}
-            <Underline>Harvard</Underline>.
+            👋 I&apos;m Dinesh. I&apos;m currently an{' '}
+            {/* <Underline>student</Underline>{' '}and{' '} */}
+            <Underline>engineer</Underline>{' '} at {' '}
+            <Underline>Harvard</Underline> (on leave).
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I previously built a company in{' '}
-            <Underline>political tech</Underline>, created Arkansas&apos; largest{' '}
-            <Underline>immigrant resources portal</Underline>, deployed forecasting systems at{' '}
+            <Underline>political software</Underline>, solved hardware and automation problems at{' '}
             <Underline>Walmart</Underline>, helped build the best AI{' '}
-            <Underline>government contracting</Underline>{' '}tool, and launched frontier voice AI models. I&apos;m also a{' '}
-            <motion.span
+            <Underline>government contracting</Underline>{' '}tool, and worked on frontier voice AI models. 
+            I&apos;m also a{' '}<Underline>Z-Fellow</Underline> and{' '}<Underline>Human Capital Fellow</Underline>.
+            {/* <motion.span
               className="inline-flex items-baseline"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -77,7 +77,9 @@ const HomePage: React.FC = () => {
             >
               <Image src="/zfellows.png" alt="Z Fellows" width={16} height={16} className="mr-1" />
               <Underline>Z-Fellow</Underline>
-            </motion.span>, {' '}
+            </motion.span>
+            , 
+            {' '}
             <motion.span
               className="inline-flex items-baseline"
               whileHover={{ scale: 1.05 }}
@@ -86,7 +88,8 @@ const HomePage: React.FC = () => {
             >
               <Image src="/soma.png" alt="Soma" width={16} height={16} className="mr-1" />
               <Underline>Soma Scholar</Underline>
-            </motion.span>, and{' '}
+            </motion.span>,
+            and{' '}
             <motion.span
               className="inline-flex items-baseline"
               whileHover={{ scale: 1.05 }}
@@ -95,15 +98,13 @@ const HomePage: React.FC = () => {
             >
               <Image src="/humancapital.png" alt="Human Capital" width={16} height={16} className="mr-1 dark:bg-white dark:rounded-sm" />
               <Underline>Human Capital Fellow</Underline>
-            </motion.span>.
+            </motion.span>. */}
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            Lately, I&apos;ve mostly been working on{' '}
-            <Underline>agentic software</Underline> across domains like{' '}
-            <Underline>video</Underline>,{' '}
-            <Underline>marketing</Underline>,{' '}
-            <Underline>engineering</Underline>, and more. Now, I&apos;m bootstrapping and building{' '}
-            <Underline>something new</Underline>.
+            Lately, I&apos;ve mostly been focused on building {' '}
+            <Underline>agentic software</Underline> to solve data representation problems across tough domains. Now, I&apos;m working on something new. 
+            {/* for{' '}
+            <Underline>mechanical engineers</Underline>. */}
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I usually float between{' '}
