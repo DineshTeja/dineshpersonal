@@ -7,6 +7,7 @@ export type Movie = {
     genre: string;
     rating: number;
     posterUrl: string;
+    language: "English" | "Telugu" | "Tamil" | "Hindi" | "Kannada";
   }
 
 export type Project = {
