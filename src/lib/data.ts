@@ -1,8 +1,4 @@
 import React from "react";
-import climateneutral from "/public/climateneutral.png";
-import anycheck from "/public/anychecklogo.png";
-import polydata from "/public/polydatasmaller_web.png";
-import commonwealth from "/public/commonwealthlogo.png";
 import { DiCode } from "react-icons/di";
 import { FaGithub, FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
 import { SiCocacola, SiWalmart } from "react-icons/si";
@@ -317,7 +313,7 @@ export const projectsData = [
     description:
       "Built a political research engine that indexes and performs sentiment analysis on political articles to create an efficient standard and verifiable structure for news articles, enables semantic search via LLMs and RAG, facilitates instant LLM-powered structured list creation, bulk data extraction on a granular level, and supports research thread management. We're creating a high-speed pipeline for extracting structured data from the treasure trove that is news media.",
     tags: ["React", "Next.js", "Supabase", "OpenAI", "Deno", "LLMs"],
-    imageUrl: commonwealth,
+    imageUrl: "/commonwealthlogo.png",
     url: "https://commonwealthai.netlify.app/",
   },
   {
@@ -325,7 +321,7 @@ export const projectsData = [
     description:
       "Assembled an application utilizing a custom-trained large language model enhanced via relevant news articles, integrated speech recognition, and real-time analytical feedback, designed to enhance information accuracy through voice-activated claims submission and comprehensive PDF essay analysis.",
     tags: ["Flask", "Google Cloud", "Fast.ai", "BERT", "LLMs"],
-    imageUrl: anycheck,
+    imageUrl: "/anychecklogo.png",
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
   {
@@ -333,7 +329,7 @@ export const projectsData = [
     description:
       "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
     tags: ["Flask", "Langchain", "Fast.ai", "LLMs"],
-    imageUrl: climateneutral,
+    imageUrl: "/climateneutral.png",
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
   {
@@ -341,7 +337,7 @@ export const projectsData = [
     description:
       "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
     tags: ["React", "Python", "TensorFlow", "Google Cloud", "AWS", "D3.js"],
-    imageUrl: polydata,
+    imageUrl: "/polydatasmaller_web.png",
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",
   },
 ] as const;

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { socialLinks } from "@/lib/data";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Instrument_Serif } from 'next/font/google';
@@ -14,13 +14,13 @@ const iconVariants = {
     opacity: 1,
     transition: {
       delay: i * 0.1,
-      type: "spring",
+      type: "spring" as const,
       stiffness: 260,
       damping: 20,
     },
   }),
   hover: { scale: 1.2, transition: { duration: 0.2 } },
-};
+} satisfies Variants;
 
 const instrumentSerif = Instrument_Serif({ weight: "400", subsets: ['latin'] });
 
