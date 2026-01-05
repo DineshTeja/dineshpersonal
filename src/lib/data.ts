@@ -444,6 +444,15 @@ export const favoriteMovies: Movie[] = [
     language: "English",
   },
   {
+    title: "Glass",
+    year: 2019,
+    director: "M. Night Shyamalan",
+    genre: "Psychological Thriller",
+    posterUrl: "/posters/glass.png",
+    rating: 8.5,
+    language: "English",
+  },
+  {
     title: "Good Will Hunting",
     year: 1997,
     director: "Gus Van Sant",
@@ -851,4 +860,14 @@ export const favoriteMovies: Movie[] = [
     rating: 9.0,
     language: "Kannada",
   },
+  {
+    title: "Garuda Gamana Vrishabha Vahana",
+    year: 2021,
+    director: "Raj B. Shetty",
+    genre: "Neo-Noir Gangster",
+    posterUrl: "/posters/garuda-gamana.png",
+    rating: 8.5,
+    language: "Kannada",
+  },
+  
 ] as const;

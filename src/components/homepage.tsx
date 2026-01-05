@@ -50,8 +50,8 @@ const HomePage: React.FC = () => {
           <p className="text-md sm:text-lg text-foreground leading-relaxed">
             👋 I&apos;m Dinesh. I&apos;m currently an{' '}
             {/* <Underline>student</Underline>{' '}and{' '} */}
-            <Underline>engineer</Underline>{' '} at {' '}
-            <Underline>Harvard</Underline> (on leave).
+            <Underline>engineer</Underline>{' '} on leave from {' '}
+            <Underline>Harvard</Underline>.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I previously built a company in{' '}
@@ -92,15 +92,14 @@ const HomePage: React.FC = () => {
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             Lately, I&apos;ve mostly been focused on building {' '}
-            <Underline>agentic software</Underline> to solve data representation problems across tough domains. Now, I&apos;m working on something new. 
+            <Underline>agentic software</Underline> to solve tough, domain-specific data representation problems. Now, I&apos;m working on something new for mechanical engineers. 
             {/* for{' '}
             <Underline>mechanical engineers</Underline>. */}
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I usually float between{' '}
             <Underline>Boston and SF</Underline>. I also love{' '}
-            <Underline>movies</Underline>{' '}and finding{' '}
-            <Underline>great food</Underline>.
+            <Underline>movies</Underline> and humanity's greatest stories.
           </p>
         </div>
 
@@ -287,7 +286,7 @@ const HomePage: React.FC = () => {
               href="https://en.wikipedia.org/wiki/Theory-theory" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="underline decoration-1 underline-offset-2 hover:text-gray-400 transition-colors"
+              className="underline decoration-dashed decoration-1 underline-offset-2 hover:text-gray-400 transition-colors"
             >
               Theory-theory
             </Link>
@@ -319,7 +318,7 @@ const HomePage: React.FC = () => {
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-base font-medium text-foreground mb-1">Films</h3>
+                    <h3 className="text-base font-medium text-foreground mb-1">❤️ Films</h3>
                   </div>
                   <div className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300">
                     <ArrowRight className="w-5 h-5" />
