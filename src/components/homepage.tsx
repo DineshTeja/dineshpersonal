@@ -21,7 +21,6 @@ const Underline: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 const HomePage: React.FC = () => {
   const [openWorkItems, setOpenWorkItems] = useState<number[]>([]);
   const [openProjectsItems, setOpenProjectsItems] = useState<number[]>([]);
-  const [openEducationItems, setOpenEducationItems] = useState<number[]>([]);
   const [showAllWork, setShowAllWork] = useState(false);
   const [showAllBuilds, setShowAllBuilds] = useState(false);
 
@@ -33,12 +32,6 @@ const HomePage: React.FC = () => {
 
   const toggleWorkItem = (index: number) => {
     setOpenWorkItems(prev =>
-      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
-    );
-  };
-
-  const toggleEducationItem = (index: number) => {
-    setOpenEducationItems(prev =>
       prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
     );
   };
@@ -55,50 +48,18 @@ const HomePage: React.FC = () => {
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
             I previously built a company in{' '}
-            <Underline>political software</Underline>, solved hardware and automation problems at{' '}
-            <Underline>Walmart</Underline>, helped build the best AI{' '}
-            <Underline>government contracting</Underline>{' '}tool, and worked on frontier voice AI models. 
-            I&apos;m also a{' '}<Underline>Z-Fellow</Underline> and{' '}<Underline>Human Capital Fellow</Underline>.
-            {/* <motion.span
-              className="inline-flex items-baseline"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Image src="/zfellows.png" alt="Z Fellows" width={16} height={16} className="mr-1" />
-              <Underline>Z-Fellow</Underline>
-            </motion.span>
-            , 
-            {' '}
-            <motion.span
-              className="inline-flex items-baseline"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Image src="/soma.png" alt="Soma" width={16} height={16} className="mr-1" />
-              <Underline>Soma Scholar</Underline>
-            </motion.span>,
-            and{' '}
-            <motion.span
-              className="inline-flex items-baseline"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Image src="/humancapital.png" alt="Human Capital" width={16} height={16} className="mr-1 dark:bg-white dark:rounded-sm" />
-              <Underline>Human Capital Fellow</Underline>
-            </motion.span>. */}
+            <Underline>political software</Underline>, worked on hardware automation problems,{' '}
+            <Underline>government contracting</Underline>{' '}, and frontier voice AI models. 
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            Lately, I&apos;ve mostly been focused on building {' '}
-            <Underline>agentic software</Underline> to solve tough, domain-specific data representation problems. Now, I&apos;m working on something new for mechanical engineers. 
-            {/* for{' '}
-            <Underline>mechanical engineers</Underline>. */}
+            <span className="text-muted-foreground">
+              &ldquo;We used to look up at the sky and wonder at our place in the stars.&rdquo;
+            </span>{" "}
+            I care about pushing the frontier on tangible things: production, physical infrastructure, legal
+            frameworks, and knowledge.
           </p>
           <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            I usually float between{' '}
-            <Underline>Boston and SF</Underline>. I also love{' '}
+            I love{' '}
             <Underline>movies</Underline> and humanity's greatest stories.
           </p>
         </div>
@@ -108,7 +69,7 @@ const HomePage: React.FC = () => {
             <h2 className="text-md sm:text-lg font-light text-foreground">Work</h2>
 
             <div className="flex items-center gap-2">
-              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              {/* <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <motion.span
                   className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
@@ -118,7 +79,7 @@ const HomePage: React.FC = () => {
                   <FileText className="w-3 h-3 mr-1" />
                   Resume
                 </motion.span>
-              </Link>
+              </Link> */}
               <motion.button
                 onClick={() => setShowAllWork(!showAllWork)}
                 className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
@@ -176,13 +137,13 @@ const HomePage: React.FC = () => {
                         <div className="pl-7 pr-3 py-3 text-foreground">
                           <p className="text-xs sm:text-sm mb-1 font-medium">{job.location}</p>
                           <p className="text-xs sm:text-sm">{job.description}</p>
-                          <div className="flex flex-wrap gap-1 mt-3">
+                          {/* <div className="flex flex-wrap gap-1 mt-3">
                             {job.tags.map((tag, tagIndex) => (
                               <CustomBadge key={tagIndex} className="text-xs">
                                 {tag}
                               </CustomBadge>
                             ))}
-                          </div>
+                          </div> */}
                         </div>
                       </motion.div>
                     </CollapsibleContent>
@@ -292,7 +253,7 @@ const HomePage: React.FC = () => {
             </Link>
           </h2>
           <div className="grid grid-cols-2 gap-3">
-            <Link href="/wrld">
+            {/* <Link href="/wrld">
               <motion.div
                 className="group relative p-5 rounded-xl border border-border bg-secondary/30 hover:bg-accent/50 transition-all duration-300 overflow-hidden"
                 whileHover={{ scale: 1.02 }}
@@ -308,7 +269,7 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
-            </Link>
+            </Link> */}
             <Link href="/movies">
               <motion.div
                 className="group relative p-5 rounded-xl border border-border bg-secondary/30 hover:bg-accent/50 transition-all duration-300 overflow-hidden"

@@ -68,10 +68,10 @@ export const tinyTools: TinyTool[] = [
 
 export const experiencesData: Experience[] = [
   {
-    title: "Engineering, API & Agents",
+    title: "Engineering, STT & Agents",
     company: "Cartesia",
     location: "San Francisco, CA",
-    description: "Productizing real-time multimodal intelligence. Launched https://www.cartesia.ai/ink-whisper.",
+    description: "Productizing real-time multimodal intelligence. Launched https://www.cartesia.ai/ink.",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/cartesia.png",
@@ -138,7 +138,7 @@ export const experiencesData: Experience[] = [
     company: "PolyData",
     location: "United States of America",
     description:
-      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections. Bootstrapped and scaled to $70K ARR.",
+      "Developed and distributed a collection of contract-bound AI-driven election analysis models focused on optimizing political campaign operations, interpreting electoral outcomes, and understanding voter behavior in local, state, and federal elections.",
     icon: React.createElement(FaVoteYea),
     date: "2021-23",
     src: "/polydatasmaller_web.png",
@@ -587,6 +587,24 @@ export const favoriteMovies: Movie[] = [
     rating: 8.5,
     language: "English",
   },
+  {
+    title: "The Imitation Game",
+    year: 2014,
+    director: "Morten Tyldum",
+    genre: "Biographical Drama",
+    posterUrl: "/posters/the-imitation-game.png",
+    rating: 8.5,
+    language: "English",
+  },
+  {
+    title: "The Departed",
+    year: 2006,
+    director: "Martin Scorsese",
+    genre: "Crime Thriller",
+    posterUrl: "/posters/the-departed.png",
+    rating: 8.5,
+    language: "English",
+  },
   // Telugu
   {
     title: "Baahubali: The Beginning",
@@ -838,6 +856,15 @@ export const favoriteMovies: Movie[] = [
     director: "Mari Selvaraj",
     genre: "Sports Action Drama",
     posterUrl: "/posters/bison.png",
+    rating: 8.5,
+    language: "Tamil",
+  },
+  {
+    title: "Vaaranam Aayiram",
+    year: 2008,
+    director: "Gautham Vasudev Menon",
+    genre: "Coming-of-Age Drama",
+    posterUrl: "/posters/vaaranam-aayiram.png",
     rating: 8.5,
     language: "Tamil",
   },

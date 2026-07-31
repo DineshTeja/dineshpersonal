@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { socialLinks } from "@/lib/data";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { Instrument_Serif } from 'next/font/google';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
@@ -22,8 +20,6 @@ const iconVariants = {
   }),
   hover: { scale: 1.2, transition: { duration: 0.2 } },
 } satisfies Variants;
-
-const instrumentSerif = Instrument_Serif({ weight: "400", subsets: ['latin'] });
 
 interface BaseLayoutProps {
   children: React.ReactNode;
@@ -54,14 +50,13 @@ export default function BaseLayout({ children, title }: BaseLayoutProps) {
                   </h1>
                 )}
                 {!isSubpage && (
-                  <h1 className={`text-xl sm:text-2xl font-medium text-foreground font-sans font-aliased tracking-tight`}>
+                  <h1 className={`text-xl sm:text-2xl font-[450] text-muted-foreground/80 font-sans font-aliased tracking-tight`}>
                       {title || "Dinesh Vasireddy"}
                     </h1>
                   )}
               </Link>
             </div>
             <div className="flex items-center space-x-0.5 sm:space-x-0.5">
-              <ThemeToggle />
               {socialLinks.map(({ Icon, href }, index) => (
                 <motion.div
                   key={index}
