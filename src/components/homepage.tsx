@@ -1,308 +1,109 @@
-"use client";
-
-import Image from "next/image";
-import React, { useState } from "react";
-import { FileText, ArrowRight } from "lucide-react";
-import { BsBoxArrowInUpRight } from "react-icons/bs";
-import { motion, AnimatePresence } from "framer-motion";
-import { projectData, experiencesData } from "@/lib/data";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { experiencesData, projectData, socialLinks } from "@/lib/data";
 
-const Underline: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <span className="border-b border-dashed border-border">{children}</span>
-);
+const externalLinkProps = (href: string) =>
+  href.startsWith("http")
+    ? { target: "_blank" as const, rel: "noopener noreferrer" }
+    : {};
 
-const HomePage: React.FC = () => {
-  const [openWorkItems, setOpenWorkItems] = useState<number[]>([]);
-  const [openProjectsItems, setOpenProjectsItems] = useState<number[]>([]);
-  const [showAllWork, setShowAllWork] = useState(false);
-  const [showAllBuilds, setShowAllBuilds] = useState(false);
-
-  const toggleProjectsItem = (index: number) => {
-    setOpenProjectsItems(prev =>
-      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
-    );
-  };
-
-  const toggleWorkItem = (index: number) => {
-    setOpenWorkItems(prev =>
-      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
-    );
-  };
-
+export default function HomePage() {
   return (
     <>
-      <main className="flex flex-col items-center bg-background z-10 mx-auto">
-        <div className="font-light mt-2 sm:mt-3 w-full max-w-3xl">
-          <p className="text-md sm:text-lg text-foreground leading-relaxed">
-            👋 I&apos;m Dinesh. I&apos;m currently an{' '}
-            {/* <Underline>student</Underline>{' '}and{' '} */}
-            <Underline>engineer</Underline>{' '} on leave from {' '}
-            <Underline>Harvard</Underline>.
-          </p>
-          <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            I previously built a company in{' '}
-            <Underline>political software</Underline>, worked on hardware automation problems,{' '}
-            <Underline>government contracting</Underline>{' '}, and frontier voice AI models. 
-          </p>
-          <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            <span className="text-muted-foreground">
-              &ldquo;We used to look up at the sky and wonder at our place in the stars.&rdquo;
-            </span>{" "}
+      <section>
+        <p>About me:</p>
+        <ul>
+          <li>
+            On leave from <u>Harvard</u>.
+          </li>
+          <li>
+            From <Link href="https://www.nytimes.com/interactive/2026/05/07/travel/things-to-do-bentonville.html">the natural state</Link>.
+          </li>
+          <li>
+            I previously built a company in <u>political software</u>.
+          </li>
+          <li>
+            I&apos;ve worked on hardware automation, <u>government contracting</u>, and frontier voice AI models.
+          </li>
+          <li>
             I care about pushing the frontier on tangible things: production, physical infrastructure, legal
             frameworks, and knowledge.
-          </p>
-          <p className="text-md sm:text-lg text-foreground mt-2 leading-relaxed">
-            I love{' '}
-            <Underline>movies</Underline> and humanity's greatest stories.
-          </p>
-        </div>
+          </li>
+          <li>
+            I love <u>movies</u> and humanity&apos;s greatest stories.
+          </li>
+        </ul>
+      </section>
 
-        <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-md sm:text-lg font-light text-foreground">Work</h2>
+      <section>
+            <span className="muted">
+              &ldquo;We used to look up at the sky and wonder at our place in the stars.&rdquo;
+            </span>{" "}
+      </section>
 
-            <div className="flex items-center gap-2">
-              {/* <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                <motion.span
-                  className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <FileText className="w-3 h-3 mr-1" />
-                  Resume
-                </motion.span>
-              </Link> */}
-              <motion.button
-                onClick={() => setShowAllWork(!showAllWork)}
-                className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                {showAllWork ? 'See less' : 'See more'}
-              </motion.button>
-            </div>
-          </div>
-          <div>
-            {experiencesData.slice(0, showAllWork ? experiencesData.length : 5).map((job, index) => (
-              <Collapsible
-                key={index}
-                open={openWorkItems.includes(index)}
-                onOpenChange={() => toggleWorkItem(index)}
-                className={`border-b border-dashed border-border ${index === 0 ? 'border-t' : ''}`}
-              >
-                <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-accent rounded-lg">
-                  <div className="flex items-center space-x-2">
-                    <div className="flex items-center space-x-1">
-                      <Link href={job.href} target="_blank" rel="noopener noreferrer">
-                        <motion.div
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                          <Image
-                            src={job.src}
-                            alt={`${job.company} logo`}
-                            width={24}
-                            height={24}
-                            className="rounded-lg mr-1"
-                          />
-                        </motion.div>
-                      </Link>
-                      <h3 className="text-md sm:text-base font-normal text-foreground truncate">{job.company}</h3>
-                    </div>
-                    <span className="text-sm text-muted-foreground">{job.title}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm text-muted-foreground">{job.date}</span>
-                  </div>
-                </CollapsibleTrigger>
-                <AnimatePresence initial={false}>
-                  {openWorkItems.includes(index) && (
-                    <CollapsibleContent forceMount>
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-7 pr-3 py-3 text-foreground">
-                          <p className="text-xs sm:text-sm mb-1 font-medium">{job.location}</p>
-                          <p className="text-xs sm:text-sm">{job.description}</p>
-                          {/* <div className="flex flex-wrap gap-1 mt-3">
-                            {job.tags.map((tag, tagIndex) => (
-                              <CustomBadge key={tagIndex} className="text-xs">
-                                {tag}
-                              </CustomBadge>
-                            ))}
-                          </div> */}
-                        </div>
-                      </motion.div>
-                    </CollapsibleContent>
-                  )}
-                </AnimatePresence>
-              </Collapsible>
-            ))}
-          </div>
-        </div>
+      <section>
+        <p>Some things I&apos;ve worked on:</p>
+        <ul>
+          {experiencesData.map((job) => (
+            <li key={`${job.company}-${job.date}`}>
+              <Link href={job.href} {...externalLinkProps(job.href)}>
+                {job.company}
+              </Link>{" "}
+              — {job.title} ({job.date})
+              <ul>
+                <li>
+                  {job.location}. {job.description}
+                </li>
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-        <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <div className="flex items-center justify-between mb-2">
-            <h2 className="text-md sm:text-lg font-light text-foreground">Builds</h2>
-            <motion.button
-              onClick={() => setShowAllBuilds(!showAllBuilds)}
-              className="inline-flex items-center px-2 py-1 rounded-lg text-xs font-normal bg-secondary text-foreground hover:bg-accent transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              {showAllBuilds ? 'See less' : 'See more'}
-            </motion.button>
-          </div>
-          <div>
-            {projectData.slice(0, showAllBuilds ? projectData.length : 5).map((project, index) => (
-              <Collapsible
-                key={index}
-                open={openProjectsItems.includes(index)}
-                onOpenChange={() => toggleProjectsItem(index)}
-                className={`border-b border-dashed border-border ${index === 0 ? 'border-t' : ''}`}
-              >
-                <CollapsibleTrigger className="px-1.5 flex items-center justify-between w-full cursor-pointer py-2 transition-colors duration-300 hover:bg-accent rounded-lg">
-                  <div className="flex items-center space-x-2">
-                    <div className="flex items-center space-x-1">
-                      <Link href={project.href} target="_blank" rel="noopener noreferrer">
-                        <motion.div
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        >
-                          <Image
-                            src={project.src}
-                            alt={`${project.name} logo`}
-                            width={24}
-                            height={24}
-                            className="rounded-lg mr-1"
-                          />
-                        </motion.div>
-                      </Link>
-                      <h3 className="text-md sm:text-base font-normal text-foreground">{project.name}</h3>
-                    </div>
-                    <span className="hidden sm:inline text-sm text-muted-foreground">
-                      {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm text-muted-foreground">{project.date}</span>
-                  </div>
-                </CollapsibleTrigger>
-                <AnimatePresence initial={false}>
-                  {openProjectsItems.includes(index) && (
-                    <CollapsibleContent forceMount>
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-7 pr-3 py-3 text-foreground">
-                          <p className="text-xs font-medium sm:text-sm mb-1 sm:hidden">
-                            {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)}
-                          </p>
-                          <p className="text-xs sm:text-sm">{project.description}</p>
-                          <div className="flex flex-wrap gap-1 mt-3">
-                            {project.tags.map((tag, tagIndex) => (
-                              <CustomBadge key={tagIndex} className="text-xs">
-                                {tag}
-                              </CustomBadge>
-                            ))}
-                            {project.links && project.links.map((link, linkIndex) => (
-                              <Link key={linkIndex} href={link.href} target="_blank" rel="noopener noreferrer">
-                                <CustomBadge className="text-xs bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-100 flex items-center">
-                                  {link.name} <BsBoxArrowInUpRight className="h-3 w-3 ml-1" />
-                                </CustomBadge>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </motion.div>
-                    </CollapsibleContent>
-                  )}
-                </AnimatePresence>
-              </Collapsible>
-            ))}
-          </div>
-        </div>
+      <section>
+        <p>Some things I&apos;ve built:</p>
+        <ul>
+          {projectData.map((project) => (
+            <li key={project.name}>
+              {/* <Link href={project.href} {...externalLinkProps(project.href)}> */}
+                {project.name}{" "}
+              {/* </Link>{" "} */}
+              — {project.tagline.charAt(0).toUpperCase() + project.tagline.slice(1)} ({project.date})
+              <ul>
+                {/* <li>{project.description}</li> */}
+                {/* <li>{project.tags.join(", ")}</li> */}
+                {/* {"links" in project && project.links?.length ? (
+                  <li>
+                    {project.links.map((link, index) => (
+                      <span key={link.name}>
+                        {index > 0 ? ", " : null}
+                        <Link href={link.href} {...externalLinkProps(link.href)}>
+                          {link.name}
+                        </Link>
+                      </span>
+                    ))}
+                  </li>
+                ) : null} */}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-        <div className="mt-6 sm:mt-3 w-full max-w-3xl py-3">
-          <h2 className="text-md sm:text-lg font-light mb-4 text-foreground">
-            <Link 
-              href="https://en.wikipedia.org/wiki/Theory-theory" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline decoration-dashed decoration-1 underline-offset-2 hover:text-gray-400 transition-colors"
-            >
-              Theory-theory
-            </Link>
-          </h2>
-          <div className="grid grid-cols-2 gap-3">
-            {/* <Link href="/wrld">
-              <motion.div
-                className="group relative p-5 rounded-xl border border-border bg-secondary/30 hover:bg-accent/50 transition-all duration-300 overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-base font-medium text-foreground mb-1">Wrld.sh</h3>
-                  </div>
-                  <div className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                </div>
-              </motion.div>
-            </Link> */}
-            <Link href="/movies">
-              <motion.div
-                className="group relative p-5 rounded-xl border border-border bg-secondary/30 hover:bg-accent/50 transition-all duration-300 overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-base font-medium text-foreground mb-1">❤️ Films</h3>
-                  </div>
-                  <div className="text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-          </div>
-        </div>
-      </main>
+      <section>
+        <p>Elsewhere:</p>
+        <ul>
+          {socialLinks.map(({ label, href }) => (
+            <li key={label}>
+              <Link href={href} {...externalLinkProps(href)}>
+                {label}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link href="/movies">Films</Link> — A running list of the best. Reach out if you disagree.
+          </li>
+        </ul>
+      </section>
     </>
   );
-};
-
-const CustomBadge: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
-  <span className={cn(
-    "inline-flex items-center bg-secondary rounded px-2 py-1 text-xs font-medium text-foreground",
-    "transition-colors duration-200 ease-in-out",
-    "hover:bg-accent",
-    className
-  )}>
-    {children}
-  </span>
-);
-
-export default HomePage;
+}

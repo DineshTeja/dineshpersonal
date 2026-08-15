@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    color-scheme: light;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -72,6 +73,88 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+@layer components {
+  .plain-site {
+    width: calc(100% - 40px);
+    max-width: 640px;
+    margin: 0 auto;
+    padding-top: 64px;
+    padding-bottom: 32px;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  .plain-site h1 {
+    display: block;
+    margin: 0.67em 0;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .plain-site p {
+    display: block;
+    margin: 1em 0;
+  }
+
+  .plain-site section {
+    margin: 0;
+  }
+
+  .plain-site main > section:first-child {
+    margin-top: 2.25em;
+  }
+
+  .plain-site section + section {
+    margin-top: 2em;
+  }
+
+  .plain-site section > :first-child {
+    margin-top: 0;
+  }
+
+  .plain-site section > :last-child {
+    margin-bottom: 0;
+  }
+
+  .plain-site ul {
+    display: block;
+    margin: 1em 0;
+    padding-left: 40px;
+    list-style-type: disc;
+  }
+
+  .plain-site ul ul {
+    margin: 0.25em 0;
+    list-style-type: circle;
+  }
+
+  .plain-site li {
+    display: list-item;
+    margin: 0.2em 0;
+  }
+
+  .plain-site a {
+    color: #0000ee;
+    text-decoration: underline;
+  }
+
+  .plain-site a:visited {
+    color: #551a8b;
+  }
+
+  .plain-site .muted {
+    color: #777;
+  }
+
+  .plain-site footer {
+    margin-top: 3em;
   }
 }

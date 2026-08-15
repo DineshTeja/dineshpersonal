@@ -61,8 +61,7 @@ export default function MoviesPage() {
         <div className="w-full max-w-3xl py-6 space-y-8">
           {/* Quote */}
           <blockquote className="text-sm italic text-muted-foreground border-l-2 border-muted-foreground/30 pl-4">
-            <p>&ldquo;Film is not the art of scholars, but of illiterates. It reaches the soul directly.&rdquo;</p>
-            <footer className="mt-1 text-xs not-italic">— Werner Herzog</footer>
+            <p>&ldquo;Film is not the art of scholars, but of illiterates. It reaches the soul directly.&rdquo;</p> — Werner Herzog
           </blockquote>
 
           {moviesByLanguage.map((group) => (

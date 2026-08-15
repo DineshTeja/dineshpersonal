@@ -1,17 +1,14 @@
 import React from "react";
 import { DiCode } from "react-icons/di";
-import { FaGithub, FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
-import { SiCocacola, SiWalmart } from "react-icons/si";
+import { FaUniversity, FaVoteYea, FaYCombinator } from "react-icons/fa";
+import { SiCocacola } from "react-icons/si";
 import { Education, Experience, Project, TinyTool, Movie } from "./types";
-import { BsLinkedin } from "react-icons/bs";
-import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
-import { FaXTwitter } from "react-icons/fa6";
 
 export const socialLinks = [
-  { Icon: FaGithub, href: "https://github.com/DineshTeja" },
-  { Icon: BsLinkedin, href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
-  { Icon: FaXTwitter, href: "https://twitter.com/dineshtva" },
-  { Icon: EnvelopeClosedIcon, href: "mailto:dineshvasireddy@college.harvard.edu" },
+  // { label: "GitHub", href: "https://github.com/DineshTeja" },
+  // { label: "LinkedIn", href: "https://www.linkedin.com/in/dinesh-vasireddy/" },
+  { label: "X", href: "https://twitter.com/dineshtva" },
+  { label: "Email", href: "mailto:dineshvasireddy@college.harvard.edu" },
 ];
 
 export const educationData: Education[] = [
@@ -68,10 +65,21 @@ export const tinyTools: TinyTool[] = [
 
 export const experiencesData: Experience[] = [
   {
+    title: "",
+    company: "",
+    location: "San Francisco, CA",
+    description: "",
+    icon: React.createElement(DiCode),
+    date: "2026",
+    src: "",
+    href: "",
+    tags: ["Go", "Next.js", "Livekit", "Python"],
+  },
+  {
     title: "Engineering, STT & Agents",
     company: "Cartesia",
     location: "San Francisco, CA",
-    description: "Productizing real-time multimodal intelligence. Launched https://www.cartesia.ai/ink.",
+    description: "Productized real-time multimodal intelligence. Launched https://www.cartesia.ai/ink.",
     icon: React.createElement(FaYCombinator),
     date: "2025",
     src: "/cartesia.png",
@@ -115,7 +123,7 @@ export const experiencesData: Experience[] = [
     title: "Data Science",
     company: "SkyGrid",
     location: "Cambridge, MA",
-    description: "Confidential.",
+    description: "",
     icon: React.createElement(DiCode),
     date: "2023",
     src: "/skygrid.png",
@@ -126,11 +134,11 @@ export const experiencesData: Experience[] = [
     title: "Engineering",
     company: "ClimateNeutral",
     location: "Cambridge, MA",
-    description: "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
+    description: "Piloted a fine-tuned LLM (Used by 347 Brands) and agent platform focused on generating comprehensive sustainability plans for F500s.",
     icon: React.createElement(DiCode),
     date: "2023",
     src: "/climateneutral.png",
-    href: "/",
+    href: "https://www.changeclimate.org/",
     tags: ["Python", "Flask", "LangChain & LangGraph", "Fast.ai", "OpenAI"],
   },
   {
@@ -151,7 +159,7 @@ export const experiencesData: Experience[] = [
     location: "Bentonville, AR",
     description:
       "Developed and automated building moving projectors that display signs on retail floors in supercenters nationwide. Created a global E-Commerce Demand Forecasting Model for 6.5M+ Products of Walmart.com sales to optimize online Apparel sales.",
-    icon: React.createElement(SiWalmart),
+    icon: React.createElement(DiCode),
     date: "2021-22",
     src: "/walmartglobal.png",
     href: "https://www.linkedin.com/in/dinesh-vasireddy/",
@@ -270,22 +278,22 @@ export const projectData: Project[] = [
     src: "/accessos.png",
     date: "2024",
   },
-  {
-    name: "Resilience Week 2023",
-    tagline: "LLMs, Cybersecurity, & Defense (IEEE published)",
-    description:
-      "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by Defense TechConnect for Resilience Week 2023 in Washington D.C.",
-    href: "https://ieeexplore.ieee.org/document/10284627",
-    tags: ["Python", "Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
-    src: "/rweek.png",
-    date: "2023",
-    links: [
-      {
-        name: "Publication",
-        href: "https://ieeexplore.ieee.org/document/10284627",
-      },
-    ]
-  },
+  // {
+  //   name: "Resilience Week 2023",
+  //   tagline: "LLMs, Cybersecurity, & Defense (IEEE published)",
+  //   description:
+  //     "Conducted and led NSF-sponsored research advised by Prof. Qinghua Li at UARK's Cybersecurity Center for Secure Evolvable Energy Delivery Systems (SEEDS) investigating the use of language learning models and machine learning algorithms (Doc2Vec, Fast.ai, Advanced BERT Models) to improve the Common Vulnerability Scoring System and effectively classify computer system vulnerabilities. Accepted for publication by Defense TechConnect for Resilience Week 2023 in Washington D.C.",
+  //   href: "https://ieeexplore.ieee.org/document/10284627",
+  //   tags: ["Python", "Flask", "Google Cloud", "Fast.ai", "LLMs", "BERT"],
+  //   src: "/rweek.png",
+  //   date: "2023",
+  //   links: [
+  //     {
+  //       name: "Publication",
+  //       href: "https://ieeexplore.ieee.org/document/10284627",
+  //     },
+  //   ]
+  // },
   {
     name: "Arkansas United",
     tagline: "Automated resources portal for Arkansas United",
@@ -327,7 +335,7 @@ export const projectsData = [
   {
     title: "ClimateNeutral LLM",
     description:
-      "Piloted a Custom LLM assistant (Used by 347 Brands) focused on generating comprehensive sustainability plans by analyzing business and sales data. Fine-tuned on international climate standards using transfer learning and domain adaptation.",
+      "Piloted a fine-tuned LLM (Used by 347 Brands) and agent platform focused on generating comprehensive sustainability plans for F500s.",
     tags: ["Flask", "Langchain", "Fast.ai", "LLMs"],
     imageUrl: "/climateneutral.png",
     url: "https://www.linkedin.com/in/dinesh-vasireddy/",

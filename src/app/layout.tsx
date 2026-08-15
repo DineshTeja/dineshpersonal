@@ -1,12 +1,17 @@
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata, Viewport } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Dinesh Vasireddy",
   description: "Dinesh Vasireddy Personal Portfolio",
   icons: {
-    icon: '/gradient.png',
+    icon: "/gradient.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -15,21 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth overflow-x-hidden" suppressHydrationWarning>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=0.6" />
-      </head>
-      <body className={`bg-background relative overflow-x-hidden`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          forcedTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en" className="overflow-x-hidden">
+      <body className="relative overflow-x-hidden bg-background">{children}</body>
     </html>
   );
 }
