@@ -19,7 +19,7 @@ function MovieCard({ movie, index }: { movie: Movie; index: number }) {
       className="group"
     >
       {/* Poster */}
-      <div className="relative aspect-[2/3] rounded-lg overflow-hidden mb-2 shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+      <div className="relative aspect-[2/3] rounded-none overflow-hidden mb-2 shadow-sm group-hover:shadow-lg transition-shadow duration-300">
         <Image
           src={movie.posterUrl}
           alt={`${movie.title} poster`}
