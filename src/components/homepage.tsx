@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <section>
-        <p>About me:</p>
+        <p>A bit about me:</p>
         <ul>
           <li>
             On leave from <u>Harvard</u>.
@@ -19,7 +19,7 @@ export default function HomePage() {
             From <Link href="https://www.nytimes.com/interactive/2026/05/07/travel/things-to-do-bentonville.html">the natural state</Link>.
           </li>
           <li>
-            I previously built a company in <u>political software</u>.
+            I previously built a company in <u>political software</u> and spent time with some great campaigns.
           </li>
           <li>
             I&apos;ve worked on hardware automation, <u>government contracting</u>, and frontier voice AI models.

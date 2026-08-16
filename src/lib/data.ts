@@ -119,28 +119,28 @@ export const experiencesData: Experience[] = [
     href: "/",
     tags: ["Python", "PyTorch", "Keras", "Google Cloud", "Streamlit"],
   },
-  {
-    title: "Data Science",
-    company: "SkyGrid",
-    location: "Cambridge, MA",
-    description: "",
-    icon: React.createElement(DiCode),
-    date: "2023",
-    src: "/skygrid.png",
-    href: "/",
-    tags: ["Python", "R", "Statistics"],
-  },
-  {
-    title: "Engineering",
-    company: "ClimateNeutral",
-    location: "Cambridge, MA",
-    description: "Piloted a fine-tuned LLM (Used by 347 Brands) and agent platform focused on generating comprehensive sustainability plans for F500s.",
-    icon: React.createElement(DiCode),
-    date: "2023",
-    src: "/climateneutral.png",
-    href: "https://www.changeclimate.org/",
-    tags: ["Python", "Flask", "LangChain & LangGraph", "Fast.ai", "OpenAI"],
-  },
+  // {
+  //   title: "Data Science",
+  //   company: "SkyGrid",
+  //   location: "Cambridge, MA",
+  //   description: "",
+  //   icon: React.createElement(DiCode),
+  //   date: "2023",
+  //   src: "/skygrid.png",
+  //   href: "/",
+  //   tags: ["Python", "R", "Statistics"],
+  // },
+  // {
+  //   title: "Engineering",
+  //   company: "ClimateNeutral",
+  //   location: "Cambridge, MA",
+  //   description: "Piloted a fine-tuned LLM (Used by 347 Brands) and agent platform focused on generating comprehensive sustainability plans for F500s.",
+  //   icon: React.createElement(DiCode),
+  //   date: "2023",
+  //   src: "/climateneutral.png",
+  //   href: "https://www.changeclimate.org/",
+  //   tags: ["Python", "Flask", "LangChain & LangGraph", "Fast.ai", "OpenAI"],
+  // },
   {
     title: "Founder & CEO",
     company: "PolyData",
@@ -158,7 +158,7 @@ export const experiencesData: Experience[] = [
     company: "Walmart Labs",
     location: "Bentonville, AR",
     description:
-      "Developed and automated building moving projectors that display signs on retail floors in supercenters nationwide. Created a global E-Commerce Demand Forecasting Model for 6.5M+ Products of Walmart.com sales to optimize online Apparel sales.",
+      "Designed a moving projector system that displays signs on retail floors in various supercenters nationwide. Created a global e-commerce demand forecasting model for 6.5M+ products on Walmart.com that's still used today.",
     icon: React.createElement(DiCode),
     date: "2021-22",
     src: "/walmartglobal.png",
@@ -168,6 +168,22 @@ export const experiencesData: Experience[] = [
 ] as const;
 
 export const projectData: Project[] = [
+  {
+    name: "Sentinel",
+    tagline: "Formally verified early assertions for safer Python execution",
+    description:
+      "Built an LLM-assisted pipeline that moves Python assertions earlier in execution and verifies equivalence to the originals using Hypothesis fuzzing, CrossHair symbolic execution, and Nagini static verification.",
+    href: "https://github.com/dhruvtpatel/2540_finalproj",
+    tags: ["Python", "LLMs", "Hypothesis", "CrossHair", "Nagini"],
+    src: "",
+    date: "2025",
+    links: [
+      {
+        name: "GitHub",
+        href: "https://github.com/dhruvtpatel/2540_finalproj",
+      },
+    ],
+  },
   {
     name: "Bulletproof", 
     tagline: "LLM reasoning enhancement via RL and token simulation",
@@ -218,6 +234,15 @@ export const projectData: Project[] = [
         href: "https://lightspeedads.netlify.app/",
       },
     ]
+  },
+  {
+    name: "Climate Neutral",
+    tagline: "Fine-tuned LLM and agent platform for sustainability frameworks at 347 brands worldwide",
+    description: "Piloted a fine-tuned LLM and agent platform focused on generating comprehensive sustainability plans for F500s.",
+    href: "https://www.changeclimate.org/",
+    tags: ["Python", "Flask", "LangChain & LangGraph", "Fast.ai", "OpenAI"],
+    src: "/climateneutral.png",
+    date: "2023",
   },
   {
     name: "Rally AI",
